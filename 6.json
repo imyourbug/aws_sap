@@ -1,0 +1,843 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 40016014,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 65,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is using multiple AWS accounts. The DNS records are stored in a private hosted zone for Amazon Route 53 in Account A. The company’s applications and databases are running in Account B.<br>A solutions architect will deploy a two-tier application in a new VPC. To simplify the configuration, the db.example.com CNAME record set for the Amazon RDS endpoint was created in a private hosted zone for Amazon Route 53.<br>During deployment, the application failed to start. Troubleshooting revealed that db.example.com is not resolvable on the Amazon EC2 instance. The solutions architect confirmed that the record set was created correctly in Route 53.<br>Which combination of steps should the solutions architect take to resolve this issue? (Choose two.)",
+            "userAnsText": "Deploy the database on a separate EC2 instance in the new VPC. Create a record set for the instance’s private IP in the private hosted zone.<br>Use SSH to connect to the application tier EC2 instance. Add an RDS endpoint IP address to the /etc/resolv.conf file.",
+            "correctAnsText": "Create an authorization to associate the private hosted zone in Account A with the new VPC in Account B.<br>Associate a new VPC in Account B with a hosted zone in Account A. Delete the association authorization in Account A.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-09T09:13:29.509+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-09T09:13:29.509+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Deploy the database on a separate EC2 instance in the new VPC. Create a record set for the instance’s private IP in the private hosted zone.<br>Use SSH to connect to the application tier EC2 instance. Add an RDS endpoint IP address to the /etc/resolv.conf file."
+                }
+            ]
+        },
+        {
+            "id": 40016027,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 3,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has registered 10 new domain names. The company uses the domains for online marketing. The company needs a solution that will redirect online visitors to a specific URL for each domain. All domains and target URLs are defined in a JSON document. All DNS records are managed by Amazon Route 53.<br>A solutions architect must implement a redirect service that accepts HTTP and HTTPS requests.<br>Which combination of steps should the solutions architect take to meet these requirements with the LEAST amount of operational effort? (Choose three.)",
+            "userAnsText": "Create an Application Load Balancer that includes HTTP and HTTPS listeners.<br>Create an AWS Lambda function that uses the JSON document in combination with the event message to look up and respond with a redirect URL.<br>Use an Amazon API Gateway API with a custom domain to publish an AWS Lambda function.",
+            "correctAnsText": "Create an AWS Lambda function that uses the JSON document in combination with the event message to look up and respond with a redirect URL.<br>Create an Amazon CloudFront distribution. Deploy a Lambda@Edge function.<br>Create an SSL certificate by using AWS Certificate Manager (ACM). Include the domains as Subject Alternative Names.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-09T09:08:40.312+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-09T09:08:40.312+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Application Load Balancer that includes HTTP and HTTPS listeners.<br>Create an AWS Lambda function that uses the JSON document in combination with the event message to look up and respond with a redirect URL.<br>Use an Amazon API Gateway API with a custom domain to publish an AWS Lambda function."
+                }
+            ]
+        },
+        {
+            "id": 40016012,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 63,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company needs to implement a patching process for its servers. The on-premises servers and Amazon EC2 instances use a variety of tools to perform patching. Management requires a single report showing the patch status of all the servers and instances.<br>Which set of actions should a solutions architect take to meet these requirements?",
+            "userAnsText": "Use AWS OpsWorks to manage patches on the on-premises servers and EC2 instances. Use Amazon QuickSight integration with OpsWorks to generate patch compliance reports.",
+            "correctAnsText": "Use AWS Systems Manager to manage patches on the on-premises servers and EC2 instances. Use Systems Manager to generate patch compliance reports.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-09T08:45:36.111+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-09T08:45:36.111+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Use AWS OpsWorks to manage patches on the on-premises servers and EC2 instances. Use Amazon QuickSight integration with OpsWorks to generate patch compliance reports."
+                }
+            ]
+        },
+        {
+            "id": 40016002,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 53,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company uses AWS Organizations with a single OU named Production to manage multiple accounts. All accounts are members of the Production OU. Administrators use deny list SCPs in the root of the organization to manage access to restricted services.<br>The company recently acquired a new business unit and invited the new unit’s existing AWS account to the organization. Once onboarded, the administrators of the new business unit discovered that they are not able to update existing AWS Config rules to meet the company’s policies.<br>Which option will allow administrators to make changes and continue to enforce the current policies without introducing additional long-term maintenance?",
+            "userAnsText": "Create a temporary OU named Onboarding for the new account. Apply an SCP to the Onboarding OU to allow AWS Config actions. Move the new account to the Production OU when adjustments to AWS Config are complete.",
+            "correctAnsText": "Create a temporary OU named Onboarding for the new account. Apply an SCP to the Onboarding OU to allow AWS Config actions. Move the organization’s root SCP to the Production OU. Move the new account to the Production OU when adjustments to AWS Config are complete.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-09T08:34:10.29+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-09T08:34:10.29+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create a temporary OU named Onboarding for the new account. Apply an SCP to the Onboarding OU to allow AWS Config actions. Move the new account to the Production OU when adjustments to AWS Config are complete."
+                }
+            ]
+        },
+        {
+            "id": 40016051,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 27,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is running a web application in the AWS Cloud. The application consists of dynamic content that is created on a set of Amazon EC2 instances. The EC2 instances run in an Auto Scaling group that is configured as a target group for an Application Load Balancer (ALB).<br><br>The company is using an Amazon CloudFront distribution to distribute the application globally. The CloudFront distribution uses the ALB as an origin. The company uses Amazon Route 53 for DNS and has created an A record of www.example.com for the CloudFront distribution.<br><br>A solutions architect must configure the application so that itis highly available and fault tolerant.<br><br>Which solution meets these requirements?",
+            "userAnsText": "Provision a full, secondary application deployment in a different AWS Region. Update the Route 53 A record to be a failover record. Add both of the CloudFront distributions as values. Create Route 53 health checks.",
+            "correctAnsText": "Provision an ALB, an Auto Scaling group, and EC2 instances in a different AWS Region. Update the CloudFront distribution, and create a second origin for the new ALCreate an origin group for the two origins. Configure one origin as primary and one origin as secondary.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-09T08:25:50.445+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-09T08:25:50.445+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Provision a full, secondary application deployment in a different AWS Region. Update the Route 53 A record to be a failover record. Add both of the CloudFront distributions as values. Create Route 53 health checks."
+                }
+            ]
+        },
+        {
+            "id": 40016011,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 62,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company wants to use a third-party software-as-a-service (SaaS) application. The third-party SaaS application is consumed through several API calls. The third-party SaaS application also runs on AWS inside a VPC.<br>The company will consume the third-party SaaS application from inside a VPC. The company has internal security policies that mandate the use of private connectivity that does not traverse the internet. No resources that run in the company VPC are allowed to be accessed from outside the company’s VPC. All permissions must conform to the principles of least privilege.<br>Which solution meets these requirements?",
+            "userAnsText": "Create a VPC peering connection between the third-party SaaS application and the company VPUpdate route tables by adding the needed routes for the peering connection.",
+            "correctAnsText": "Create an AWS PrivateLink interface VPC endpoint. Connect this endpoint to the endpoint service that the third-party SaaS application provides. Create a security group to limit the access to the endpoint. Associate the security group with the endpoint.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-09T08:25:50.445+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-09T08:25:50.445+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create a VPC peering connection between the third-party SaaS application and the company VPUpdate route tables by adding the needed routes for the peering connection."
+                }
+            ]
+        },
+        {
+            "id": 40016038,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 14,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company wants to migrate its workloads from on premises to AWS. The workloads run on Linux and Windows. The company has a large on-premises infrastructure that consists of physical machines and VMs that host numerous applications.<br><br>The company must capture details about the system configuration, system performance, running processes, and network connections of its on-premises workloads. The company also must divide the on-premises applications into groups for AWS migrations. The company needs recommendations for Amazon EC2 instance types so that the company can run its workloads on AWS in the most cost-effective manner.<br><br>Which combination of steps should a solutions architect take to meet these requirements? (Choose three.)",
+            "userAnsText": "Assess the existing applications by installing AWS Application Discovery Agent on the physical machines and VMs.<br>Group servers into applications for migration by using AWS Migration Hub.<br>Import data about server sizes into AWS Trusted Advisor. Follow the recommendations for cost optimization.",
+            "correctAnsText": "Assess the existing applications by installing AWS Application Discovery Agent on the physical machines and VMs.<br>Group servers into applications for migration by using AWS Migration Hub.<br>Generate recommended instance types and associated costs by using AWS Migration Hub.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-09T08:25:50.445+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-09T08:25:50.445+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Assess the existing applications by installing AWS Application Discovery Agent on the physical machines and VMs.<br>Group servers into applications for migration by using AWS Migration Hub.<br>Import data about server sizes into AWS Trusted Advisor. Follow the recommendations for cost optimization."
+                }
+            ]
+        },
+        {
+            "id": 40016061,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 37,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company wants to migrate an application to Amazon EC2 from VMware Infrastructure that runs in an on-premises data center. A solutions architect must preserve the software and configuration settings during the migration.<br><br>What should the solutions architect do to meet these requirements?",
+            "userAnsText": "Create a managed-instance activation for a hybrid environment in AWS Systems Manager. Download and install Systems Manager Agent on the on-premises VM. Register the VM with Systems Manager to be a managed instance. Use AWS Backup to create a snapshot of the VM and create an AMI. Launch an EC2 instance that is based on the AMI.",
+            "correctAnsText": "Use the VMware vSphere client to export the application as an image in Open Virtualization Format (OVF) format. Create an Amazon S3 bucket to store the image in the destination AWS Region. Create and apply an IAM role for VM Import. Use the AWS CLI to run the EC2 import command.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-06T14:41:32.707+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-06T14:41:32.707+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create a managed-instance activation for a hybrid environment in AWS Systems Manager. Download and install Systems Manager Agent on the on-premises VM. Register the VM with Systems Manager to be a managed instance. Use AWS Backup to create a snapshot of the VM and create an AMI. Launch an EC2 instance that is based on the AMI."
+                }
+            ]
+        },
+        {
+            "id": 40016056,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 32,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company with several AWS accounts is using AWS Organizations and service control policies (SCPs). An administrator created the following SCP and has attached it to an organizational unit (OU) that contains AWS account 1111-1111-1111:<br><br><code><pre>{\n  \"Version\": \"2012-10-17\",\n  \"Statement\": [\n    {\n      \"Sid\": \"AllowsAllActions\",\n      \"Effect\": \"Allow\",\n      \"Action\": \"*\",\n      \"Resource\": \"*\"\n    },\n    {\n      \"Sid\": \"DenyCloudTrail\",\n      \"Effect\": \"Deny\",\n      \"Action\": \"cloudtrail:*\",\n      \"Resource\": \"*\"\n    }\n  ]\n}</pre></code><br><br>Developers working in account 1111-1111-1111 complain that they cannot create Amazon S3 buckets. How should the administrator address this problem?",
+            "userAnsText": "Add s3:CreateBucket with “Allow” effect to the SCP.",
+            "correctAnsText": "Instruct the developers to add Amazon S3 permissions to their IAM entities.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T15:05:40.91+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T15:05:40.91+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Add s3:CreateBucket with “Allow” effect to the SCP."
+                }
+            ]
+        },
+        {
+            "id": 40016042,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 18,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is using Amazon OpenSearch Service to analyze data. The company loads data into an OpenSearch Service cluster with 10 data nodes from an Amazon S3 bucket that uses S3 Standard storage. The data resides in the cluster for 1 month for read-only analysis. After 1 month, the company deletes the index that contains the data from the cluster. For compliance purposes, the company must retain a copy of all input data.<br><br>The company is concerned about ongoing costs and asks a solutions architect to recommend a new solution.<br><br>Which solution will meet these requirements MOST cost-effectively?",
+            "userAnsText": "Reduce the number of data nodes in the cluster to 2. Add UltraWarm nodes to handle the expected capacity. Configure the indexes to transition to UltraWarm when OpenSearch Service ingests the data. Add cold storage nodes to the cluster Transition the indexes from UltraWarm to cold storage. Delete the input data from the S3 bucket after 1 month by using an S3 Lifecycle policy.",
+            "correctAnsText": "Reduce the number of data nodes in the cluster to 2 Add UltraWarm nodes to handle the expected capacity. Configure the indexes to transition to UltraWarm when OpenSearch Service ingests the data. Transition the input data to S3 Glacier Deep Archive after 1 month by using an S3 Lifecycle policy.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T14:58:05.476+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T14:58:05.476+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Reduce the number of data nodes in the cluster to 2. Add UltraWarm nodes to handle the expected capacity. Configure the indexes to transition to UltraWarm when OpenSearch Service ingests the data. Add cold storage nodes to the cluster Transition the indexes from UltraWarm to cold storage. Delete the input data from the S3 bucket after 1 month by using an S3 Lifecycle policy."
+                }
+            ]
+        },
+        {
+            "id": 40016023,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 74,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is developing a new service that will be accessed using TCP on a static port. A solutions architect must ensure that the service is highly available, has redundancy across Availability Zones, and is accessible using the DNS name my.service.com, which is publicly accessible. The service must use fixed address assignments so other companies can add the addresses to their allow lists.<br>Assuming that resources are deployed in multiple Availability Zones in a single Region, which solution will meet these requirements?",
+            "userAnsText": "Create an Amazon ECS cluster and a service definition for the application. Create and assign public IP addresses for the ECS cluster. Create a Network Load Balancer (NLB) and expose the TCP port. Create a target group and assign the ECS cluster name to the NLCreate a new A record set named my.service.com, and assign the public IP addresses of the ECS cluster to the record set. Provide the public IP addresses of the ECS cluster to the other companies to add to their allow lists.",
+            "correctAnsText": "Create Amazon EC2 instances for the service. Create one Elastic IP address for each Availability Zone. Create a Network Load Balancer (NLB) and expose the assigned TCP port. Assign the Elastic IP addresses to the NLB for each Availability Zone. Create a target group and register the EC2 instances with the NLB. Create a new A (alias) record set named my.service.com, and assign the NLB DNS name to the record set.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T14:54:27.991+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T14:54:27.991+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon ECS cluster and a service definition for the application. Create and assign public IP addresses for the ECS cluster. Create a Network Load Balancer (NLB) and expose the TCP port. Create a target group and assign the ECS cluster name to the NLCreate a new A record set named my.service.com, and assign the public IP addresses of the ECS cluster to the record set. Provide the public IP addresses of the ECS cluster to the other companies to add to their allow lists."
+                }
+            ]
+        },
+        {
+            "id": 40016019,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 70,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is planning to store a large number of archived documents and make the documents available to employees through the corporate intranet. Employees will access the system by connecting through a client VPN service that is attached to a VPC. The data must not be accessible to the public.<br>The documents that the company is storing are copies of data that is held on physical media elsewhere. The number of requests will be low. Availability and speed of retrieval are not concerns of the company.<br>Which solution will meet these requirements at the LOWEST cost?",
+            "userAnsText": "Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 Glacier Deep Archive storage class as default. Configure the S3 bucket for website hosting. Create an S3 interface endpoint. Configure the S3 bucket to allow access only through that endpoint.",
+            "correctAnsText": "Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 One Zone-Infrequent Access (S3 One Zone-IA) storage class as default. Configure the S3 bucket for website hosting. Create an S3 interface endpoint. Configure the S3 bucket to allow access only through that endpoint.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T14:50:45.637+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T14:50:45.637+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 Glacier Deep Archive storage class as default. Configure the S3 bucket for website hosting. Create an S3 interface endpoint. Configure the S3 bucket to allow access only through that endpoint."
+                }
+            ]
+        },
+        {
+            "id": 40016060,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 36,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A finance company hosts a data lake in Amazon S3. The company receives financial data records over SFTP each night from several third parties. The company runs its own SFTP server on an Amazon EC2 instance in a public subnet of a VPC. After the files are uploaded, they are moved to the data lake by a cron job that runs on the same instance. The SFTP server is reachable on DNS sftp.example.com through the use of Amazon Route 53.<br><br>What should a solutions architect do to improve the reliability and scalability of the SFTP solution?",
+            "userAnsText": "Move the EC2 instance into an Auto Scaling group. Place the EC2 instance behind an Application Load Balancer (ALB). Update the DNS record sftp.example.com in Route 53 to point to the ALB.",
+            "correctAnsText": "Migrate the SFTP server to AWS Transfer for SFTP. Update the DNS record sftp.example.com in Route 53 to point to the server endpoint hostname.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T14:45:47.178+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T14:45:47.178+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Move the EC2 instance into an Auto Scaling group. Place the EC2 instance behind an Application Load Balancer (ALB). Update the DNS record sftp.example.com in Route 53 to point to the ALB."
+                }
+            ]
+        },
+        {
+            "id": 40016040,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 16,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company recently deployed an application on AWS. The application uses Amazon DynamoDB. The company measured the application load and configured the RCUs and WCUs on the DynamoDB table to match the expected peak load. The peak load occurs once a week for a 4-hour period and is double the average load. The application load is close to the average load for the rest of the week. The access pattern includes many more writes to the table than reads of the table.<br><br>A solutions architect needs to implement a solution to minimize the cost of the table.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Configure DynamoDB Accelerator (DAX) in front of the table. Configure on-demand capacity mode for the table.",
+            "correctAnsText": "Use AWS Application Auto Scaling to increase capacity during the peak period. Purchase reserved RCUs and WCUs to match the average load.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T14:29:29.11+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T14:29:29.11+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Configure DynamoDB Accelerator (DAX) in front of the table. Configure on-demand capacity mode for the table."
+                }
+            ]
+        },
+        {
+            "id": 40016054,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 30,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company’s factory and automation applications are running in a single VPC. More than 20 applications run on a combination of Amazon EC2, Amazon Elastic Container Service (Amazon ECS), and Amazon RDS.<br><br>The company has software engineers spread across three teams. One of the three teams owns each application, and each time is responsible for the cost and performance of all of its applications. Team resources have tags that represent their application and team. The teams use IAM access for daily activities.<br><br>The company needs to determine which costs on the monthly AWS bill are attributable to each application or team. The company also must be able to create reports to compare costs from the last 12 months and to help forecast costs for the next 12 months. A solutions architect must recommend an AWS Billing and Cost Management solution that provides these cost reports.<br><br>Which combination of actions will meet these requirements? (Choose three.)",
+            "userAnsText": "Activate the user-define cost allocation tags that represent the application and the team.<br>Activate IAM access to Billing and Cost Management.<br>Enable Cost Explorer.",
+            "correctAnsText": "Activate the user-define cost allocation tags that represent the application and the team.<br>Create a cost category for each application in Billing and Cost Management.<br>Enable Cost Explorer.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T14:18:54.941+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T14:18:54.941+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Activate the user-define cost allocation tags that represent the application and the team.<br>Activate IAM access to Billing and Cost Management.<br>Enable Cost Explorer."
+                }
+            ]
+        },
+        {
+            "id": 40016026,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 2,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is storing data in several Amazon DynamoDB tables. A solutions architect must use a serverless architecture to make the data accessible publicly through a simple API over HTTPS. The solution must scale automatically in response to demand.<br>Which solutions meet these requirements? (Choose two.)",
+            "userAnsText": "Create an Amazon API Gateway HTTP API. Configure this API with integrations to AWS Lambda functions that return data from the DynamoDB tables.<br>Create an accelerator in AWS Global Accelerator. Configure this accelerator with AWS Lambda@Edge function integrations that return data from the DynamoDB tables.",
+            "correctAnsText": "Create an Amazon API Gateway REST API. Configure this API with direct integrations to DynamoDB by using API Gateway’s AWS integration type.<br>Create an Amazon API Gateway HTTP API. Configure this API with integrations to AWS Lambda functions that return data from the DynamoDB tables.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T14:05:15.91+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T14:05:15.91+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon API Gateway HTTP API. Configure this API with integrations to AWS Lambda functions that return data from the DynamoDB tables.<br>Create an accelerator in AWS Global Accelerator. Configure this accelerator with AWS Lambda@Edge function integrations that return data from the DynamoDB tables."
+                }
+            ]
+        },
+        {
+            "id": 40016028,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 4,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company that has multiple AWS accounts is using AWS Organizations. The company’s AWS accounts host VPCs, Amazon EC2 instances, and containers.<br>The company’s compliance team has deployed a security tool in each VPC where the company has deployments. The security tools run on EC2 instances and send information to the AWS account that is dedicated for the compliance team. The company has tagged all the compliance-related resources with a key of “costCenter” and a value or “compliance”.<br>The company wants to identify the cost of the security tools that are running on the EC2 instances so that the company can charge the compliance team’s AWS account. The cost calculation must be as accurate as possible.<br>What should a solutions architect do to meet these requirements?",
+            "userAnsText": "In the member accounts of the organization activate the costCenter user-defined tag. From the management account, schedule a monthly AWS Cost and Usage Report. Use the tag breakdown in the report to calculate the total cost for the costCenter tagged resources.",
+            "correctAnsText": "In the management account of the organization, activate the costCenter user-defined tag. Configure monthly AWS Cost and Usage Reports to save to an Amazon S3 bucket in the management account. Use the tag breakdown in the report to obtain the total cost for the costCenter tagged resources.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T13:58:58.952+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T13:58:58.952+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "In the member accounts of the organization activate the costCenter user-defined tag. From the management account, schedule a monthly AWS Cost and Usage Report. Use the tag breakdown in the report to calculate the total cost for the costCenter tagged resources."
+                }
+            ]
+        },
+        {
+            "id": 40016047,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 23,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A solutions architect has developed a web application that uses an Amazon API Gateway Regional endpoint and an AWS Lambda function. The consumers of the web application are all close to the AWS Region where the application will be deployed. The Lambda function only queries an Amazon Aurora MySQL database. The solutions architect has configured the database to have three read replicas.<br><br>During testing, the application does not meet performance requirements. Under high load, the application opens a large number of database connections. The solutions architect must improve the application’s performance.<br><br>Which actions should the solutions architect take to meet these requirements? (Choose two.)",
+            "userAnsText": "Use RDS Proxy to set up a connection pool to the reader endpoint of the Aurora database.<br>Change the API Gateway endpoint to an edge-optimized endpoint.",
+            "correctAnsText": "Use RDS Proxy to set up a connection pool to the reader endpoint of the Aurora database.<br>Move the code for opening the database connection in the Lambda function outside of the event handler.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T10:42:13.49+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T10:42:13.49+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Use RDS Proxy to set up a connection pool to the reader endpoint of the Aurora database.<br>Change the API Gateway endpoint to an edge-optimized endpoint."
+                }
+            ]
+        },
+        {
+            "id": 40016073,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 49,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is running several workloads in a single AWS account. A new company policy states that engineers can provision only approved resources and that engineers must use AWS CloudFormation to provision these resources. A solutions architect needs to create a solution to enforce the new restriction on the IAM role that the engineers use for access.<br><br>What should the solutions architect do to create the solution?",
+            "userAnsText": "Update the IAM policy for the engineers’ IAM role with permissions to only allow provisioning of approved resources and AWS CloudFormation. Use AWS CloudFormation templates to create stacks with approved resources.",
+            "correctAnsText": "Update the IAM policy for the engineers’ IAM role with permissions to only allow AWS CloudFormation actions. Create a new IAM policy with permission to provision approved resources, and assign the policy to a new IAM service role. Assign the IAM service role to AWS CloudFormation during stack creation.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T08:20:59.158+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T08:20:59.158+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Update the IAM policy for the engineers’ IAM role with permissions to only allow provisioning of approved resources and AWS CloudFormation. Use AWS CloudFormation templates to create stacks with approved resources."
+                }
+            ]
+        },
+        {
+            "id": 40016059,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 35,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company built an application based on AWS Lambda deployed in an AWS CloudFormation stack. The last production release of the web application introduced an issue that resulted in an outage lasting several minutes. A solutions architect must adjust the deployment process to support a canary release.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Deploy the application into a new CloudFormation stack. Use an Amazon Route 53 weighted routing policy to distribute the load.",
+            "correctAnsText": "Create an alias for every new deployed version of the Lambda function. Use the AWS CLI update-alias command with the routing-config parameter to distribute the load.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T08:01:45.277+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T08:01:45.277+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Deploy the application into a new CloudFormation stack. Use an Amazon Route 53 weighted routing policy to distribute the load."
+                }
+            ]
+        },
+        {
+            "id": 40016069,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 45,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has an environment that has a single AWS account. A solutions architect is reviewing the environment to recommend what the company could improve specifically in terms of access to the AWS Management Console. The company’s IT support workers currently access the console for administrative tasks, authenticating with named IAM users that have been mapped to their job role.<br><br>The IT support workers no longer want to maintain both their Active Directory and IAM user accounts. They want to be able to access the console by using their existing Active Directory credentials. The solutions architect is using AWS IAM Identity Center (AWS Single Sign-On) to implement this functionality.<br><br>Which solution will meet these requirements MOST cost-effectively?",
+            "userAnsText": "Create an organization in AWS Organizations. Turn on all features for the organization. Create and configure a directory in AWS Directory Service for Microsoft Active Directory (AWS Managed Microsoft AD) with a two-way trust to the company’s on-premises Active Directory. Configure IAM Identity Center and select the AWS Managed Microsoft AD directory as the identity source. Create permission sets and map them to the existing groups within the AWS Managed Microsoft AD directory.",
+            "correctAnsText": "Create an organization in AWS Organizations. Turn on all features for the organization. Create and configure an AD Connector to connect to the company’s on-premises Active Directory. Configure IAM Identity Center and set the AD Connector as the identity source. Create permission sets and map them to the existing groups within the company’s Active Directory.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T07:42:54.845+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T07:42:54.845+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an organization in AWS Organizations. Turn on all features for the organization. Create and configure a directory in AWS Directory Service for Microsoft Active Directory (AWS Managed Microsoft AD) with a two-way trust to the company’s on-premises Active Directory. Configure IAM Identity Center and select the AWS Managed Microsoft AD directory as the identity source. Create permission sets and map them to the existing groups within the AWS Managed Microsoft AD directory."
+                }
+            ]
+        },
+        {
+            "id": 40016055,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 31,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "An AWS customer has a web application that runs on premises. The web application fetches data from a third-party API that is behind a firewall. The third party accepts only one public CIDR block in each client’s allow list.<br><br>The customer wants to migrate their web application to the AWS Cloud. The application will be hosted on a set of Amazon EC2 instances behind an Application Load Balancer (ALB) in a VPC. The ALB is located in public subnets. The EC2 instances are located in private subnets. NAT gateways provide internet access to the private subnets.<br><br>How should a solutions architect ensure that the web application can continue to call the third-party API after the migration?",
+            "userAnsText": "Register a block of customer-owned public IP addresses in the AWS account. Set up AWS Global Accelerator to use Elastic IP addresses from the address block. Set the ALB as the accelerator endpoint.",
+            "correctAnsText": "Register a block of customer-owned public IP addresses in the AWS account. Create Elastic IP addresses from the address block and assign them to the NAT gateways in the VPC.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T07:42:54.845+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T07:42:54.845+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Register a block of customer-owned public IP addresses in the AWS account. Set up AWS Global Accelerator to use Elastic IP addresses from the address block. Set the ALB as the accelerator endpoint."
+                }
+            ]
+        },
+        {
+            "id": 40016044,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 20,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company hosts a Git repository in an on-premises data center. The company uses webhooks to invoke functionality that runs in the AWS Cloud. The company hosts the webhook logic on a set of Amazon EC2 instances in an Auto Scaling group that the company set as a target for an Application Load Balancer (ALB). The Git server calls the ALB for the configured webhooks. The company wants to move the solution to a serverless architecture.<br><br>Which solution will meet these requirements with the LEAST operational overhead?",
+            "userAnsText": "For each webhook, create and configure an AWS Lambda function URL. Update the Git servers to call the individual Lambda function URLs.",
+            "correctAnsText": "Create an Amazon API Gateway HTTP API. Implement each webhook logic in a separate AWS Lambda function. Update the Git servers to call the API Gateway endpoint.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T07:27:54.121+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T07:27:54.121+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "For each webhook, create and configure an AWS Lambda function URL. Update the Git servers to call the individual Lambda function URLs."
+                }
+            ]
+        },
+        {
+            "id": 40016066,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 42,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has applications in an AWS account that is named Source. The account is in an organization in AWS Organizations. One of the applications uses AWS Lambda functions and stores inventory data in an Amazon Aurora database. The application deploys the Lambda functions by using a deployment package. The company has configured automated backups for Aurora.<br><br>The company wants to migrate the Lambda functions and the Aurora database to a new AWS account that is named Target. The application processes critical data, so the company must minimize downtime.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Use AWS Resource Access Manager (AWS RAM) to share the Lambda functions with the Target account. Share the automated Aurora DB cluster snapshot with the Target account.",
+            "correctAnsText": "Download the Lambda function deployment package from the Source account. Use the deployment package and create new Lambda functions in the Target account. Share the Aurora DB cluster with the Target account by using AWS Resource Access Manager {AWS RAM). Grant the Target account permission to clone the Aurora DB cluster.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T07:18:16.334+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T07:18:16.334+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Use AWS Resource Access Manager (AWS RAM) to share the Lambda functions with the Target account. Share the automated Aurora DB cluster snapshot with the Target account."
+                }
+            ]
+        },
+        {
+            "id": 40016050,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 26,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A health insurance company stores personally identifiable information (PII) in an Amazon S3 bucket. The company uses server-side encryption with S3 managed encryption keys (SSE-S3) to encrypt the objects. According to a new requirement, all current and future objects in the S3 bucket must be encrypted by keys that the company’s security team manages. The S3 bucket does not have versioning enabled.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "In the S3 bucket properties, change the default encryption to AES-256 with a customer managed key. Attach a policy to deny unencrypted PutObject requests to any entities that access the S3 bucket. Use the AWS CLI to re-upload all objects in the S3 bucket.",
+            "correctAnsText": "In the S3 bucket properties, change the default encryption to server-side encryption with AWS KMS managed encryption keys (SSE-KMS). Set an S3 bucket policy to deny unencrypted PutObject requests. Use the AWS CLI to re-upload all objects in the S3 bucket.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T03:16:30.26+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T03:16:30.26+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "In the S3 bucket properties, change the default encryption to AES-256 with a customer managed key. Attach a policy to deny unencrypted PutObject requests to any entities that access the S3 bucket. Use the AWS CLI to re-upload all objects in the S3 bucket."
+                }
+            ]
+        },
+        {
+            "id": 40016074,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 50,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A solutions architect is designing the data storage and retrieval architecture for a new application that a company will be launching soon. The application is designed to ingest millions of small records per minute from devices all around the world. Each record is less than 4 KB in size and needs to be stored in a durable location where it can be retrieved with low latency. The data is ephemeral and the company is required to store the data for 120 days only, after which the data can be deleted.<br><br>The solutions architect calculates that, during the course of a year, the storage requirements would be about 10-15 TB.<br><br>Which storage strategy is the MOST cost-effective and meets the design requirements?",
+            "userAnsText": "Design the application to batch incoming records before writing them to an Amazon S3 bucket. Update the metadata for the object to contain the list of records in the batch and use the Amazon S3 metadata search feature to retrieve the data. Configure a lifecycle policy to delete the data after 120 days.",
+            "correctAnsText": "Design the application to store each incoming record in an Amazon DynamoDB table properly configured for the scale. Configure the DynamoDB Time to Live (TTL) feature to delete records older than 120 days.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-04T02:38:23.981+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-04T02:38:23.981+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Design the application to batch incoming records before writing them to an Amazon S3 bucket. Update the metadata for the object to contain the list of records in the batch and use the Amazon S3 metadata search feature to retrieve the data. Configure a lifecycle policy to delete the data after 120 days."
+                }
+            ]
+        },
+        {
+            "id": 40016016,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 67,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company with global offices has a single 1&nbsp;Gbps AWS Direct Connect connection to a single AWS Region. The company’s on-premises network uses the connection to communicate with the company’s resources in the AWS Cloud. The connection has a single private virtual interface that connects to a single VPC.<br>A solutions architect must implement a solution that adds a redundant Direct Connect connection in the same Region. The solution also must provide connectivity to other Regions through the same pair of Direct Connect connections as the company expands into other Regions.<br>Which solution meets these requirements?",
+            "userAnsText": "Provision a transit gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the transit gateway. Associate the transit gateway with the single VPC.",
+            "correctAnsText": "Provision a Direct Connect gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the Direct Connect gateway. Connect the Direct Connect gateway to the single VPC.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-03T15:55:46.418+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-03T15:55:46.418+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Provision a transit gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the transit gateway. Associate the transit gateway with the single VPC."
+                }
+            ]
+        },
+        {
+            "id": 40016048,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 24,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is planning to host a web application on AWS and wants to load balance the traffic across a group of Amazon EC2 instances. One of the security requirements is to enable end-to-end encryption in transit between the client and the web server.<br><br>Which solution will meet this requirement?",
+            "userAnsText": "Place the EC2 instances behind an Application Load Balancer (ALB). Provision an SSL certificate using AWS Certificate Manager (ACM), and associate the SSL certificate with the ALB. Export the SSL certificate and install it on each EC2 instance. Configure the ALB to listen on port 443 and to forward traffic to port 443 on the instances.",
+            "correctAnsText": "Place the EC2 instances behind an Application Load Balancer (ALB) Provision an SSL certificate using AWS Certificate Manager (ACM), and associate the SSL certificate with the ALB. Provision a third-party SSL certificate and install it on each EC2 instance. Configure the ALB to listen on port 443 and to forward traffic to port 443 on the instances.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-02T15:15:03.544+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-02T15:15:03.544+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Place the EC2 instances behind an Application Load Balancer (ALB). Provision an SSL certificate using AWS Certificate Manager (ACM), and associate the SSL certificate with the ALB. Export the SSL certificate and install it on each EC2 instance. Configure the ALB to listen on port 443 and to forward traffic to port 443 on the instances."
+                }
+            ]
+        },
+        {
+            "id": 40016004,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 55,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company uses a service to collect metadata from applications that the company hosts on premises. Consumer devices such as TVs and internet radios access the applications. Many older devices do not support certain HTTP headers and exhibit errors when these headers are present in responses. The company has configured an on-premises load balancer to remove the unsupported headers from responses sent to older devices, which the company identified by the User-Agent headers.<br>The company wants to migrate the service to AWS, adopt serverless technologies, and retain the ability to support the older devices. The company has already migrated the applications into a set of AWS Lambda functions.<br>Which solution will meet these requirements?",
+            "userAnsText": "Create an Amazon API Gateway REST API for the metadata service. Configure API Gateway to invoke the correct Lambda function for each type of request. Modify the default gateway responses to remove the problematic headers based on the value of the User-Agent header.",
+            "correctAnsText": "Create an Amazon CloudFront distribution for the metadata service. Create an Application Load Balancer (ALB). Configure the CloudFront distribution to forward requests to the ALB. Configure the ALB to invoke the correct Lambda function for each type of request. Create a CloudFront function to remove the problematic headers based on the value of the User-Agent header.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-02T14:37:30.544+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-02T14:37:30.544+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon API Gateway REST API for the metadata service. Configure API Gateway to invoke the correct Lambda function for each type of request. Modify the default gateway responses to remove the problematic headers based on the value of the User-Agent header."
+                }
+            ]
+        },
+        {
+            "id": 40016046,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 22,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is building a serverless application that runs on an AWS Lambda function that is attached to a VPC. The company needs to integrate the application with a new service from an external provider. The external provider supports only requests that come from public IPv4 addresses that are in an allow list.<br><br>The company must provide a single public IP address to the external provider before the application can start using the new service.<br><br>Which solution will give the application the ability to access the new service?",
+            "userAnsText": "Deploy an internet gateway. Associate an Elastic IP address with the internet gateway. Configure the default route in the public VPC route table to use the internet gateway.",
+            "correctAnsText": "Deploy a NAT gateway. Associate an Elastic IP address with the NAT gateway. Configure the VPC to use the NAT gateway.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-02T09:26:37.975+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-02T09:26:37.975+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Deploy an internet gateway. Associate an Elastic IP address with the internet gateway. Configure the default route in the public VPC route table to use the internet gateway."
+                }
+            ]
+        },
+        {
+            "id": 40016009,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 60,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A retail company is operating its ecommerce application on AWS. The application runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The company uses an Amazon RDS DB instance as the database backend. Amazon CloudFront is configured with one origin that points to the ALB. Static content is cached. Amazon Route 53 is used to host all public zones.<br>After an update of the application, the ALB occasionally returns a 502 status code (Bad Gateway) error. The root cause is malformed HTTP headers that are returned to the ALB. The webpage returns successfully when a solutions architect reloads the webpage immediately after the error occurs.<br>While the company is working on the problem, the solutions architect needs to provide a custom error page instead of the standard ALB error page to visitors.<br>Which combination of steps will meet this requirement with the LEAST amount of operational overhead? (Choose two.)",
+            "userAnsText": "Create an Amazon CloudWatch alarm to invoke an AWS Lambda function if the ALB health check response Elb.InternalError is greater than 0. Configure the Lambda function to modify the forwarding rule at the ALB to point to a public accessible web server.<br>Add a custom error response by configuring a CloudFront custom error page. Modify DNS records to point to a publicly accessible web page.",
+            "correctAnsText": "Create an Amazon S3 bucket. Configure the S3 bucket to host a static webpage. Upload the custom error pages to Amazon S3.<br>Add a custom error response by configuring a CloudFront custom error page. Modify DNS records to point to a publicly accessible web page.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-02T09:19:14.485+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-02T09:19:14.485+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon CloudWatch alarm to invoke an AWS Lambda function if the ALB health check response Elb.InternalError is greater than 0. Configure the Lambda function to modify the forwarding rule at the ALB to point to a public accessible web server.<br>Add a custom error response by configuring a CloudFront custom error page. Modify DNS records to point to a publicly accessible web page."
+                }
+            ]
+        },
+        {
+            "id": 40016063,
+            "examId": 400800,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 1",
+            "qNum": 39,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has an organization in AWS Organizations. The company is using AWS Control Tower to deploy a landing zone for the organization. The company wants to implement governance and policy enforcement. The company must implement a policy that will detect Amazon RDS DB instances that are not encrypted at rest in the company’s production OU.<br><br>Which solution will meet this requirement?",
+            "userAnsText": "Create a custom SCP in AWS Control Tower. Apply the SCP to the production OU.",
+            "correctAnsText": "Enable the appropriate guardrail from the list of strongly recommended guardrails in AWS Control Tower. Apply the guardrail to the production OU.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-02T09:07:17.683+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-02T09:07:17.683+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create a custom SCP in AWS Control Tower. Apply the SCP to the production OU."
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 50,
+        "total": 32,
+        "totalPages": 1
+    }
+}

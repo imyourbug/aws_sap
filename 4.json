@@ -1,0 +1,902 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 30003127,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 53,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A company is building an on-demand streaming application on AWS Cloud. The company has chosen Amazon S3 as its storage service and moved the existing videos to an Amazon S3 bucket. The application requires the video playback to start quickly, fast-forwarding should be more efficient and the overall user experience should be smoother without smothering the user's bandwidth.</p>\n\n<p>Which AWS service(s) will help implement this solution effectively?</p>",
+            "userAnsText": "<p>Use AWS Elemental MediaConvert for file-based video processing, and Amazon CloudFront for delivery. Create a CloudFront distribution that points to the S3 bucket with videos uploaded. CloudFront will direct the request to the best edge location, based on the user’s location enhancing the overall user experience</p>",
+            "correctAnsText": "<p>Use AWS Elemental MediaConvert for file-based video processing and Amazon CloudFront for delivery. Use video streaming protocols like Apple’s HTTP Live Streaming (HLS) and create a manifest file. Point the CloudFront distribution at the manifest</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T10:27:35.273+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T10:27:35.273+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use AWS Elemental MediaConvert for file-based video processing, and Amazon CloudFront for delivery. Create a CloudFront distribution that points to the S3 bucket with videos uploaded. CloudFront will direct the request to the best edge location, based on the user’s location enhancing the overall user experience</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003091,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 17,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A solutions architect is setting up DNS failover configuration for Route 53. The architect needs to use multiple routing policies (such as latency-based and weighted) to configure a more complex DNS failover.</p>\n\n<p>Which of the following options represent the key points of consideration while setting up a failover configuration on Route 53? (Select two)</p>",
+            "userAnsText": "<p>When responding to queries, Route 53 includes only the healthy primary resources in Active-active failover configuration</p><br><p>If you're routing traffic to any AWS resources that you can create alias records for, you need to create health checks for these resources too</p>",
+            "correctAnsText": "<p>Records without a health check are always considered healthy. If no record is healthy, all records are deemed to be healthy</p><br><p>If you're creating failover records in a private hosted zone, you must assign a public IP address to an instance in the VPC to check the health of an endpoint within a VPC by IP address</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T10:27:35.273+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T10:27:35.273+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>When responding to queries, Route 53 includes only the healthy primary resources in Active-active failover configuration</p><br><p>If you're routing traffic to any AWS resources that you can create alias records for, you need to create health checks for these resources too</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003113,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 39,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A data analytics company runs a real-time data processing application that uses Kinesis Client Library (KCL) to help consume and process data from the real-time data streams. The development team has raised a query on the viability of using the same DynamoDB table for different KCL applications.</p>\n\n<p>Which of the following are correct statements for KCL while consuming Kinesis Data Streams? (Select two)</p>",
+            "userAnsText": "<p>Multiple KCL applications can share a DynamoDB table if Amazon Amazon Simple Storage Service (Amazon S3) is configured to save transit data and metadata</p><br><p>Multiple KCL applications can share a DynamoDB table</p>",
+            "correctAnsText": "<p>Each KCL application must use its own DynamoDB table</p><br><p>You can only use DynamoDB for checkpointing KCL</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T10:18:55.662+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T10:18:55.662+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Multiple KCL applications can share a DynamoDB table if Amazon Amazon Simple Storage Service (Amazon S3) is configured to save transit data and metadata</p><br><p>Multiple KCL applications can share a DynamoDB table</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003118,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 44,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A medical insurance company stores its bills and supporting documents of its customers in an Amazon S3 bucket as per the regulatory guidelines. The bucket is organized into folders with each folder having an insurance claim type. Employees working on claims have access to this S3 bucket and copy the bills and supporting documents to the folders based on the claim type. With changes in the regulations, the company has a new workflow for a new type of claim that exceeds a certain amount. These high-value claims have to be copied to a different bucket from where a program processes them within an hour. The workflow must trigger a ticket for the Audit team if the claim data is not copied into the destination bucket within 15 minutes.</p>\n\n<p>Which is the most effective solution that can be quickly implemented to incorporate the necessary changes in the workflow?</p>",
+            "userAnsText": "<p>Create a new Amazon S3 bucket to be used for replication. Create a new S3 Replication Time Control (S3 RTC) rule on the source S3 bucket that filters data based on the prefix (high-value claim type) and replicates it to the new S3 bucket. Leverage an Amazon EventBridge rule to trigger a notification when the time to copy the claim data exceeds the desired threshold</p>",
+            "correctAnsText": "<p>Create a new Amazon S3 bucket to be used for replication. Create a new S3 Replication Time Control (S3 RTC) rule on the source S3 bucket that filters data based on the prefix (high-value claim type) and replicates it to the new S3 bucket. Leverage an Amazon S3 event notification to trigger a notification when the time to copy the claim data exceeds the desired threshold</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T10:16:57.895+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T10:16:57.895+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create a new Amazon S3 bucket to be used for replication. Create a new S3 Replication Time Control (S3 RTC) rule on the source S3 bucket that filters data based on the prefix (high-value claim type) and replicates it to the new S3 bucket. Leverage an Amazon EventBridge rule to trigger a notification when the time to copy the claim data exceeds the desired threshold</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003078,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 4,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A solutions architect has configured an Amazon Relational Database Service (Amazon RDS) DB instance as part of an AWS Elastic Beanstalk environment. To resolve an issue, the Beanstalk environment has to be upgraded from environment A to environment B for a week. Therefore, the dependency between the DB instance and the Beanstalk environment has to be removed.</p>\n\n<p>How will you implement this requirement without causing a downtime and data loss?</p>",
+            "userAnsText": "<p>Use an Elastic Beanstalk rolling deployment policy to decouple the RDS DB instance from the Beanstalk environment (environment A)</p>",
+            "correctAnsText": "<p>Decouple the RDS DB instance from the Beanstalk environment (environment A) and leverage Elastic Beanstalk blue (environment A)/green (environment B) deployment to connect to the decoupled database post the upgrade</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T10:13:34.681+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T10:13:34.681+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use an Elastic Beanstalk rolling deployment policy to decouple the RDS DB instance from the Beanstalk environment (environment A)</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003140,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 66,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>You have hired a Cloud consulting agency, Example Corp, to monitor your AWS account and help optimize costs. To track daily spending, Example Corp needs access to your AWS resources, therefore, you allow Example Corp to assume an IAM role in your account. However, Example Corp also tracks spending for other customers, and there could be a configuration issue in the Example Corp environment that allows another customer to compel Example Corp to attempt to take an action in your AWS account, even though that customer should only be able to take the action in their account.</p>\n\n<p>How will you mitigate the risk of such a cross-account access scenario?</p>",
+            "userAnsText": "<p>Create an IAM role in your AWS account with a trust policy that trusts the Partner (Example Corp). Use the AWS account ID of Example Corp as the principal element of the trust policy that can assume the role</p>",
+            "correctAnsText": "<p>Create an IAM role in your AWS account with a trust policy that trusts the Partner (Example Corp). Take a unique external ID value from Example Corp and include this external ID condition in the role’s trust policy</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T10:08:30.857+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T10:08:30.857+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create an IAM role in your AWS account with a trust policy that trusts the Partner (Example Corp). Use the AWS account ID of Example Corp as the principal element of the trust policy that can assume the role</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003087,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 13,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A retail company has a Direct Connect connection between its on-premises data center and its VPC on the AWS Cloud. The company's flagship application runs on an EC2 instance in the VPC and it needs to access customer data stored in the on-premises data center with consistent performance. To meet the compliance guidelines, the data should remain encrypted during this operation.</p>\n\n<p>Which of the following solutions would you recommend for this use case?</p>",
+            "userAnsText": "<p>Configure a private virtual interface on the Direct Connect connection. Create an AWS Site-to-Site VPN between the customer gateway and the virtual private gateway in the VPC</p>",
+            "correctAnsText": "<p>Configure a public virtual interface on the Direct Connect connection. Create an AWS Site-to-Site VPN between the customer gateway and the virtual private gateway in the VPC</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T09:55:25.825+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T09:55:25.825+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Configure a private virtual interface on the Direct Connect connection. Create an AWS Site-to-Site VPN between the customer gateway and the virtual private gateway in the VPC</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003138,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 64,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A solutions architect at a company is managing the migration of the company's IT infrastructure from its on-premises data center to AWS Cloud. The architect needs to automate VPC creation to enforce the company's network and security standards which mandate that each application is isolated in its own VPC. The solution must also ensure that the CIDR range used in each VPC is unique.</p>\n\n<p>Which of the following options would you recommend to address these requirements?</p>",
+            "userAnsText": "<p>Deploy the VPC infrastructure using AWS CloudFormation and use the intrinsic function Fn::Cidr to request a unique CIDR range</p>",
+            "correctAnsText": "<p>Deploy the VPC infrastructure using AWS CloudFormation and leverage a custom resource to request a unique CIDR range from an external IP address management (IPAM) service</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T09:50:53.306+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T09:50:53.306+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Deploy the VPC infrastructure using AWS CloudFormation and use the intrinsic function Fn::Cidr to request a unique CIDR range</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003089,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 15,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A healthcare company is migrating sensitive data from its on-premises data center to AWS Cloud via an existing AWS Direct Connect connection. The company must ensure confidentiality and integrity of the data in transit to the AWS VPC.</p>\n\n<p>Which of the following options should be combined to set up the most cost-effective connection between your on-premises data center and AWS? (Select three)</p>",
+            "userAnsText": "<p>Set up a private virtual interface on the Direct Connect connection</p><br><p>Create a VPC with a virtual private gateway</p><br><p>Create an IPsec tunnel between your customer gateway appliance and the virtual private gateway</p>",
+            "correctAnsText": "<p>Create a VPC with a virtual private gateway</p><br><p>Create an IPsec tunnel between your customer gateway appliance and the virtual private gateway</p><br><p>Set up a public virtual interface on the Direct Connect connection</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T09:45:20.398+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T09:45:20.398+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up a private virtual interface on the Direct Connect connection</p><br><p>Create a VPC with a virtual private gateway</p><br><p>Create an IPsec tunnel between your customer gateway appliance and the virtual private gateway</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003081,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 7,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A healthcare company has to maintain a log of all transactions for audit and compliance purposes. The company is planning stringent security measures for all of its CloudTrail log files.</p>\n\n<p>Which of the following would you suggest as the LEAST effort options to secure the CloudTrail logs? (Select two)</p>",
+            "userAnsText": "<p>Enable Versioning on Amazon S3 buckets that store CloudTrail logs and digest files</p><br><p>Use Amazon S3 MFA Delete on the S3 bucket that holds CloudTrail logs and digest files</p>",
+            "correctAnsText": "<p>Use Amazon S3 MFA Delete on the S3 bucket that holds CloudTrail logs and digest files</p><br><p>Enable CloudTrail log file integrity validation</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T09:44:03.562+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T09:44:03.562+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Enable Versioning on Amazon S3 buckets that store CloudTrail logs and digest files</p><br><p>Use Amazon S3 MFA Delete on the S3 bucket that holds CloudTrail logs and digest files</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003093,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 19,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>An e-commerce company has created a data warehouse using Redshift that is used to analyze data from Amazon S3. From the usage patterns, the analytics team has detected that after 30 days, the data is rarely queried in Redshift and it's not \"hot data\" anymore. The team would like to preserve the SQL querying capability on the data and get the queries started immediately. Also, the team wants to adopt a pricing model that allows the company to save the maximum amount of cost on Redshift.</p>\n\n<p>Which of the following options would you recommend? (Select two)</p>",
+            "userAnsText": "<p>Migrate the Redshift underlying storage to S3 IA</p><br><p>Transition the data to S3 Standard IA after 30 days</p>",
+            "correctAnsText": "<p>Analyze the cold data with Athena</p><br><p>Transition the data to S3 Standard IA after 30 days</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T09:44:03.562+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T09:44:03.562+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Migrate the Redshift underlying storage to S3 IA</p><br><p>Transition the data to S3 Standard IA after 30 days</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003130,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 56,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>An e-commerce company runs its flagship website on its on-premises Linux servers. Recently, the company suffered outages after announcing huge discounts on its website. The web tier of the application is fronted by Elastic Load Balancer while the database tier is built on RDS MYSQL database. The company is planning to run heavy discounts for the upcoming holiday sales season. The company is looking for a solution to avoid any similar outages as well as quickly ramp up the ability to handle huge traffic spikes.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which of the following would you suggest as the most optimal solution that can enhance the application's capabilities to handle the sudden spikes in user traffic without significant development effort?</p>",
+            "userAnsText": "<p>Lift and Shift the application using AWS Elastic Beanstalk to enhance the scalability of the application without any downtime on the existing one</p>",
+            "correctAnsText": "<p>Create a CloudFront distribution and configure CloudFront to cache objects from a custom origin. This will offload some traffic from the on-premises servers. Customize CloudFront cache behavior by setting Time To Live (TTL) to suit your business requirement</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T08:37:24.858+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T08:37:24.858+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Lift and Shift the application using AWS Elastic Beanstalk to enhance the scalability of the application without any downtime on the existing one</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003131,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 57,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A company has decided to move their existing data warehouse solution to Amazon Redshift. Being apprehensive about moving their critical data directly, the company has decided to test run and migrate a part of their data warehouse to Amazon Redshift using AWS Database Migration Service (DMS) task.</p>\n\n<p>As a solutions architect, which of the following would you suggest as the key points of consideration while running the DMS task? (Select two)</p>",
+            "userAnsText": "<p>DMS now supports custom DNS names along with Amazon provided DNS names</p><br><p>Add subnet CIDR range, or IP address of the replication instance in the inbound rules of the Amazon Redshift cluster security group</p>",
+            "correctAnsText": "<p>Add subnet CIDR range, or IP address of the replication instance in the inbound rules of the Amazon Redshift cluster security group</p><br><p>Your Amazon Redshift cluster must be in the same account and same AWS Region as the replication instance</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T08:33:35.354+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T08:33:35.354+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>DMS now supports custom DNS names along with Amazon provided DNS names</p><br><p>Add subnet CIDR range, or IP address of the replication instance in the inbound rules of the Amazon Redshift cluster security group</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003110,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 36,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>The development team at a company has noticed issues with the Quality of Service (QoS) in the traffic to the EC2 instances hosting a VOIP program. The team needs to inspect the network packets to determine if it is a programming error or a networking error.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which of the following options would you suggest for the given use case?</p>",
+            "userAnsText": "<p>Use VPC Flow Logs to inspect the network packets</p>",
+            "correctAnsText": "<p>Configure traffic mirroring on the source EC2 instances hosting the VOIP program, set up a network monitoring program on a target EC2 instance and stream the logs to an S3 bucket for further analysis</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T08:24:15.607+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T08:24:15.607+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use VPC Flow Logs to inspect the network packets</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003096,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 22,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>An e-commerce company manages its flagship applications on AWS. The Amazon EC2 instances running the applications are fronted by an Application Load Balancer (ALB). Amazon Route 53 provides public DNS services. Different URLs (mobile.ecomm.com, web.ecomm.com, api.ecomm.com) will serve the required content to the end-users.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which combination of services would you use to serve the content to the end-users? (Select two)</p>",
+            "userAnsText": "<p>Use Path conditions in ALB listener to route *.ecomm.com to appropriate target groups</p><br><p>Use Host conditions in ALB listener to route *.ecomm.com to appropriate target groups</p>",
+            "correctAnsText": "<p>Use Host conditions in ALB listener to route ecomm.com to appropriate target groups</p><br><p>Use Host conditions in ALB listener to route *.ecomm.com to appropriate target groups</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T08:18:21.049+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T08:18:21.049+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use Path conditions in ALB listener to route *.ecomm.com to appropriate target groups</p><br><p>Use Host conditions in ALB listener to route *.ecomm.com to appropriate target groups</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003112,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 38,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A global multi-player gaming application runs on UDP protocol and it needs to add functionality where you can assign multiple players to a single session on a game server based on factors such as geographic location, player skill, and a few more configurable parameters. The application is accessed by players spread out across different regions of the world.</p>\n\n<p>What is the BEST way to configure this requirement?</p>",
+            "userAnsText": "<p>Use Application Load Balancer (ALB) with sticky sessions enabled to maintain player session data. Configure Global Accelerator to front the ALB for cross-region elasticity</p>",
+            "correctAnsText": "<p>Use custom routing accelerator of Global Accelerator to deterministically route one or more users to a specific instance using VPC subnet endpoints</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T08:18:21.049+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T08:18:21.049+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use Application Load Balancer (ALB) with sticky sessions enabled to maintain player session data. Configure Global Accelerator to front the ALB for cross-region elasticity</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003083,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 9,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A financial services firm intends to migrate its IT operations to AWS. The security team is establishing a framework to ensure that AWS best practices are being followed. AWS management console is the only way used by the IT teams to provision AWS resources. As per the firm's compliance requirements, the AWS resources need to be maintained in a particular configuration and audited regularly for unauthorized changes.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, how will you implement this requirement? (Select two)</p>",
+            "userAnsText": "<p>Leverage AWS Config rules for auditing changes to AWS resources periodically and monitor the compliance of the configuration. Set up AWS Config custom rules using AWS Lambda to create a test-driven development approach, and finally automate the evaluation of configuration changes against the required controls</p><br><p>Leverage CloudWatch Logs agent to aggregate all the AWS SDK logs. Analyze the log data using a pre-defined set of filter patterns that match any changes in the API calls. Trigger notifications via Amazon CloudWatch alarms when unintended changes are performed</p>",
+            "correctAnsText": "<p>Leverage AWS Config rules for auditing changes to AWS resources periodically and monitor the compliance of the configuration. Set up AWS Config custom rules using AWS Lambda to create a test-driven development approach, and finally automate the evaluation of configuration changes against the required controls</p><br><p>Leverage AWS CloudTrail events to review management activities of all AWS accounts. Make sure that CloudTrail is enabled in all accounts for the available AWS services. Enable CloudTrail trails and encrypt CloudTrail event log files with an AWS KMS key and monitor the recorded events via CloudWatch Logs</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T08:18:21.049+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T08:18:21.049+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Leverage AWS Config rules for auditing changes to AWS resources periodically and monitor the compliance of the configuration. Set up AWS Config custom rules using AWS Lambda to create a test-driven development approach, and finally automate the evaluation of configuration changes against the required controls</p><br><p>Leverage CloudWatch Logs agent to aggregate all the AWS SDK logs. Analyze the log data using a pre-defined set of filter patterns that match any changes in the API calls. Trigger notifications via Amazon CloudWatch alarms when unintended changes are performed</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003137,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 63,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A research agency processes multiple compressed (gzip) CSV files containing data about contagious diseases for the past month aggregated from healthcare facilities. The files are about ~200 GB and are stored in Amazon S3 Glacier Flexible Storage Class. As per the reporting guidelines, the agency needs to query a portion of this data to prepare a report every month.</p>\n\n<p>Which of the following is the most cost-effective way to query this data?</p>",
+            "userAnsText": "<p>Ingest the data into Amazon S3 from S3 Glacier and query the required data with Amazon Athena</p>",
+            "correctAnsText": "<p>Ingest the data into Amazon S3 from S3 Glacier and query the required data with Amazon S3 Select</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T04:18:34.072+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T04:18:34.072+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Ingest the data into Amazon S3 from S3 Glacier and query the required data with Amazon Athena</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003095,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 21,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>For deployments across AWS accounts, a company has decided to use AWS CodePipeline to deploy an AWS CloudFormation stack in an AWS account (account A) to a different AWS account (account B).</p>\n\n<p>As a solutions architect, what combination of steps will you take to configure this requirement? (Select three)</p>",
+            "userAnsText": "<p>In account B, create a cross-account IAM role. In account A, add the <code>AssumeRole</code> permission to account A's CodePipeline service role to allow it to assume the cross-account role in account B</p><br><p>In Account A, create a customer-managed AWS KMS key that grants usage permissions to account A's CodePipeline service role and account B. In Account B, create an Amazon Simple Storage Service (Amazon S3) bucket with a bucket policy that grants account A access to the bucket</p><br><p>In account B, create a service role for the CloudFormation stack that includes the required permissions for the services deployed by the stack. In account A, update the CodePipeline configuration to include the resources associated with account B</p>",
+            "correctAnsText": "<p>In account A, create a customer-managed AWS KMS key that grants usage permissions to account A's CodePipeline service role and account B. Also, create an Amazon Simple Storage Service (Amazon S3) bucket with a bucket policy that grants account B access to the bucket</p><br><p>In account B, create a cross-account IAM role. In account A, add the <code>AssumeRole</code> permission to account A's CodePipeline service role to allow it to assume the cross-account role in account B</p><br><p>In account B, create a service role for the CloudFormation stack that includes the required permissions for the services deployed by the stack. In account A, update the CodePipeline configuration to include the resources associated with account B</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T04:11:37.258+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T04:11:37.258+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>In account B, create a cross-account IAM role. In account A, add the <code>AssumeRole</code> permission to account A's CodePipeline service role to allow it to assume the cross-account role in account B</p><br><p>In Account A, create a customer-managed AWS KMS key that grants usage permissions to account A's CodePipeline service role and account B. In Account B, create an Amazon Simple Storage Service (Amazon S3) bucket with a bucket policy that grants account A access to the bucket</p><br><p>In account B, create a service role for the CloudFormation stack that includes the required permissions for the services deployed by the stack. In account A, update the CodePipeline configuration to include the resources associated with account B</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003094,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 20,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A social media company is migrating its legacy web application to the AWS Cloud. Since the application is complex and may take several months to refactor, the CTO at the company tasked the development team to build an ad-hoc solution of using CloudFront with a custom origin pointing to the SSL endpoint URL for the legacy web application until the replacement is ready and deployed. The ad-hoc solution has worked for several weeks, however, all browser connections recently began showing an HTTP 502 Bad Gateway error with the header \"X-Cache: Error from CloudFront\". Network monitoring services show that the HTTPS port 443 on the legacy web application is open and responding to requests.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which of the following options will you attribute as the likely cause of the error, and what is your recommendation to resolve this issue?</p>",
+            "userAnsText": "<p>The SSL certificate on the CloudFront distribution has expired. Reissue the SSL certificate on the CloudFront distribution via the AWS Certificate Manager (ACM) in the us-east-1 Region</p>",
+            "correctAnsText": "<p>The SSL certificate on the legacy web application server has expired. Reissue the SSL certificate on the web server that is signed by a globally recognized certificate authority (CA). Install the full certificate chain onto the legacy web application server</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T04:01:45.162+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T04:01:45.162+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>The SSL certificate on the CloudFront distribution has expired. Reissue the SSL certificate on the CloudFront distribution via the AWS Certificate Manager (ACM) in the us-east-1 Region</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003111,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 37,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A web application is running on a fleet of Amazon EC2 instances that are configured to operate in an Auto Scaling group (ASG). The instances are fronted by an Elastic Load Balancer (ELB). To enhance the system performance, a new Amazon Machine Image (AMI) was created and the ASG was configured to use the new AMI. However, after the production deployment, users complained of aberrations in the expected application functionality. A cross-check on the ELB has confirmed that all the instances are healthy and running as expected.</p>\n\n<p>As a solutions architect, which option would you suggest to rectify these issues and guarantee that later deployments are successful?</p>",
+            "userAnsText": "<p>Configure the ASG to use Elastic Load Balancing (ELB) health checks in place of EC2 status checks</p>",
+            "correctAnsText": "<p>Create a new ASG launch configuration that uses the newly created AMI. Double the size of the ASG and allow the new instances to become healthy and then reduce the ASG back to the original size. If the new instances do not work as expected, associate the ASG with the old launch configuration</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T03:56:15.512+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T03:56:15.512+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Configure the ASG to use Elastic Load Balancing (ELB) health checks in place of EC2 status checks</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003116,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 42,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A company runs a mobile app-based health tracking solution. The mobile app sends 2 KB of data to the company’s backend servers every 2 minutes. The user data is stored in a DynamoDB table. The development team runs a nightly procedure to scan the table for extracting and aggregating the data from the previous day. These insights are then stored on Amazon S3 in JSON files for each user (daily average file size per user is approximately 1 MB). Approximately 50,000 end-users in the US are then alerted via SNS push notifications the next morning, as the new insights are available to be parsed and visualized in the mobile app.</p>\n\n<p>You have been hired as an AWS Certified Solutions Architect Professional to recommend a cost-efficient solution to optimize the backend design. Which of the following options would you suggest? (Select two)</p>",
+            "userAnsText": "<p>Set up an Amazon SQS queue to buffer writes to the Amazon DynamoDB table and reduce provisioned write throughput</p><br><p>Set up the backend to serve the insights from Amazon DynamoDB Accelerator (DAX) which can cache reads from the Amazon DynamoDB table and reduce provisioned read throughput</p>",
+            "correctAnsText": "<p>Set up an Amazon SQS queue to buffer writes to the Amazon DynamoDB table and reduce provisioned write throughput</p><br><p>Set up a new DynamoDB table each day and drop the table for the previous day after its data is written on S3</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T03:36:55.125+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T03:36:55.125+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up an Amazon SQS queue to buffer writes to the Amazon DynamoDB table and reduce provisioned write throughput</p><br><p>Set up the backend to serve the insights from Amazon DynamoDB Accelerator (DAX) which can cache reads from the Amazon DynamoDB table and reduce provisioned read throughput</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003092,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 18,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A business has their web application hosted in <code>us-east-1</code> region. Recently, the business has added another region <code>us-east-2</code>, and has configured Route53 to direct user traffic to the least-latency AWS Region. However, the development team has found some aberrations in the expected functionality and the team is trying to ascertain if it's a configuration issue.</p>\n\n<p>Which of the following would you suggest as the key points of consideration while configuring Route53? (Select three)</p>",
+            "userAnsText": "<p>If you configure Route 53 to use the HTTPS protocol to check the health of your endpoint, then that endpoint must support TLS</p><br><p>After a Route 53 health checker receives the HTTP status code, it must receive the response body from the endpoint within the next two seconds with the SearchString string that you specified. The string must appear entirely in the first 5,120 bytes of the response body or the endpoint fails the health check</p><br><p>If you specify a non-AWS endpoint, an additional charge applies. Charges for a health check do not apply when the health check is disabled</p>",
+            "correctAnsText": "<p>HTTPS health checks don't validate SSL/TLS certificates, so checks don't fail if a certificate is invalid or expired</p><br><p>If you configure Route 53 to use the HTTPS protocol to check the health of your endpoint, then that endpoint must support TLS</p><br><p>After a Route 53 health checker receives the HTTP status code, it must receive the response body from the endpoint within the next two seconds with the SearchString string that you specified. The string must appear entirely in the first 5,120 bytes of the response body or the endpoint fails the health check</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T03:33:22.479+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T03:33:22.479+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>If you configure Route 53 to use the HTTPS protocol to check the health of your endpoint, then that endpoint must support TLS</p><br><p>After a Route 53 health checker receives the HTTP status code, it must receive the response body from the endpoint within the next two seconds with the SearchString string that you specified. The string must appear entirely in the first 5,120 bytes of the response body or the endpoint fails the health check</p><br><p>If you specify a non-AWS endpoint, an additional charge applies. Charges for a health check do not apply when the health check is disabled</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003106,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 32,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A solutions architect at a retail company has configured a private hosted zone using Route 53. The architect needs to configure health checks for record sets within the private hosted zone that are associated with EC2 instances.</p>\n\n<p>How can the architect build a solution to address the given use case?</p>",
+            "userAnsText": "<p>Configure a Route 53 health check to a private IP associated with the instances inside the VPC to be checked</p>",
+            "correctAnsText": "<p>Configure a CloudWatch metric that checks the status of the EC2 StatusCheckFailed metric, add an alarm to the metric, and then configure a health check that monitors the state of the alarm</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T03:33:22.479+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T03:33:22.479+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Configure a Route 53 health check to a private IP associated with the instances inside the VPC to be checked</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003100,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 26,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A company uses Amazon S3 storage service for storing its business data. Multiple S3 event notifications have been configured to be delivered to Amazon Simple Queue Service (Amazon SQS) queue when objects pass through the storage lifecycle. The team has noticed that notifications are not being delivered to the queue. Amazon SQS queue has server-side encryption (SSE) turned on.</p>\n\n<p>What should be done to receive the S3 event notifications to an Amazon SQS queue that uses SSE?</p>",
+            "userAnsText": "<p>Create an AWS-managed KMS key and configure the key policy to grant permissions to the Amazon S3 service principal</p>",
+            "correctAnsText": "<p>Create a customer-managed AWS KMS key and configure the key policy to grant permissions to the Amazon S3 service principal</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T03:02:32.558+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T03:02:32.558+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create an AWS-managed KMS key and configure the key policy to grant permissions to the Amazon S3 service principal</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003119,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 45,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A company has an Elastic Load Balancer (ELB) that is configured with an Auto Scaling Group (ASG) having a minimum of 4, a maximum of 10, and the desired value of 4 instances. The ASG cooldown and the termination policies are configured to the default values. Monitoring reports indicate a general usage requirement of 4 instances, while any traffic spikes result in an additional 10 instances. Customers have been complaining of request timeouts and partially loaded pages.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which of the following options will you suggest to fix this issue?</p>",
+            "userAnsText": "<p>Add a lifecycle hook on scale-out event to your ASG, making sure that the instance is fully ready before it starts receiving traffic</p>",
+            "correctAnsText": "<p>Configure connection draining on ELB</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T03:00:41.523+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T03:00:41.523+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Add a lifecycle hook on scale-out event to your ASG, making sure that the instance is fully ready before it starts receiving traffic</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003129,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 55,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>An analytics company has configured a hybrid environment between its on-premises data center and the AWS Cloud. The company wants to use the Elastic File System (EFS) to store and share data between the on-premises applications that need to resolve DNS queries through the on-premises DNS servers. The company wants to use a custom domain name to connect to EFS. The company also wants to avoid using the Amazon EFS target IP address.</p>\n\n<p>Which of the following solutions would you recommend to address these requirements?</p>",
+            "userAnsText": "<p>Configure a Route 53 Resolver inbound endpoint and configure it for the EFS specific VPC. Create a Route 53 public-hosted zone and add a new CNAME record with the value of the EFS DNS name. Configure forwarding rules on the on-premises DNS servers to forward queries for the custom domain host to the Route 53 public hosted zone</p>",
+            "correctAnsText": "<p>Configure a Route 53 Resolver inbound endpoint and configure it for the EFS specific VPC. Create a Route 53 private hosted zone and add a new CNAME record with the value of the EFS DNS name. Configure forwarding rules on the on-premises DNS servers to forward queries for the custom domain host to the Route 53 private hosted zone</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T02:40:48.97+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T02:40:48.97+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Configure a Route 53 Resolver inbound endpoint and configure it for the EFS specific VPC. Create a Route 53 public-hosted zone and add a new CNAME record with the value of the EFS DNS name. Configure forwarding rules on the on-premises DNS servers to forward queries for the custom domain host to the Route 53 public hosted zone</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003077,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 3,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A pharmaceutical company uses AWS Cloud to run multiple workloads with each workload managed by its software development team. The company leverages AWS Organizations and SAML-based federation to provide access to its development teams. A single shared production AWS account is used by all teams to deploy their production workloads. Recently, the company faced an incident when one of the teams had accidentally shut down a production EC2 instance used by another team.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, you have been tasked to devise a solution that will eliminate the possibility of recurrence of such an event while making sure that all the teams still retain the necessary access permissions to their AWS resources in the shared AWS account. Which solution is the best fit for these requirements?</p>",
+            "userAnsText": "<p>During SAML-based federation, pass an attribute for DevelopmentDept as an AWS Security Token Service (AWS STS) session tag. Set up an SCP with an allow action and a StringEquals condition for the DevelopmentDept resource tag and aws:PrincipalTag/DevelopmentDept. Assign the SCP to the root OU</p>",
+            "correctAnsText": "<p>During SAML-based federation, pass an attribute for DevelopmentDept as an AWS Security Token Service (AWS STS) session tag. The policy of the assumed IAM role used by the developers should be updated with a deny action and a StringNotEquals condition for the DevelopmentDept resource tag and aws:PrincipalTag/ DevelopmentDept</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T02:36:36.663+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T02:36:36.663+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>During SAML-based federation, pass an attribute for DevelopmentDept as an AWS Security Token Service (AWS STS) session tag. Set up an SCP with an allow action and a StringEquals condition for the DevelopmentDept resource tag and aws:PrincipalTag/DevelopmentDept. Assign the SCP to the root OU</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003082,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 8,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A social gaming company is developing a mobile game that streams score updates to a backend processor and then publishes results on a leaderboard. The company has hired you to design a solution that can handle major traffic spikes, process the mobile game updates in the order of receipt, and store the processed updates in a highly available database. The company wants to minimize the management overhead required to maintain the solution.</p>\n\n<p>Which of the following solutions will you recommend to meet these requirements?</p>",
+            "userAnsText": "<p>Send score updates to an SQS queue which uses a fleet of EC2 instances (with Auto Scaling) to process these updates in the SQS queue and then store these processed updates in an RDS MySQL database</p>",
+            "correctAnsText": "<p>Send score updates to Kinesis Data Streams which uses a Lambda function to process these updates and then store these processed updates in DynamoDB</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T02:31:39.195+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T02:31:39.195+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Send score updates to an SQS queue which uses a fleet of EC2 instances (with Auto Scaling) to process these updates in the SQS queue and then store these processed updates in an RDS MySQL database</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003105,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 31,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A payment service provider company has a legacy application built on high throughput and resilient queueing system to send messages to the customers. The implementation relied on a manually-managed RabbitMQ cluster and consumers. The system was able to process a large load of messages within a reasonable delivery time. The cluster and consumers were both deployed on Amazon Elastic Compute Cloud (Amazon EC2) instances. However, when the messages in the queue piled up due to network failures on the customer side, the latency of the overall flow was affected, resulting in a breach of the service level agreement (SLA). The development team had to manually scale the queues to resolve the issue. Also, while doing manual upgrades on RabbitMQ and the hosting operating system, the company faced downtimes.</p>\n\n<p>The company is growing and has to maintain a strict delivery time SLA. The company is now looking for a serverless solution for its messaging queues. The queue functions of handling concurrency, message delays and retries, maintaining message order, secure delivery, and scalability are needed in the proposed solution architecture.</p>\n\n<p>Which of the following would you propose for a cost-effective solution for the requirement?</p>",
+            "userAnsText": "<p>Design the serverless architecture by use of Amazon MQ for RabbitMQ with Amazon ECS Fargate. To save costs, run the Amazon MQ for RabbitMQ queues and Amazon ECS Fargate tasks only when needed</p>",
+            "correctAnsText": "<p>Design the serverless architecture by use of Amazon Simple Queue Service (SQS) with Amazon ECS Fargate. To save costs, run the Amazon SQS FIFO queues and Amazon ECS Fargate tasks only when needed</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T16:05:32.841+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T16:05:32.841+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Design the serverless architecture by use of Amazon MQ for RabbitMQ with Amazon ECS Fargate. To save costs, run the Amazon MQ for RabbitMQ queues and Amazon ECS Fargate tasks only when needed</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003145,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 71,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>An e-commerce company has a three-tier web application with separate subnets for Web, Application and Database tiers. The CTO at the company wants to monitor any malicious activity targeting the web application running on EC2 instances. As a solutions architect, you have been tasked with developing a solution to notify the security team in case the network exposure of EC2 instances on specific ports violates the security policies of the company.</p>\n\n<p>Which AWS Services would you use to build an automated notification system to meet these requirements with the least development effort? (Select two)</p>",
+            "userAnsText": "<p>Amazon SNS</p><br><p>VPC Flow Logs</p>",
+            "correctAnsText": "<p>Amazon Inspector</p><br><p>Amazon SNS</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T16:03:31.389+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T16:03:31.389+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Amazon SNS</p><br><p>VPC Flow Logs</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003085,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 11,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A development team is designing a system on AWS that will leverage Amazon CloudFront for content caching and for protecting the underlying origin. The team has flagged a concern regarding a probable attack on the origin server IP addresses, despite it being served by CloudFront.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which of the following would you recommend as the BEST solution for providing the strongest level of protection to the origin server?</p>",
+            "userAnsText": "<p>Configure Origin Access Identity(OAI) on the origin server, which will only allow requests originating from CloudFront</p>",
+            "correctAnsText": "<p>Configure CloudFront to use a custom header and configure an AWS WAF rule on the origin’s Application Load Balancer to accept only traffic that contains that header</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T16:03:31.389+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T16:03:31.389+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Configure Origin Access Identity(OAI) on the origin server, which will only allow requests originating from CloudFront</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003109,
+            "examId": 300301,
+            "examKey": "exam2",
+            "examIndex": 2,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 2",
+            "qNum": 35,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A data analytics company leverages Amazon QuickSight (Enterprise Edition) for creating and publishing interactive BI dashboards that can be accessed from any device. For a new requirement, the company must create a private connection from Amazon QuickSight to an Amazon RDS DB instance that's in a private subnet to fetch data for analysis.</p>\n\n<p>Which is the BEST solution for configuring a private connection between QuickSight and Amazon RDS DB instance?</p>",
+            "userAnsText": "<p>Create a Private Virtual Interface between VPC that hosts Amazon RDS DB instance and QuickSight. Use this connection to privately access necessary data from RDS DB</p>",
+            "correctAnsText": "<p>Create a new private subnet in the same VPC as the Amazon RDS DB instance.  Create a new security group with necessary inbound rules for QuickSight in the same VPC. Sign in to QuickSight as a QuickSight admin and create a new QuickSight VPC connection. Create a new dataset from the RDS DB instance</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:58:36.414+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:58:36.414+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create a Private Virtual Interface between VPC that hosts Amazon RDS DB instance and QuickSight. Use this connection to privately access necessary data from RDS DB</p>"
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 50,
+        "total": 33,
+        "totalPages": 1
+    }
+}

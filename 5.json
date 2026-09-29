@@ -1,0 +1,200 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 30003170,
+            "examId": 300302,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 3",
+            "qNum": 21,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A data analytics company uses Amazon S3 as the data lake to store the input data that is ingested from the IoT field devices on an hourly basis. The ingested data has attributes such as the device type, ID of the device, the status of the device, the timestamp of the event, the source IP address, etc. The data runs into millions of records per day and the company wants to run complex analytical queries on this data daily for product improvements for each device type.</p>\n\n<p>Which is the most optimal way to save this data to get the best performance from the millions of data points processed daily?</p>",
+            "userAnsText": "<p>Store the data in Apache Parquet, partitioned by device type and sorted by date</p>",
+            "correctAnsText": "<p>Store the data in Apache ORC, partitioned by date and sorted by device type of the device</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T15:07:24.84+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T15:07:24.84+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Store the data in Apache Parquet, partitioned by device type and sorted by date</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003153,
+            "examId": 300302,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 3",
+            "qNum": 4,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A financial services company wants to set up an AWS WAF-based solution to manage AWS WAF rules across multiple AWS accounts that are structured under different Organization Units (OUs) in AWS Organizations. The solution should automatically update and remediate noncompliant AWS WAF rules in all accounts. The solution should also facilitate adding or removing accounts or OUs from managed AWS WAF rule sets as needed.</p>\n\n<p>Which of the following solutions is the most operationally efficient to address the given use case?</p>",
+            "userAnsText": "<p>Use AWS Firewall Manager to manage AWS WAF rules across accounts in the organization. Leverage AWS Systems Manager Parameter Store to store account numbers and OUs. Update AWS Systems Manager Parameter Store as needed to add or remove accounts or OUs. Create cross-account IAM roles in member accounts with permissions to create and update AWS WAF rules. Create a Lambda function to assume IAM roles in the management account to create and update AWS WAF rules in the member accounts</p>",
+            "correctAnsText": "<p>Create an AWS Organizations organization-wide AWS Config rule that mandates all resources in the selected OUs to be associated with the AWS WAF rules. Configure automated remediation actions by using AWS Systems Manager Automation documents to fix non-compliant resources. Set up AWS WAF rules by using an AWS CloudFormation stack set to target the same OUs where the AWS Config rule is applied</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T14:34:50.744+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T14:34:50.744+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use AWS Firewall Manager to manage AWS WAF rules across accounts in the organization. Leverage AWS Systems Manager Parameter Store to store account numbers and OUs. Update AWS Systems Manager Parameter Store as needed to add or remove accounts or OUs. Create cross-account IAM roles in member accounts with permissions to create and update AWS WAF rules. Create a Lambda function to assume IAM roles in the management account to create and update AWS WAF rules in the member accounts</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003156,
+            "examId": 300302,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 3",
+            "qNum": 7,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A company manages a stateful web application that persists data on a MySQL database. The application stack is hosted in the company's on-premises data center using a single server. The company is looking at increasing its market presence through promotions and campaigns. While the user experience has been good so far, the current application architecture will not support the growth that the company envisages. The company has hired you as an AWS Certified Solutions Architect Professional to migrate the current architecture to AWS which should continue to support SQL-based queries. The proposed solution should offer maximum reliability with better performance.</p>\n\n<p>What would you recommend?</p>",
+            "userAnsText": "<p>Set up database migration to an Amazon RDS MySQL Multi-AZ DB instance. Deploy the application in an Auto Scaling group for Amazon EC2 instances that are fronted by an Application Load Balancer. Store sessions in Amazon ElastiCache for Memcached</p>",
+            "correctAnsText": "<p>Set up database migration to Amazon Aurora MySQL. Deploy the application in an Auto Scaling group for Amazon EC2 instances that are fronted by an Application Load Balancer. Store sessions in an Amazon ElastiCache for Redis with replication group</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T14:32:52.865+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T14:32:52.865+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up database migration to an Amazon RDS MySQL Multi-AZ DB instance. Deploy the application in an Auto Scaling group for Amazon EC2 instances that are fronted by an Application Load Balancer. Store sessions in Amazon ElastiCache for Memcached</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003177,
+            "examId": 300302,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 3",
+            "qNum": 28,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A leading pharmaceutical company has significant investments in running Oracle and PostgreSQL services on Amazon RDS which provide their scientists with near real-time analysis of millions of rows of manufacturing data generated by continuous manufacturing equipment with 1,600 data points per row. The business analytics team has been running ad-hoc queries on these databases to prepare daily reports for senior management. The engineering team has observed that the database performance takes a hit whenever these reports are run by the analytics team. To facilitate the business analytics reporting, the engineering team now wants to replicate this data with high availability and consolidate these databases into a petabyte-scale data warehouse by streaming data to Amazon Redshift.</p>\n\n<p>As a Solutions Architect Professional, which of the following would you recommend as the MOST resource-efficient solution that requires the LEAST amount of development time without the need to manage the underlying infrastructure?</p>",
+            "userAnsText": "<p>Use Amazon EMR to replicate the data from the databases into Amazon Redshift</p>",
+            "correctAnsText": "<p>Use AWS Database Migration Service to replicate the data from the databases into Amazon Redshift</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T14:28:26.475+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T14:28:26.475+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use Amazon EMR to replicate the data from the databases into Amazon Redshift</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003155,
+            "examId": 300302,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 3",
+            "qNum": 6,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A company uses Amazon FSx for Windows File Server with deployment type of Single-AZ 2 as its file storage service for its non-core functions. With a change in the company's policy that mandates high availability of data for all its functions, the company needs to change the existing configuration. The company also needs to monitor the file system activity as well as the end-user actions on the Amazon FSx file server.</p>\n\n<p>Which solutions will you combine to implement these requirements? (Select two)</p>",
+            "userAnsText": "<p>Configure a new Amazon FSx for Windows file system with a deployment type of Multi-AZ. Transfer data to the newly created file system using the AWS DataSync service. Point all the file system users to the new location. You can test the failover of your Multi-AZ file system by modifying the elastic network interfaces associated with your file system</p><br><p>You can monitor the file system activity using AWS CloudTrail and monitor end-user actions with file access auditing using Amazon CloudWatch Logs</p>",
+            "correctAnsText": "<p>You can monitor storage capacity and file system activity using Amazon CloudWatch, and monitor end-user actions with file access auditing using Amazon CloudWatch Logs and Amazon Kinesis Data Firehose</p><br><p>Configure a new Amazon FSx for Windows file system with a deployment type of Multi-AZ. Transfer data to the newly created file system using the AWS DataSync service. Point all the file system users to the new location. You can test the failover of your Multi-AZ file system by modifying its throughput capacity</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T14:13:36.58+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T14:13:36.58+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Configure a new Amazon FSx for Windows file system with a deployment type of Multi-AZ. Transfer data to the newly created file system using the AWS DataSync service. Point all the file system users to the new location. You can test the failover of your Multi-AZ file system by modifying the elastic network interfaces associated with your file system</p><br><p>You can monitor the file system activity using AWS CloudTrail and monitor end-user actions with file access auditing using Amazon CloudWatch Logs</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003175,
+            "examId": 300302,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 3",
+            "qNum": 26,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>An Amazon Simple Storage Service (Amazon S3) bucket has been configured to host a static website. While using the S3 static website endpoint, the testing team has complained that they are receiving access denied error for this website.</p>\n\n<p>What are the key points to consider while configuring an S3 bucket as a static website? (Select two)</p>",
+            "userAnsText": "<p>Amazon S3 Block Public Access must be disabled at the bucket level even though it is already disabled at the account level</p><br><p>Amazon S3 static website endpoint needs to support both publicly and privately accessible content</p>",
+            "correctAnsText": "<p>The AWS account that owns the bucket must also own the object</p><br><p>Objects can't be encrypted by AWS Key Management Service (AWS KMS)</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T14:06:22.431+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T14:06:22.431+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Amazon S3 Block Public Access must be disabled at the bucket level even though it is already disabled at the account level</p><br><p>Amazon S3 static website endpoint needs to support both publicly and privately accessible content</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003163,
+            "examId": 300302,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 3",
+            "qNum": 14,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>The development team at a company needs to implement a client-side encryption mechanism for objects that will be stored in a new Amazon S3 bucket. The team created a CMK that is stored in AWS Key Management Service (AWS KMS) for this purpose. The team created the following IAM policy and attached it to an IAM role:</p>\n\n<pre><code>{\n  \"Version\": \"2012-10-17\",\n  \"Id\": \"key-policy-1\",\n  \"Statement\": [\n    {\n      \"Sid\": \"GetPut\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"s3:GetObject\",\n        \"s3:PutObject\"\n      ],\n      \"Resource\": \"arn:aws:s3:::ExampleBucket/*\"\n    },\n    {\n      \"Sid\": \"KMS\",\n      \"Effect\": \"Allow\",\n      \"Action\": [\n        \"kms:Decrypt\",\n        \"kms:Encrypt\"\n      ],\n      \"Resource\": \"arn:aws:kms:us-west-1:111122223333:key/keyid-12345\"\n    }\n  ]\n}\n</code></pre>\n\n<p>The team was able to successfully get existing objects from the S3 bucket while testing. But any attempts to upload a new object resulted in an error. The error message stated that the action was forbidden.</p>\n\n<p>Which IAM policy action should be added to the IAM policy to resolve the error?</p>",
+            "userAnsText": "<p>kms:GetDataKey</p>",
+            "correctAnsText": "<p>kms:GenerateDataKey</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-26T14:02:39.779+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-26T14:02:39.779+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>kms:GetDataKey</p>"
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 50,
+        "total": 7,
+        "totalPages": 1
+    }
+}

@@ -1,0 +1,609 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 40016516,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 42,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has deployed applications to thousands of Amazon EC2 instances in an AWS account. A security audit discovers that several unencrypted Amazon Elastic Block Store (Amazon EBS) volumes are attached to the EC2 instances. The company’s security policy requires the EBS volumes to be encrypted.<br><br>The company needs to implement an automated solution to encrypt the EBS volumes. The solution also must prevent development teams from creating unencrypted EBS volumes.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Use AWS Systems Manager Fleet Manager to create a list of unencrypted EBS volumes, Create a Systems Manager Automation runbook that includes the steps to create a new encrypted EBS volume. Create an SCP to deny the creation of unencrypted EBS volumes.",
+            "correctAnsText": "Configure the AWS Config managed rule that identifies unencrypted EBS volumes. Configure an automatic remediation action. Associate an AWS Systems Manager Automation runbook that includes the steps to create a new encrypted EBS volume. Modify the AWS account setting for EBS encryption to always encrypt new EBS volumes.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T14:28:33.571+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T14:28:33.571+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Use AWS Systems Manager Fleet Manager to create a list of unencrypted EBS volumes, Create a Systems Manager Automation runbook that includes the steps to create a new encrypted EBS volume. Create an SCP to deny the creation of unencrypted EBS volumes."
+                }
+            ]
+        },
+        {
+            "id": 40016469,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 70,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company uses AWS Organizations. The company runs two firewall appliances in a centralized networking account. Each firewall appliance runs on a manually configured highly available Amazon EC2 instance. A transit gateway connects the VPC from the centralized networking account to VPCs of member accounts. Each firewall appliance uses a static private IP address that is then used to route traffic from the member accounts to the internet.<br><br>During a recent incident, a badly configured script initiated the termination of both firewall appliances. During the rebuild of the firewall appliances, the company wrote a new script to configure the firewall appliances at startup.<br><br>The company wants to modernize the deployment of the firewall appliances. The firewall appliances need the ability to scale horizontally to handle increased traffic when the network expands. The company must continue to use the firewall appliances to comply with company policy. The provider of the firewall appliances has confirmed that the latest version of the firewall code will work with all AWS services.<br><br>Which combination of steps should the solutions architect recommend to meet these requirements MOST cost-effectively? (Choose three.)",
+            "userAnsText": "Deploy a Gateway Load Balancer in the centralized networking account. Set up an endpoint service that uses AWS PrivateLink.<br>Create an Auto Scaling group. Configure an AWS Launch Wizard deployment that uses the new script as user data to configure the firewall appliances. Create a target group that uses the IP target type.<br>Create VPC endpoints in each member account. Update the route tables to point to the VPC endpoints.",
+            "correctAnsText": "Deploy a Gateway Load Balancer in the centralized networking account. Set up an endpoint service that uses AWS PrivateLink.<br>Create an Auto Scaling group and a launch template that uses the new script as user data to configure the firewall appliances. Create a target group that uses the instance target type.<br>Create VPC endpoints in the centralized networking account. Update the route tables in each member account to point to the VPC endpoints.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T13:46:03.811+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T13:46:03.811+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Deploy a Gateway Load Balancer in the centralized networking account. Set up an endpoint service that uses AWS PrivateLink.<br>Create an Auto Scaling group. Configure an AWS Launch Wizard deployment that uses the new script as user data to configure the firewall appliances. Create a target group that uses the IP target type.<br>Create VPC endpoints in each member account. Update the route tables to point to the VPC endpoints."
+                }
+            ]
+        },
+        {
+            "id": 40016486,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 12,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company hosts its primary API on AWS by using an Amazon API Gateway API and AWS Lambda functions that contain the logic for the API methods. The company’s internal applications use the API for core functionality and business logic. The company’s customers use the API to access data from their accounts. Several customers also have access to a legacy API that is running on a single standalone Amazon EC2 instance.<br><br>The company wants to increase the security for these APIs to better prevent denial of service (DoS) attacks, check for vulnerabilities, and guard against common exploits.<br><br>What should a solutions architect do to meet these requirements?",
+            "userAnsText": "Use AWS WAF to protect both APIs. Configure Amazon Inspector to analyze the legacy API. Configure Amazon GuardDuty to monitor for malicious attempts to access the APIs.",
+            "correctAnsText": "Use AWS WAF to protect the API Gateway API. Configure Amazon Inspector to analyze the legacy API. Configure Amazon GuardDuty to monitor for malicious attempts to access the APIs.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T11:01:39.443+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T11:01:39.443+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Use AWS WAF to protect both APIs. Configure Amazon Inspector to analyze the legacy API. Configure Amazon GuardDuty to monitor for malicious attempts to access the APIs."
+                }
+            ]
+        },
+        {
+            "id": 40016478,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 4,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A solutions architect is creating an AWS CloudFormation template from an existing manually created non-production AWS environment. The CloudFormation template can be destroyed and recreated as needed. The environment contains an Amazon EC2 instance. The EC2 instance has an instance profile that the EC2 instance uses to assume a role in a parent account.<br><br>The solutions architect recreates the role in a CloudFormation template and uses the same role name. When the CloudFormation template is launched in the child account, the EC2 instance can no longer assume the role in the parent account because of insufficient permissions<br><br>What should the solutions architect do to resolve this issue?",
+            "userAnsText": "In the parent account, edit the trust policy for the role that the EC2 instance needs to assume. Add a statement that allows the sts:AssumeRole action for the root principal of the child account. Save the trust policy.",
+            "correctAnsText": "In the parent account, edit the trust policy for the role that the EC2 instance needs to assume. Ensure that the target role ARN in the existing statement that allows the sts:AssumeRole action is correct. Save the trust policy.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T11:01:39.443+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T11:01:39.443+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "In the parent account, edit the trust policy for the role that the EC2 instance needs to assume. Add a statement that allows the sts:AssumeRole action for the root principal of the child account. Save the trust policy."
+                }
+            ]
+        },
+        {
+            "id": 40016523,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 49,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is hosting an application on AWS for a project that will run for the next 3 years. The application consists of 20 Amazon EC2 On-Demand Instances that are registered in a target group for a Network Load Balancer (NLB). The instances are spread across two Availability Zones. The application is stateless and runs 24 hours a day, 7 days a week.<br><br>The company receives reports from users who are experiencing slow responses from the application. Performance metrics show that the instances are at 10% CPU utilization during normal application use. However, the CPU utilization increases to 100% at busy times, which typically last for a few hours.<br><br>The company needs a new architecture to resolve the problem of slow responses from the application.<br><br>Which solution will meet these requirements MOST cost-effectively?",
+            "userAnsText": "Create a Spot Fleet that has a request type of request. Set the TotalTargetCapacity parameter to 20. Set the DefaultTargetCapacityType parameter to On-Demand. Specify the NLB when creating the Spot Fleet.",
+            "correctAnsText": "Create an Auto Scaling group. Attach the Auto Scaling group to the target group of the NLB. Set the minimum capacity to 4 and the maximum capacity to 28. Purchase Reserved Instances for four instances.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T10:50:20.338+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T10:50:20.338+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create a Spot Fleet that has a request type of request. Set the TotalTargetCapacity parameter to 20. Set the DefaultTargetCapacityType parameter to On-Demand. Specify the NLB when creating the Spot Fleet."
+                }
+            ]
+        },
+        {
+            "id": 40016522,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 48,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company migrated to AWS and uses AWS Business Support. The company wants to monitor the cost-effectiveness of Amazon EC2 instances across AWS accounts. The EC2 instances have tags for department, business unit, and environment. Development EC2 instances have high cost but low utilization.<br><br>The company needs to detect and stop any underutilized development EC2 instances. Instances are underutilized if they had 10% or less average daily CPU utilization and 5 MB or less network I/O for at least 4 of the past 14 days.<br><br>Which solution will meet these requirements with the LEAST operational overhead?",
+            "userAnsText": "Configure Amazon CloudWatch dashboards to monitor EC2 instance utilization based on tags for department, business unit, and environment. Create an Amazon EventBridge rule that invokes an AWS Lambda function to stop underutilized development EC2 instances.",
+            "correctAnsText": "Create an Amazon EventBridge rule to detect low utilization of EC2 instances reported by AWS Trusted Advisor. Configure the rule to invoke an AWS Lambda function that filters the data by tags for department, business unit, and environment and stops underutilized development EC2 instances.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T10:47:20.612+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T10:47:20.612+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Configure Amazon CloudWatch dashboards to monitor EC2 instance utilization based on tags for department, business unit, and environment. Create an Amazon EventBridge rule that invokes an AWS Lambda function to stop underutilized development EC2 instances."
+                }
+            ]
+        },
+        {
+            "id": 40016513,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 39,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is migrating its data center to the AWS Cloud and needs to complete the migration as quickly as possible. The company has many applications that are running on hundreds of VMware VMs in the data center. Each VM is configured with a shared Windows folder that contains common shared files. The file share is larger than 100 GB in size.<br><br>The company’s compliance team requires a change request to be fled and approved for every software installation and modification to each VM. The company has an AWS Direct Connect connection with 10 GB of bandwidth between AWS and the data center.<br><br>Which set of steps should the company take to complete the migration in the LEAST amount of time?",
+            "userAnsText": "Deploy the AWS Application Discovery Service Agent and the AWS Application Migration Service Agent onto each VMware hypervisor directly. Review the portfolio in AWS Migration Hub. Copy each VM’s file share data to a new Amazon FSx for Windows File Server file system. After migration, remap the file share on each VM to the FSx for Windows File Server file system.",
+            "correctAnsText": "Deploy the AWS Application Migration Service agentless appliance to VMware vCenter. Copy the Windows file share data to a new Amazon FSx for Windows File Server file system. After migration, remap the file share on each VM to the FSx for Windows File Server file system.<br>C. Create and review a portfolio in AWS Migration Hub. Order an AWS Snowcone device. Deploy AWS Application Migration Service to VMware vCenter and export all the VMs to the Snowcone device. Copy all Windows file share data to the Snowcone device. Ship the Snowcone device to AWS. Use Application Migration Service to deploy all the migrated instances.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T10:47:20.612+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T10:47:20.612+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Deploy the AWS Application Discovery Service Agent and the AWS Application Migration Service Agent onto each VMware hypervisor directly. Review the portfolio in AWS Migration Hub. Copy each VM’s file share data to a new Amazon FSx for Windows File Server file system. After migration, remap the file share on each VM to the FSx for Windows File Server file system."
+                }
+            ]
+        },
+        {
+            "id": 40016464,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 65,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company wants to migrate virtual Microsoft workloads from an on-premises data center to AWS. The company has successfully tested a few sample workloads on AWS. The company also has created an AWS Site-to-Site VPN connection to a VPC. A solutions architect needs to generate a total cost of ownership (TCO) report for the migration of all the workloads from the data center.<br><br>Simple Network Management Protocol (SNMP) has been enabled on each VM in the data center. The company cannot add more VMs in the data center and cannot install additional software on the VMs. The discovery data must be automatically imported into AWS Migration Hub.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Launch a Windows Amazon EC2 instance. Install the Migration Evaluator agentless collector on the EC2 instance. Configure Migration Hub to generate the TCO report.",
+            "correctAnsText": "Launch a Windows Amazon EC2 instance. Install the Migration Evaluator agentless collector on the EC2 instance. Configure Migration Evaluator to generate the TCO report.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T10:02:50.069+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T10:02:50.069+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Launch a Windows Amazon EC2 instance. Install the Migration Evaluator agentless collector on the EC2 instance. Configure Migration Hub to generate the TCO report."
+                }
+            ]
+        },
+        {
+            "id": 40016476,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 2,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is deploying a new application on AWS. The application consists of an Amazon Elastic Kubernetes Service (Amazon EKS) cluster and an Amazon Elastic Container Registry (Amazon ECR) repository. The EKS cluster has an AWS managed node group.<br><br>The company's security guidelines state that all resources on AWS must be continuously scanned for security vulnerabilities.<br><br>Which solution will meet this requirement with the LEAST operational overhead?",
+            "userAnsText": "Activate AWS Security Hub. Configure Security Hub to scan the EKS nodes and the ECR repository.",
+            "correctAnsText": "Activate Amazon Inspector to scan the EKS nodes and the ECR repository.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T09:59:57.314+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T09:59:57.314+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Activate AWS Security Hub. Configure Security Hub to scan the EKS nodes and the ECR repository."
+                }
+            ]
+        },
+        {
+            "id": 40016456,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 57,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company wants to record key performance indicators (KPIs) from its application as part of a strategy to convert to a user-based licensing schema. The application is a multi-tier application with a web-based UI. The company saves all log files to Amazon CloudWatch by using the CloudWatch agent. All logins to the application are saved in a log file.<br><br>As part of the new license schema, the company needs to find out how many unique users each client has on a daily basis, weekly basis, and monthly basis.<br><br>Which solution will provide this information with the LEAST change to the application?",
+            "userAnsText": "Configure the CloudWatch agent to extract successful login metrics from the logs. Additionally, configure the CloudWatch agent to save the successful login metrics as a custom metric that uses the user name and client name as dimensions for the metric.",
+            "correctAnsText": "Configure an Amazon CloudWatch Logs metric filter that saves each successful login as a metric. Configure the user name and client name as dimensions for the metric.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T09:56:55.773+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T09:56:55.773+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Configure the CloudWatch agent to extract successful login metrics from the logs. Additionally, configure the CloudWatch agent to save the successful login metrics as a custom metric that uses the user name and client name as dimensions for the metric."
+                }
+            ]
+        },
+        {
+            "id": 40016509,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 35,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company hosts a data-processing application on Amazon EC2 instances. The application polls an Amazon Elastic File System (Amazon EFS) file system for newly uploaded files. When a new file is detected, the application extracts data from the file and runs logic to select a Docker container image to process the file. The application starts the appropriate container image and passes the file location as a parameter.<br><br>The data processing that the container performs can take up to 2 hours. When the processing is complete, the code that runs inside the container writes the file back to Amazon EFS and exits.<br><br>The company needs to refactor the application to eliminate the EC2 instances that are running the containers.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Create an Amazon Elastic Container Service (Amazon ECS) cluster. Configure the processing to run as AWS Fargate tasks. Extract the container selection logic to run as an Amazon EventBridge rule that starts the appropriate Fargate task. Configure the EventBridge rule to run when files are added to the EFS file system.",
+            "correctAnsText": "Create an Amazon Elastic Container Service (Amazon ECS) cluster. Configure the processing to run as AWS Fargate tasks. Extract the container selection logic to run as an AWS Lambda function that starts the appropriate Fargate task. Migrate the storage of file uploads to an Amazon S3 bucket. Update the processing code to use Amazon S3. Configure an S3 event notification to invoke the Lambda function when objects are created.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T09:54:45.552+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T09:54:45.552+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon Elastic Container Service (Amazon ECS) cluster. Configure the processing to run as AWS Fargate tasks. Extract the container selection logic to run as an Amazon EventBridge rule that starts the appropriate Fargate task. Configure the EventBridge rule to run when files are added to the EFS file system."
+                }
+            ]
+        },
+        {
+            "id": 40016515,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 41,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is using AWS to develop and manage its production web application. The application includes an Amazon API Gateway HTTP API that invokes an AWS Lambda function. The Lambda function processes and then stores data in a database.<br><br>The company wants to implement user authorization for the web application in an integrated way. The company already uses a third-party identity provider that issues OAuth tokens for the company’s other applications.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Integrate the company’s third-party identity provider with AWS IAM Identity Center. Configure API Gateway to use IAM Identity Center for zero-configuration authentication and authorization. Update the web application to retrieve AWS Security Token Service (AWS STS) tokens from IAM Identity Center and include the tokens in the Authorization header when calling the API Gateway HTTP API.",
+            "correctAnsText": "Integrate the company’s third-party identity provider with API Gateway. Configure an API Gateway Lambda authorizer to validate tokens from the identity provider. Require the Lambda authorizer on all API routes. Update the web application to get tokens from the identity provider and include the tokens in the Authorization header when calling the API Gateway HTTP API.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T09:34:48.68+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T09:34:48.68+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Integrate the company’s third-party identity provider with AWS IAM Identity Center. Configure API Gateway to use IAM Identity Center for zero-configuration authentication and authorization. Update the web application to retrieve AWS Security Token Service (AWS STS) tokens from IAM Identity Center and include the tokens in the Authorization header when calling the API Gateway HTTP API."
+                }
+            ]
+        },
+        {
+            "id": 40016485,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 11,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company plans to migrate many VMs from an on-premises environment to AWS. The company requires an initial assessment of the on-premises environment before the migration, a visualization of the dependencies between applications that run on the VMs, and a report that provides an assessment of the on-premises environment.<br><br>To get this information, the company has initiated a Migration Evaluator assessment request. The company has the ability to install collector software in its on-premises environment without any constraints<br><br>Which solution will provide the company with the required information with the LEAST operational overhead?",
+            "userAnsText": "Set up the Migration Evaluator Collector in the on-premises environment. Install the AWS Application Discovery Agent on each VM. After the data collection period ends, use AWS Migration Hub to view the application dependencies. Download the Quick Insights assessment report from Migration Evaluator.",
+            "correctAnsText": "Install the AWS Application Discovery Agent on each on-premises VM. After the data collection period ends, use AWS Migration Hub to view the application dependencies. Download the Quick insights assessment report from Migration Hub.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-12T09:19:59.71+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-12T09:19:59.71+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Set up the Migration Evaluator Collector in the on-premises environment. Install the AWS Application Discovery Agent on each VM. After the data collection period ends, use AWS Migration Hub to view the application dependencies. Download the Quick Insights assessment report from Migration Evaluator."
+                }
+            ]
+        },
+        {
+            "id": 40016483,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 9,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A utility company wants to collect usage data every 5 minutes from its smart meters to facilitate time-of-use metering. When a meter sends data to AWS, the data is sent to Amazon API Gateway, processed by an AWS Lambda function. and stored in an Amazon DynamoDB table. During the pilot phase, the Lambda functions took from 3 to 5 seconds to complete.<br><br>As more smart meters are deployed, the engineers notice the Lambda functions are taking from 1 to 2 minutes to complete. The functions are also increasing in duration as new types of metrics are collected from the devices. There are many ProvisionedThroughputExceededException errors while performing PUT operations on DynamoDB, and there are also many TooManyRequestsException errors from Lambda.<br><br>Which combination of changes will resolve these issues? (Choose two.)",
+            "userAnsText": "Increase the write capacity units to the DynamoDB table.<br>Collect data in an Amazon SQS FIFO queue, which triggers a Lambda function to process each message",
+            "correctAnsText": "Increase the write capacity units to the DynamoDB table.<br>Stream the data into an Amazon Kinesis data stream from API Gateway and process the data in batches.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-10T17:12:57.123+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-10T17:12:57.123+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Increase the write capacity units to the DynamoDB table.<br>Collect data in an Amazon SQS FIFO queue, which triggers a Lambda function to process each message"
+                }
+            ]
+        },
+        {
+            "id": 40016467,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 68,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company wants to establish a dedicated connection between its on-premises infrastructure and AWS. The company is setting up a 1 Gbps AWS Direct Connect connection to its account VPC. The architecture includes a transit gateway and a Direct Connect gateway to connect multiple VPCs and the on-premises infrastructure.<br><br>The company must connect to VPC resources over a transit VIF by using the Direct Connect connection.<br><br>Which combination of steps will meet these requirements? (Choose two.)",
+            "userAnsText": "Advertise the VPC prefixes from the Direct Connect gateway to the on-premises network over the transit VIF.<br>Update the Direct Connect connection's MACsec encryption mode attribute to must_encrypt.",
+            "correctAnsText": "Advertise the on-premises network prefixes over the transit VIF.<br>Advertise the VPC prefixes from the Direct Connect gateway to the on-premises network over the transit VIF.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-08T16:51:32.509+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-08T16:51:32.509+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Advertise the VPC prefixes from the Direct Connect gateway to the on-premises network over the transit VIF.<br>Update the Direct Connect connection's MACsec encryption mode attribute to must_encrypt."
+                }
+            ]
+        },
+        {
+            "id": 40016520,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 46,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company in the United States (US) has acquired a company in Europe. Both companies use the AWS Cloud. The US company has built a new application with a microservices architecture. The US company is hosting the application across five VPCs in the us-east-2 Region. The application must be able to access resources in one VPC in the eu-west-1 Region.<br>However, the application must not be able to access any other VPCs.<br><br>The VPCs in both Regions have no overlapping CIDR ranges. All accounts are already consolidated in one organization in AWS Organizations.<br><br>Which solution will meet these requirements MOST cost-effectively?",
+            "userAnsText": "Create one transit gateway in eu-west-1. Attach the VPCs in us-east-2 and the VPC in eu-west-1 to the transit gateway. Create the necessary route entries in each VPC so that the traffic is routed through the transit gateway.",
+            "correctAnsText": "Create one VPC peering connection for each VPC in us-east-2 to the VPC in eu-west-1. Create the necessary route entries in each VPC so that the traffic is routed through the VPC peering connection.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-08T16:51:32.509+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-08T16:51:32.509+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create one transit gateway in eu-west-1. Attach the VPCs in us-east-2 and the VPC in eu-west-1 to the transit gateway. Create the necessary route entries in each VPC so that the traffic is routed through the transit gateway."
+                }
+            ]
+        },
+        {
+            "id": 40016506,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 32,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has an application that uses Amazon EC2 instances in an Auto Scaling group. The quality assurance (QA) department needs to launch a large number of short-lived environments to test the application. The application environments are currently launched by the manager of the department using an AWS CloudFormation template. To launch the stack, the manager uses a role with permission to use CloudFormation, EC2, and Auto Scaling APIs. The manager wants to allow testers to launch their own environments, but does not want to grant broad permissions to each user.<br><br>Which set up would achieve these goals?",
+            "userAnsText": "Upload the AWS CloudFormation template to Amazon S3. Give users in the QA department permission to assume the manager’s role and add a policy that restricts the permissions to the template and the resources it creates. Train users to launch the template from the CloudFormation console.",
+            "correctAnsText": "Create an AWS Service Catalog product from the environment template. Add a launch constraint to the product with the existing role. Give users in the QA department permission to use AWS Service Catalog APIs only. Train users to launch the template from the AWS Service Catalog console.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-07T16:30:25.065+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-07T16:30:25.065+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Upload the AWS CloudFormation template to Amazon S3. Give users in the QA department permission to assume the manager’s role and add a policy that restricts the permissions to the template and the resources it creates. Train users to launch the template from the CloudFormation console."
+                }
+            ]
+        },
+        {
+            "id": 40016487,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 13,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is running a serverless ecommerce application on AWS. The application uses Amazon API Gateway to invoke AWS Lambda Java functions. The Lambda functions connect to an Amazon RDS for MySQL database to store data.<br><br>During a recent sale event, a sudden increase in web traffic resulted in poor API performance and database connection failures. The company needs to implement a solution to minimize the latency for the Lambda functions and to support bursts in traffic.<br><br>Which solution will meet these requirements with the LEAST amount of change to the application?",
+            "userAnsText": "Create an RDS Proxy endpoint for the database. Store database secrets in AWS Secrets Manager. Set up the required IAM permissions. Update the Lambda functions to connect to the RDS Proxy endpoint. Increase the reserved concurrency for the Lambda functions.",
+            "correctAnsText": "Create an RDS Proxy endpoint for the database. Store database secrets in AWS Secrets Manager. Set up the required IAM permissions. Update the Lambda functions to connect to the RDS Proxy endpoint. Increase the provisioned concurrency for the Lambda functions.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-07T16:08:35.684+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-07T16:08:35.684+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an RDS Proxy endpoint for the database. Store database secrets in AWS Secrets Manager. Set up the required IAM permissions. Update the Lambda functions to connect to the RDS Proxy endpoint. Increase the reserved concurrency for the Lambda functions."
+                }
+            ]
+        },
+        {
+            "id": 40016490,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 16,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A solutions architect is importing a VM from an on-premises environment by using the Amazon EC2 VM Import feature of AWS Import/Export. The solutions architect has created an AMI and has provisioned an Amazon EC2 instance that is based on that AMI. The EC2 instance runs inside a public subnet in a VPC and has a public IP address assigned.<br><br>The EC2 instance does not appear as a managed instance in the AWS Systems Manager console.<br><br>Which combination of steps should the solutions architect take to troubleshoot this issue? (Choose two.)",
+            "userAnsText": "Verify that Systems Manager Agent is installed on the instance and is running.<br>Verify the correct configuration of service-linked roles for Systems Manager.",
+            "correctAnsText": "Verify that Systems Manager Agent is installed on the instance and is running.<br>Verify that the instance is assigned an appropriate IAM role for Systems Manager.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-07T15:49:04.279+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-07T15:49:04.279+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Verify that Systems Manager Agent is installed on the instance and is running.<br>Verify the correct configuration of service-linked roles for Systems Manager."
+                }
+            ]
+        },
+        {
+            "id": 40016510,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 36,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A media company has a 30-T8 repository of digital news videos. These videos are stored on tape in an on-premises tape library and referenced by a Media Asset Management (MAM) system. The company wants to enrich the metadata for these videos in an automated fashion and put them into a searchable catalog by using a MAM feature. The company must be able to search based on information in the video, such as objects, scenery items, or people’s faces. A catalog is available that contains faces of people who have appeared in the videos that include an image of each person. The company would like to migrate these videos to AWS.<br><br>The company has a high-speed AWS Direct Connect connection with AWS and would like to move the MAM solution video content directly from its current file system.<br><br>How can these requirements be met by using the LEAST amount of ongoing management overhead and causing MINIMAL disruption to the existing system?",
+            "userAnsText": "Set up an AWS Storage Gateway, tape gateway appliance on-premises. Use the MAM solution to extract the videos from the current archive and push them into the tape gateway. Use the catalog of faces to build a collection in Amazon Rekognition. Build an AWS Lambda function that invokes the Rekognition Javascript SDK to have Amazon Rekognition process the video in the tape gateway, retrieve the required metadata, and push the metadata into the MAM solution.",
+            "correctAnsText": "Set up an AWS Storage Gateway, file gateway appliance on-premises. Use the MAM solution to extract the videos from the current archive and push them into the file gateway. Use the catalog of faces to build a collection in Amazon Rekognition. Build an AWS Lambda function that invokes the Rekognition Javascript SDK to have Rekognition pull the video from the Amazon S3 files backing the file gateway, retrieve the required metadata, and push the metadata into the MAM solution.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-07T15:29:19.137+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-07T15:29:19.137+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Set up an AWS Storage Gateway, tape gateway appliance on-premises. Use the MAM solution to extract the videos from the current archive and push them into the tape gateway. Use the catalog of faces to build a collection in Amazon Rekognition. Build an AWS Lambda function that invokes the Rekognition Javascript SDK to have Amazon Rekognition process the video in the tape gateway, retrieve the required metadata, and push the metadata into the MAM solution."
+                }
+            ]
+        },
+        {
+            "id": 40016500,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 26,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company needs to migrate its on-premises database fleet to Amazon RDS. The company is currently using a mixture of Microsoft SQL Server, MySQL, and Oracle databases. Some of the databases have custom schemas and stored procedures.<br><br>Which combination of steps should the company take for the migration? (Choose two.)",
+            "userAnsText": "Use Migration Evaluator Quick Insights to analyze the source databases and to identify the stored procedures that need to be migrated.<br>Use AWS Database Migration Service (AWS DMS) to migrate the source databases to Amazon RDS.",
+            "correctAnsText": "Use the AWS Schema Conversion Tool (AWS SCT) to analyze the source databases for changes that are required<br>Use AWS Database Migration Service (AWS DMS) to migrate the source databases to Amazon RDS.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-07T15:29:19.137+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-07T15:29:19.137+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Use Migration Evaluator Quick Insights to analyze the source databases and to identify the stored procedures that need to be migrated.<br>Use AWS Database Migration Service (AWS DMS) to migrate the source databases to Amazon RDS."
+                }
+            ]
+        },
+        {
+            "id": 40016518,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 44,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has several AWS Lambda functions written in Python. The functions are deployed with the .zip package deployment type. The functions use a Lambda layer that contains common libraries and packages in a .zip file. The Lambda .zip packages and Lambda layer .zip file are stored in an Amazon S3 bucket.<br><br>The company must implement automatic scanning of the Lambda functions and the Lambda layer to identify CVEs. A subset of the Lambda functions must receive automated code scans to detect potential data leaks and other vulnerabilities. The code scans must occur only for selected Lambda functions, not all the Lambda functions.<br><br>Which combination of actions will meet these requirements? (Choose three.)",
+            "userAnsText": "Activate Lambda standard scanning and Lambda code scanning in Amazon Inspector.<br>Tag Lambda functions that do not need code scans. In the tag, include a key of InspectorCodeExclusion and a value of LambdaCodeScanning.<br>Use Amazon Inspector to scan the 3 bucket that contains the Lambda .zip packages and the Lambda layer .zip file for code scans.",
+            "correctAnsText": "Activate Amazon Inspector. Start automated CVE scans.<br>Activate Lambda standard scanning and Lambda code scanning in Amazon Inspector.<br>Tag Lambda functions that do not need code scans. In the tag, include a key of InspectorCodeExclusion and a value of LambdaCodeScanning.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-07T15:21:11.517+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-07T15:21:11.517+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Activate Lambda standard scanning and Lambda code scanning in Amazon Inspector.<br>Tag Lambda functions that do not need code scans. In the tag, include a key of InspectorCodeExclusion and a value of LambdaCodeScanning.<br>Use Amazon Inspector to scan the 3 bucket that contains the Lambda .zip packages and the Lambda layer .zip file for code scans."
+                }
+            ]
+        },
+        {
+            "id": 40016496,
+            "examId": 400806,
+            "examKey": "exam7",
+            "examIndex": 7,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 7",
+            "qNum": 22,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "Accompany runs an application on Amazon EC2 and AWS Lambda. The application stores temporary data in Amazon S3. The S3 objects are deleted after 24 hours.<br><br>The company deploys new versions of the application by launching AWS CloudFormation stacks. The stacks create the required resources. After validating a new version, the company deletes the old stack. The deletion of an old development stack recently failed. A solutions architect needs to resolve this issue without major architecture changes.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Modify the CloudFormation stack to attach a DeletionPolicy attribute with a value of Delete to the S3 bucket.",
+            "correctAnsText": "Create a Lambda function to delete objects from an S3 bucket. Add the Lambda function as a custom resource in the CloudFormation stack with a DependsOn attribute that points to the S3 bucket resource.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-07T14:50:36.852+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-07T14:50:36.852+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Modify the CloudFormation stack to attach a DeletionPolicy attribute with a value of Delete to the S3 bucket."
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 50,
+        "total": 23,
+        "totalPages": 1
+    }
+}

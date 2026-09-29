@@ -1,0 +1,929 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 30003011,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 12,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A company wants to migrate its on-premises Oracle database to Aurora MySQL. The company has hired an AWS Certified Solutions Architect Professional to carry out the migration with minimal downtime using AWS DMS. The company has mandated that the migration must have minimal impact on the performance of the source database and the Solutions Architect must validate that the data was migrated accurately from the source to the target before the cutover.</p>\n\n<p>Which of the following solutions will MOST effectively address this use-case?</p>",
+            "userAnsText": "<p>Use AWS Schema Conversion Tool for the migration task so it can compare the source and target data and report any mismatches</p>",
+            "correctAnsText": "<p>Configure DMS data validation on the migration task so it can compare the source and target data for the DMS task and report any mismatches</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use AWS Schema Conversion Tool for the migration task so it can compare the source and target data and report any mismatches</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003036,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 37,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>The product team at a global IoT technology company is looking to build features to facilitate better collaboration with the company's customers. As part of its research, the product team has figured out a market need to support both stateful and stateless client-server communications via the APIs developed using its platform.</p>\n\n<p>You have been hired by the company as an AWS Certified Solutions Architect Professional to build a solution to fulfill this market need using AWS API Gateway. Which of the following would you recommend to the company?</p>",
+            "userAnsText": "<p>API Gateway creates RESTful APIs that enable stateful client-server communication and API Gateway also creates WebSocket APIs that adhere to the WebSocket protocol, which enables stateless, full-duplex communication between client and server</p>",
+            "correctAnsText": "<p>API Gateway creates RESTful APIs that enable stateless client-server communication and API Gateway also creates WebSocket APIs that adhere to the WebSocket protocol, which enables stateful, full-duplex communication between client and server</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>API Gateway creates RESTful APIs that enable stateful client-server communication and API Gateway also creates WebSocket APIs that adhere to the WebSocket protocol, which enables stateless, full-duplex communication between client and server</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003072,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 73,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>An automobile company helps more than 20 million web and mobile users browse automobile dealer inventory, read vehicle reviews, and consume other automobile-related content by leveraging its library of 50 million vehicle photos uploaded by auto dealers. The company is planning a key update with even better image quality and faster load times on the company's website as well as mobile apps but the existing image-handling solution based on Cloudera MapReduce clusters is not the right tool for the job. The company now wants to switch to a serverless solution on AWS Cloud. As part of this process, the engineering team has been studying various best practices for serverless solutions. They intend to use AWS Lambda extensively and are looking at the salient features to consider when using Lambda as the backbone for the serverless architecture.</p>\n\n<p>As a Solutions Architect Professional, which of the following would you identify as key considerations for a serverless architecture? (Select three)</p>",
+            "userAnsText": "<p>If you intend to reuse code in more than one Lambda function, you should consider creating a Lambda Layer for the reusable code</p><br><p>The bigger your deployment package, the slower your Lambda function will cold-start. Hence, AWS suggests packaging dependencies as a separate package from the actual Lambda package</p><br><p>By default, Lambda functions always operate from an AWS-owned VPC and hence have access to any public internet address or public AWS APIs. Once a Lambda function is VPC-enabled, it will need a route through a NAT gateway in a public subnet to access public resources</p>",
+            "correctAnsText": "<p>If you intend to reuse code in more than one Lambda function, you should consider creating a Lambda Layer for the reusable code</p><br><p>Since Lambda functions can scale extremely quickly, it's a good idea to deploy a CloudWatch Alarm that notifies your team when function metrics such as ConcurrentExecutions or Invocations exceeds the expected threshold</p><br><p>By default, Lambda functions always operate from an AWS-owned VPC and hence have access to any public internet address or public AWS APIs. Once a Lambda function is VPC-enabled, it will need a route through a NAT gateway in a public subnet to access public resources</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>If you intend to reuse code in more than one Lambda function, you should consider creating a Lambda Layer for the reusable code</p><br><p>The bigger your deployment package, the slower your Lambda function will cold-start. Hence, AWS suggests packaging dependencies as a separate package from the actual Lambda package</p><br><p>By default, Lambda functions always operate from an AWS-owned VPC and hence have access to any public internet address or public AWS APIs. Once a Lambda function is VPC-enabled, it will need a route through a NAT gateway in a public subnet to access public resources</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003032,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 33,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A data analytics company stores event data in its on-premises PostgreSQL database. With the increase in the number of clients, the company is spending a lot of resources managing and maintaining the infrastructure while performance seems to be dwindling. The company has established connectivity between its on-premises systems and AWS Cloud already and wants a hybrid solution that can automatically buffer and transform event data in a scalable way and create visualizations to track and monitor events in real time. The transformed event data would be in semi-structured JSON format and have dynamic schemas.</p>\n\n<p>Which combination of services/technologies will you suggest to implement the requirements?</p>",
+            "userAnsText": "<p>Set up Amazon Kinesis Data Firehose to buffer events and an AWS Lambda function to process and transform the events. Provision an Amazon Aurora Neptune DB cluster to receive the transformed events from Firehose and use QuickSight to create near-real-time visualizations and dashboards</p>",
+            "correctAnsText": "<p>Set up Amazon Kinesis Data Firehose to buffer events and an AWS Lambda function to process and transform the events. Set up Amazon OpenSearch to receive the transformed events. Use the Kibana endpoint that is deployed with OpenSearch to create near-real-time visualizations and dashboards</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up Amazon Kinesis Data Firehose to buffer events and an AWS Lambda function to process and transform the events. Provision an Amazon Aurora Neptune DB cluster to receive the transformed events from Firehose and use QuickSight to create near-real-time visualizations and dashboards</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003050,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 51,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A leading mobility company wants to use AWS for its connected cab application that would collect sensor data from its electric cab fleet to give drivers dynamically updated map information. The company would like to build its new sensor service by leveraging fully serverless components that are provisioned and managed automatically by AWS. The development team at the company does not want an option that requires the capacity to be manually provisioned, as it does not want to respond manually to changing volumes of sensor data. The company has hired you as an AWS Certified Solutions Architect Professional to provide consultancy for this strategic initiative.</p>\n\n<p>Given these constraints, which of the following solutions would you suggest as the BEST fit to develop this service?</p>",
+            "userAnsText": "<p>Ingest the sensor data in Kinesis Data Firehose, which directly writes the data into an auto-scaled DynamoDB table for downstream processing</p>",
+            "correctAnsText": "<p>Ingest the sensor data in an Amazon SQS standard queue, which is polled by a Lambda function in batches and the data is written into an auto-scaled DynamoDB table for downstream processing</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Ingest the sensor data in Kinesis Data Firehose, which directly writes the data into an auto-scaled DynamoDB table for downstream processing</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003015,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 16,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A multi-national company uses Amazon S3 as its data lake to store the data that flows into its business. This data is both structured and semi-structured and is organized under different buckets in the company's AWS account in the same Region. Hundreds of applications in the company's AWS account use structured data for running data analytics, event monitoring, report generation, event creation, and many more. While the semi-structured data runs through several transformations and is sent to downstream applications for further processing. While the company's security policy restricts S3 bucket access over the internet, the internal security team has requested tighter access rules for the applications using the S3 data lake.</p>\n\n<p>Which combination of steps will you undertake to implement this requirement in the most efficient way? (Select three)</p>",
+            "userAnsText": "<p>Create an S3 access point for each application from each AWS account and attach the access points to the S3 bucket. Configure each access point to be accessible only from the application's VPC. Update the bucket policy to require access from an access point</p><br><p>Add a bucket policy on the buckets to deny access from applications outside the data lake VPC</p><br><p>From each application VPC, create a gateway endpoint for Amazon S3. Configure the endpoint policy to allow access to an S3 access point. Specify the route table that is used to access the access point</p>",
+            "correctAnsText": "<p>Create a gateway endpoint for Amazon S3 in the data lake VPC. Attach an endpoint policy to allow access to the S3 bucket only via the access points. Specify the route table that is used to access the bucket</p><br><p>In the AWS account that owns the S3 buckets, create an S3 access point for each bucket that the applications must use to access the data. Set up all applications in a single data lake VPC</p><br><p>Add a bucket policy on the buckets to deny access from applications outside the data lake VPC</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create an S3 access point for each application from each AWS account and attach the access points to the S3 bucket. Configure each access point to be accessible only from the application's VPC. Update the bucket policy to require access from an access point</p><br><p>Add a bucket policy on the buckets to deny access from applications outside the data lake VPC</p><br><p>From each application VPC, create a gateway endpoint for Amazon S3. Configure the endpoint policy to allow access to an S3 access point. Specify the route table that is used to access the access point</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003038,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 39,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A leading hotel reviews website has a repository of more than one million high-quality digital images. When this massive volume of images became too cumbersome to handle in-house, the company decided to offload the content to a central repository on Amazon S3 as part of its hybrid cloud strategy. The company now wants to reprocess its entire collection of photographic images to change the watermarks. The company wants to use Amazon EC2 instances and Amazon SQS in an integrated workflow to generate the sizes they need for each photo. The team wants to process a few thousand photos each night, using Amazon EC2 Spot Instances. The team uses Amazon SQS to communicate the photos that need to be processed and the status of the jobs. To handle certain sensitive photos, the team wants to postpone the delivery of certain messages to the queue by one minute while all other messages need to be delivered immediately to the queue.</p>\n\n<p>As a Solutions Architect Professional, which of the following solutions would you suggest to the company to handle the workflow for sensitive photos?</p>",
+            "userAnsText": "<p>Use delay queues to postpone the delivery of certain messages to the queue by one minute</p>",
+            "correctAnsText": "<p>Use message timers to postpone the delivery of certain messages to the queue by one minute</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use delay queues to postpone the delivery of certain messages to the queue by one minute</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003043,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 44,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A leading club in the Major League Baseball runs a web platform that boasts over 50,000 pages and over 100 million digitized photographs. It is available in six languages and maintains up-to-date information for the season. The engineering team has built a notification system on the web platform using SNS notifications which are then handled by a Lambda function for end-user delivery. During the off-season, the notification systems need to handle about 100 requests per second. During the peak baseball season, the rate touches about 5000 requests per second and it is noticed that a significant number of the notifications are not being delivered to the end-users on the web platform.</p>\n\n<p>As a Solutions Architect Professional, which of the following would you suggest as the BEST fit solution to address this issue?</p>",
+            "userAnsText": "<p>Amazon SNS has hit a concurrency limit, so the team needs to contact AWS support to raise the account limit</p>",
+            "correctAnsText": "<p>Amazon SNS message deliveries to AWS Lambda have crossed the account concurrency quota for Lambda, so the team needs to contact AWS support to raise the account limit</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Amazon SNS has hit a concurrency limit, so the team needs to contact AWS support to raise the account limit</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003024,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 25,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A data analytics company needs to set up a data lake on Amazon S3 for a financial services client. The data lake is split in raw and curated zones. For compliance reasons, the source data needs to be kept for a minimum of 5 years. The source data arrives in the raw zone and is then processed via an AWS Glue based ETL job into the curated zone. The business analysts run ad-hoc queries only on the data in the curated zone using Athena. The team is concerned about the cost of data storage in both the raw and curated zones as the data is increasing at a rate of 2 TB daily in each zone.</p>\n\n<p>Which of the following options would you implement together as the MOST cost-optimal solution?\n(Select two)</p>",
+            "userAnsText": "<p>Use Glue ETL job to write the transformed data in the curated zone using CSV format</p><br><p>Setup a lifecycle policy to transition the raw zone data into Glacier Deep Archive after 1 day of object creation</p>",
+            "correctAnsText": "<p>Setup a lifecycle policy to transition the raw zone data into Glacier Deep Archive after 1 day of object creation</p><br><p>Use Glue ETL job to write the transformed data in the curated zone using a compressed file format</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use Glue ETL job to write the transformed data in the curated zone using CSV format</p><br><p>Setup a lifecycle policy to transition the raw zone data into Glacier Deep Archive after 1 day of object creation</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003019,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 20,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>A global healthcare company wants to develop a solution called Health Information Systems (HIS) on AWS Cloud that would allow the providers, payers, and government agencies to collaborate, anticipate and navigate the changing healthcare landscape. While pursuing this endeavor, the company would like to decrease its IT operational overhead so it could focus more intently on its core business - healthcare analytics. The solution should help the company eliminate the bottleneck created by manual provisioning of development pipelines while adhering to crucial governance and control requirements. As a means to this end, the company has set up \"AWS Organizations\" to manage several of these scenarios and would like to use Service Control Policies (SCP) for central control over the maximum available permissions for the various accounts in their organization. This allows the organization to ensure that all accounts stay within the organization’s access control guidelines.</p>\n\n<p>As a Solutions Architect Professional, which of the following scenarios would you identify as correct regarding the given use-case? (Select three)</p>",
+            "userAnsText": "<p>If a user or role has an IAM permission policy that grants access to an action that is either not allowed or explicitly denied by the applicable SCPs, the user or role can still perform that action</p><br><p>SCPs affect all users and roles in attached accounts, including the root user</p><br><p>SCPs do not affect service-linked role</p>",
+            "correctAnsText": "<p>If a user or role has an IAM permission policy that grants access to an action that is either not allowed or explicitly denied by the applicable SCPs, the user or role can't perform that action</p><br><p>SCPs affect all users and roles in attached accounts, including the root user</p><br><p>SCPs do not affect service-linked role</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>If a user or role has an IAM permission policy that grants access to an action that is either not allowed or explicitly denied by the applicable SCPs, the user or role can still perform that action</p><br><p>SCPs affect all users and roles in attached accounts, including the root user</p><br><p>SCPs do not affect service-linked role</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003027,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 28,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A company allows property owners and travelers to connect with each other for the purpose of renting unique vacation spaces around the world. The engineering team at the company uses Amazon MySQL RDS DB cluster because it simplifies much of the time-consuming administrative tasks typically associated with databases. The team uses Multi-Availability Zone (Multi-AZ) deployment to further automate its database replication and augment data durability. The current cluster configuration also uses Read Replicas. An intern has joined the team and wants to understand the replication capabilities for Multi-AZ as well as Read Replicas for the given RDS cluster.</p>\n\n<p>As a Solutions Architect Professional, which of the following capabilities would you identify as correct for the given database?</p>",
+            "userAnsText": "<p>Multi-AZ follows asynchronous replication and spans at least two Availability Zones within a single region. Read Replicas follow asynchronous replication and can be within an Availability Zone, Cross-AZ, or Cross-Region</p>",
+            "correctAnsText": "<p>Multi-AZ follows synchronous replication and spans at least two Availability Zones within a single region. Read Replicas follow asynchronous replication and can be within an Availability Zone, Cross-AZ, or Cross-Region</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Multi-AZ follows asynchronous replication and spans at least two Availability Zones within a single region. Read Replicas follow asynchronous replication and can be within an Availability Zone, Cross-AZ, or Cross-Region</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003013,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 14,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A web-hosting startup manages more than 500 public web applications on AWS Cloud which are deployed in a single AWS Region. The fully qualified domain names (FQDNs) of all of the applications are configured to use HTTPS and are served via Application Load Balancers (ALBs). These ALBs are configured to use public SSL/TLS certificates. The startup has hired you as an AWS Certified Solutions Architect Professional to migrate the web applications to a multi-Region architecture. You must ensure that all HTTPS services continue to work without interruption.</p>\n\n<p>Which of the following solutions would you suggest to address these requirements?</p>",
+            "userAnsText": "<p>Generate a certificate for each FQDN via AWS Certificate Manager. Associate the same FQDN certificate with the ALBs in the relevant AWS Regions</p>",
+            "correctAnsText": "<p>Generate a separate certificate for each FQDN in each AWS Region using AWS Certificate Manager. Associate the certificates with the corresponding ALBs in the relevant AWS Region</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Generate a certificate for each FQDN via AWS Certificate Manager. Associate the same FQDN certificate with the ALBs in the relevant AWS Regions</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003039,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 40,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A leading medical imaging equipment and diagnostic imaging solutions provider uses AWS Cloud to run its healthcare data flows through more than 500,000 medical imaging devices globally. The solutions provider stores close to one petabyte of medical imaging data on Amazon S3 to provide the durability and reliability needed for their critical data. A research assistant working with the radiology department is trying to upload a high-resolution image into S3 via the public internet. The image size is approximately 5GB. The research assistant is using S3 Transfer Acceleration (S3TA) for faster image upload. It turns out that S3TA did not result in an accelerated transfer.</p>\n\n<p>Given this scenario, which of the following is correct regarding the charges for this image transfer?</p>",
+            "userAnsText": "<p>The research assistant only needs to pay S3 transfer charges for the image upload</p>",
+            "correctAnsText": "<p>The research assistant does not need to pay any transfer charges for the image upload</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>The research assistant only needs to pay S3 transfer charges for the image upload</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003029,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 30,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>The DevOps team for a CRM SaaS company wants to implement a patching plan on AWS Cloud for a large mixed fleet of Windows and Linux servers. The patching plan has to be auditable and must be implemented securely to ensure compliance with the company's business requirements.</p>\n\n<p>As a Solutions Architect Professional, which of the following options would you recommend to address these requirements with MINIMAL effort? (Select two)</p>",
+            "userAnsText": "<p>Set up Systems Manager Agent on all instances to manage patching. Test patches in pre-production and then deploy as a maintenance window task with the appropriate approval</p><br><p>Apply patch baselines using the AWS-ApplyPatchBaseline SSM document</p>",
+            "correctAnsText": "<p>Set up Systems Manager Agent on all instances to manage patching. Test patches in pre-production and then deploy as a maintenance window task with the appropriate approval</p><br><p>Apply patch baselines using the AWS-RunPatchBaseline SSM document</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up Systems Manager Agent on all instances to manage patching. Test patches in pre-production and then deploy as a maintenance window task with the appropriate approval</p><br><p>Apply patch baselines using the AWS-ApplyPatchBaseline SSM document</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003035,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 36,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A multi-national digital media company wants to exit out of the business of owning and maintaining its own IT infrastructure so it can redeploy resources toward innovation in Artificial Intelligence and related areas to create a better customer experience. As part of this digital transformation, the media company wants to archive about 9 PB of data in its on-premises data center to durable long term storage.</p>\n\n<p>As a Solutions Architect Professional, what is your recommendation to migrate and store this data in the quickest and MOST cost-optimal way?</p>",
+            "userAnsText": "<p>Transfer the on-premises data into a Snowmobile device. Copy the Snowmobile data into Amazon S3 and create a lifecycle policy to transition the data into AWS Glacier</p>",
+            "correctAnsText": "<p>Transfer the on-premises data into multiple Snowball Edge Storage Optimized devices. Copy the Snowball Edge data into Amazon S3 and create a lifecycle policy to transition the data into AWS Glacier</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Transfer the on-premises data into a Snowmobile device. Copy the Snowmobile data into Amazon S3 and create a lifecycle policy to transition the data into AWS Glacier</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003054,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 55,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A global apparel, footwear, and accessories retailer uses Amazon S3 for centralized storage of the static media assets such as images and videos for its products. The product planning specialists typically upload and download video files (about 100MB each) to the same S3 bucket as part of their day to day work. Initially, the product planning specialists were based out of a single region and there were no performance issues. However, as the company grew and started running offices from multiple countries, it resulted in poor latency while accessing data from S3 and uploading data to S3. The company wants to continue with the serverless solution for its storage requirements but wants to improve its performance.</p>\n\n<p>As a solutions architect, which of the following solutions do you propose to address this issue? (Select two)</p>",
+            "userAnsText": "<p>Create new S3 buckets in every region where the company has an office, so that each office can maintain its storage for the media assets</p><br><p>Enable Amazon S3 Transfer Acceleration for the S3 bucket. This would speed up uploads as well as downloads for the video files</p>",
+            "correctAnsText": "<p>Use Amazon CloudFront distribution with origin as the S3 bucket. This would speed up uploads as well as downloads for the video files</p><br><p>Enable Amazon S3 Transfer Acceleration for the S3 bucket. This would speed up uploads as well as downloads for the video files</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create new S3 buckets in every region where the company has an office, so that each office can maintain its storage for the media assets</p><br><p>Enable Amazon S3 Transfer Acceleration for the S3 bucket. This would speed up uploads as well as downloads for the video files</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003021,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 22,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A blog hosting company has an existing SaaS product architected as an on-premises three-tier web application. The blog content is posted and updated several times a day by multiple authors, so the Linux web servers serve content from a centralized file share on a NAS server. The CTO at the company has done an extensive technical review and highlighted to the company management that the existing infrastructure is not optimized. The company would like to migrate to AWS so that the resources can be dynamically scaled in response to load. The on-premises infrastructure and AWS Cloud are connected using Direct Connect.</p>\n\n<p>As a Solutions Architect Professional, which of the following solutions would you recommend to the company so that it can migrate the web infrastructure to AWS without delaying the content updation process?</p>",
+            "userAnsText": "<p>Set up an on-premises file gateway using Storage Gateway to replace the NAS server and then replicate the existing content to AWS. On the AWS Cloud, mount the same Storage Gateway bucket to the EC2 instance based web servers to serve the content</p>",
+            "correctAnsText": "<p>Attach an EFS file system to the on-premises servers to act as the NAS server. Mount the same EFS file system to the AWS based web servers running on EC2 instances to serve the content</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up an on-premises file gateway using Storage Gateway to replace the NAS server and then replicate the existing content to AWS. On the AWS Cloud, mount the same Storage Gateway bucket to the EC2 instance based web servers to serve the content</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003023,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 24,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>The engineering team at a social media company is building an ElasticSearch based index for all the existing files in S3. To build this index, it only needs to read the first 250 bytes of each object in S3, which contains some metadata about the content of the file itself. There are over 100,000 files in your S3 bucket, adding up to 50TB of data.</p>\n\n<p>As a Solutions Architect Professional, which of the following solutions can be used to build this index MOST efficiently? (Select two)</p>",
+            "userAnsText": "<p>Use the ElasticSearch Import feature to load the entire data from S3 to ElasticSearch and then ElasticSearch would automatically build the index</p><br><p>Create an application that will use the S3 Select ScanRange parameter to get the first 250 bytes and store that information in ElasticSearch</p>",
+            "correctAnsText": "<p>Create an application that will use the S3 Select ScanRange parameter to get the first 250 bytes and store that information in ElasticSearch</p><br><p>Create an application that will traverse the S3 bucket, issue a Byte Range Fetch for the first 250 bytes, and store that information in ElasticSearch</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use the ElasticSearch Import feature to load the entire data from S3 to ElasticSearch and then ElasticSearch would automatically build the index</p><br><p>Create an application that will use the S3 Select ScanRange parameter to get the first 250 bytes and store that information in ElasticSearch</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003063,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 64,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>A healthcare technology solutions company recently faced a security event resulting in an S3 bucket with sensitive data containing Personally Identifiable Information (PII) for patients being made public. The company policy mandates never to have public S3 objects so the Governance and Compliance team must be notified immediately as soon as any public objects are identified. The company has hired you as an AWS Certified Solutions Architect Professional to help build a solution that detects the presence of a public S3 object, which in turn sets off an alarm to trigger notifications and then automatically remediates the said object.</p>\n\n<p>Which of the following solutions would you implement in tandem to meet the requirements of the given use-case? (Select two)</p>",
+            "userAnsText": "<p>Enable object-level logging for S3. Set up a EventBridge event pattern when a PutObject API call with public-read permission is detected in the AWS CloudTrail logs and set the target as an SNS topic for downstream notifications</p><br><p>Enable object-level logging for S3. When a PutObject API call is made with a public-read permission, use S3 event notifications to trigger a Lambda that sends a notification via SNS</p>",
+            "correctAnsText": "<p>Configure a Lambda function as one of the SNS topic subscribers, which is invoked to secure the objects in the S3 bucket</p><br><p>Enable object-level logging for S3. Set up a EventBridge event pattern when a PutObject API call with public-read permission is detected in the AWS CloudTrail logs and set the target as an SNS topic for downstream notifications</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Enable object-level logging for S3. Set up a EventBridge event pattern when a PutObject API call with public-read permission is detected in the AWS CloudTrail logs and set the target as an SNS topic for downstream notifications</p><br><p>Enable object-level logging for S3. When a PutObject API call is made with a public-read permission, use S3 event notifications to trigger a Lambda that sends a notification via SNS</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003048,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 49,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>The engineering team at a company is evaluating the Multi-AZ and Read Replica capabilities of RDS MySQL vs Aurora MySQL before they implement the solution in their production environment. The company has hired you as an AWS Certified Solutions Architect Professional to provide a detailed report on this technical requirement.</p>\n\n<p>Which of the following would you identify as correct regarding the given use-case? (Select three)</p>",
+            "userAnsText": "<p>Database engine version upgrades happen on primary for Aurora MySQL whereas all instances are updated together for RDS MySQL</p><br><p>Multi-AZ deployments for both RDS MySQL and Aurora MySQL follow synchronous replication</p><br><p>Read Replicas can be manually promoted to a standalone database instance for Aurora MySQL whereas Read Replicas for RDS MySQL can be promoted to the primary instance</p>",
+            "correctAnsText": "<p>Read Replicas can be manually promoted to a standalone database instance for RDS MySQL whereas Read Replicas for Aurora MySQL can be promoted to the primary instance</p><br><p>Multi-AZ deployments for both RDS MySQL and Aurora MySQL follow synchronous replication</p><br><p>The primary and standby DB instances are upgraded at the same time for RDS MySQL Multi-AZ. All instances are upgraded at the same time for Aurora MySQL</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Database engine version upgrades happen on primary for Aurora MySQL whereas all instances are updated together for RDS MySQL</p><br><p>Multi-AZ deployments for both RDS MySQL and Aurora MySQL follow synchronous replication</p><br><p>Read Replicas can be manually promoted to a standalone database instance for Aurora MySQL whereas Read Replicas for RDS MySQL can be promoted to the primary instance</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003004,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 5,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A company has built a serverless electronic document management system for users to upload their documents. The system also has a web application that connects to an Amazon API Gateway with Regional endpoints which in turn invokes AWS Lambda functions. The Lambda functions write the metadata of the documents to the Amazon Aurora Serverless database before uploading the actual documents to the Amazon S3 bucket. While the serverless architecture has been tested in the US East (N. Virginia) Region, the solution should be scalable for other AWS Regions too.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which options would you recommend to make the architecture scalable while offering low latency service to customers of any AWS region? (Select two)</p>",
+            "userAnsText": "<p>Enable S3 Transfer Acceleration on the S3 bucket and configure the web application to use the Transfer Acceleration endpoints</p><br><p>Configure AWS Global Accelerator to front the CloudFront distribution for providing low latency access to customers of all AWS regions</p>",
+            "correctAnsText": "<p>Enable S3 Transfer Acceleration on the S3 bucket and configure the web application to use the Transfer Acceleration endpoints</p><br><p>Change the API Gateway Regional endpoints to edge-optimized endpoints</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Enable S3 Transfer Acceleration on the S3 bucket and configure the web application to use the Transfer Acceleration endpoints</p><br><p>Configure AWS Global Accelerator to front the CloudFront distribution for providing low latency access to customers of all AWS regions</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003020,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 21,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A big data analytics company is leveraging AWS Cloud to process Internet of Things (IoT) sensor data from the field devices of an agricultural sciences company. The analytics company stores the IoT sensor data in Amazon DynamoDB tables. To detect anomalous behaviors and respond quickly, all changes to the items stored in the DynamoDB tables must be logged in near real-time.</p>\n\n<p>As an AWS Certified Solutions Architect Professional, which of the following solutions would you recommend to meet the requirements of the given use-case so that it requires minimal custom development and infrastructure maintenance?</p>",
+            "userAnsText": "<p>Set up DynamoDB Streams to capture and send updates to a Lambda function that outputs records directly to Kinesis Data Analytics (KDA). Detect and analyze anomalies in KDA and send notifications via SNS</p>",
+            "correctAnsText": "<p>Set up DynamoDB Streams to capture and send updates to a Lambda function that outputs records to Kinesis Data Analytics (KDA) via Kinesis Data Streams (KDS). Detect and analyze anomalies in KDA and send notifications via SNS</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up DynamoDB Streams to capture and send updates to a Lambda function that outputs records directly to Kinesis Data Analytics (KDA). Detect and analyze anomalies in KDA and send notifications via SNS</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003033,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 34,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>The DevOps team at a leading SaaS company is planning to release the major upgrade of its flagship CRM application in a week. The team is testing the alpha release of the application running on 20 EC2 instances managed by an Auto Scaling group in subnet 172.20.0.0/24 within VPC X with CIDR block 172.20.0.0/16. The team has noticed connection timeout errors in the application logs while connecting to a MySQL database running on an EC2 instance in the same region in subnet 172.30.0.0/24 within VPC Y with CIDR block 172.30.0.0/16. The IP of the database instance is hard-coded in the application instances.</p>\n\n<p>As a Solutions Architect Professional, which of the following solutions would you recommend to the DevOps team to solve the problem in a secure way with minimal maintenance and overhead? (Select two)</p>",
+            "userAnsText": "<p>Set up a VPC peering connection between the two VPCs and add a route to the routing table of VPC X that points to the IP address range of 172.30.0.0/16</p><br><p>Create and attach internet gateways for both VPCs and set up default routes to the Internet gateways for both VPCs. Assign an Elastic IP for the EC2 instance running MySQL database in VPC Y. Update the application instances to connect to this Elastic IP</p>",
+            "correctAnsText": "<p>Set up a VPC peering connection between the two VPCs and add a route to the routing table of VPC X that points to the IP address range of 172.30.0.0/16</p><br><p>Set up a VPC peering connection between the two VPCs and add a route to the routing table of VPC Y that points to the IP address range of 172.20.0.0/16</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up a VPC peering connection between the two VPCs and add a route to the routing table of VPC X that points to the IP address range of 172.30.0.0/16</p><br><p>Create and attach internet gateways for both VPCs and set up default routes to the Internet gateways for both VPCs. Assign an Elastic IP for the EC2 instance running MySQL database in VPC Y. Update the application instances to connect to this Elastic IP</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003026,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 27,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A web development studio runs hundreds of Proof-of-Concept (PoC) and demo applications on virtual machines running on an on-premises server. Many of the applications are simple PHP, JavaScript or Python web applications which are no longer actively developed and serve little traffic.</p>\n\n<p>As a Solutions Architect Professional, which of the following approaches would you suggest to migrate these applications to AWS with the lowest infrastructure cost and least development effort?</p>",
+            "userAnsText": "<p>Migrate the application code to use a serverless stack comprising of Lambda functions and DynamoDB</p>",
+            "correctAnsText": "<p>Dockerize each application and then deploy to an ECS cluster running behind an Application Load Balancer</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Migrate the application code to use a serverless stack comprising of Lambda functions and DynamoDB</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003007,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 8,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>The DevOps team at a leading social media company uses Chef to automate the configurations of servers in the on-premises data center. The CTO at the company now wants to migrate the IT infrastructure to AWS Cloud with minimal changes to the server configuration workflows and at the same time account for less operational overhead post-migration to AWS. The company has hired you as an AWS Certified Solutions Architect Professional to recommend a solution for this migration.</p>\n\n<p>Which of the following solutions would you recommend to address the given use-case?</p>",
+            "userAnsText": "<p>Rehost the IT infrastructure to AWS Cloud by leveraging AWS OpsWorks as a configuration management service to automate the configurations of servers on AWS</p>",
+            "correctAnsText": "<p>Replatform the IT infrastructure to AWS Cloud by leveraging AWS OpsWorks as a configuration management service to automate the configurations of servers on AWS</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Rehost the IT infrastructure to AWS Cloud by leveraging AWS OpsWorks as a configuration management service to automate the configurations of servers on AWS</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003041,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 42,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>The CTO at a multi-national retail company is pursuing an IT re-engineering effort to set up a hybrid network architecture that would facilitate the company's envisaged long-term data center migration from multiple on-premises data centers to the AWS Cloud. The current on-premises data centers are in different locations and are inter-linked via a private fiber. Due to the unique constraints of the existing legacy applications, using NAT is not an option. During the migration period, many critical applications will need access to other applications deployed in both the on-premises data centers and AWS Cloud.</p>\n\n<p>As a Solutions Architect Professional, which of the following options would you suggest to set up a hybrid network architecture that is highly available and supports high bandwidth for a multi-Region deployment post-migration?</p>",
+            "userAnsText": "<p>Set up a Direct Connect as primary connection for all on-premises data centers with another VPN as backup. Configure both connections to use the same virtual private gateway and BGP. Make sure that no VPC CIDR blocks overlap one another or the on-premises network</p>",
+            "correctAnsText": "<p>Set up a Direct Connect to each on-premises data center from different service providers and configure routing to failover to the other on-premises data center's Direct Connect in case one connection fails. Make sure that no VPC CIDR blocks overlap one another or the on-premises network</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up a Direct Connect as primary connection for all on-premises data centers with another VPN as backup. Configure both connections to use the same virtual private gateway and BGP. Make sure that no VPC CIDR blocks overlap one another or the on-premises network</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003058,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 59,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>An e-commerce company runs a data archival workflow once a month for its on-premises data center which is connected to the AWS Cloud over a minimally used 10-Gbps Direct Connect connection using a private virtual interface to its virtual private cloud (VPC). The company internet connection is 200 Mbps, and the usual archive size is around 140 TB that is created on the first Friday of a month. The archive must be transferred and available in Amazon S3 by the next Monday morning.</p>\n\n<p>As a Solutions Architect Professional, which of the following options would you recommend as the LEAST expensive way to address the given use-case?</p>",
+            "userAnsText": "<p>Configure a VPC endpoint for S3 and then leverage the Direct Connect connection for data transfer with VPC endpoint as the target</p>",
+            "correctAnsText": "<p>Configure a public virtual interface on the 10-Gbps Direct Connect connection and then copy the data to S3 over the connection</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Configure a VPC endpoint for S3 and then leverage the Direct Connect connection for data transfer with VPC endpoint as the target</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003074,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 75,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A stock trading firm uses AWS Cloud for its IT infrastructure. The firm runs several trading-risk simulation applications, developing complex algorithms to simulate diverse scenarios in order to evaluate the financial health of its customers. The firm stores customers' financial records on Amazon S3. The engineering team needs to implement an archival solution based on Amazon S3 Glacier to enforce regulatory and compliance controls on the archived data.</p>\n\n<p>As a Solutions Architect Professional, which of the following solutions would you recommend?</p>",
+            "userAnsText": "<p>Use S3 Glacier vault to store the sensitive archived data and then use an S3 Access Control List to enforce compliance controls</p>",
+            "correctAnsText": "<p>Use S3 Glacier vault to store the sensitive archived data and then use a vault lock policy to enforce compliance controls</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use S3 Glacier vault to store the sensitive archived data and then use an S3 Access Control List to enforce compliance controls</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003053,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 54,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A digital media company has hired you as an AWS Certified Solutions Architect Professional to optimize the architecture for its backup solution for applications running on the AWS Cloud. Currently, all of the applications running on AWS use at least two Availability Zones (AZs). The updated backup policy at the company mandates that all nightly backups for its data are durably stored in at least two geographically distinct Regions for Production and Disaster Recovery (DR) and the backup processes for both Regions must be fully automated. The new backup solution must ensure that the backup is available to be restored immediately for the Production Region and should be restored within 24 hours in the DR Region.</p>\n\n<p>Which of the following represents the MOST cost-effective solution that will address the given use-case?</p>",
+            "userAnsText": "<p>Create a backup process to persist all the data to an S3 bucket A using S3 standard storage class in the Production Region. Set up cross-Region replication of this S3 bucket A to an S3 bucket B using S3 standard-IA storage class in the DR Region and set up a lifecycle policy in the DR Region to immediately move this data to Amazon Glacier</p>",
+            "correctAnsText": "<p>Create a backup process to persist all the data to an S3 bucket A using S3 standard storage class in the Production Region. Set up cross-Region replication of this S3 bucket A to an S3 bucket B using S3 standard storage class in the DR Region and set up a lifecycle policy in the DR Region to immediately move this data to Amazon Glacier</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create a backup process to persist all the data to an S3 bucket A using S3 standard storage class in the Production Region. Set up cross-Region replication of this S3 bucket A to an S3 bucket B using S3 standard-IA storage class in the DR Region and set up a lifecycle policy in the DR Region to immediately move this data to Amazon Glacier</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003005,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 6,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>An IT company wants to move all its clients belonging to the regulated and security-sensitive industries such as financial services and healthcare to the AWS Cloud as it wants to leverage the out-of-box security-specific capabilities offered by AWS. The Security team at the company is developing a framework to validate the adoption of AWS best practices and industry-recognized compliance standards. The AWS Management Console is the preferred method for the in-house teams wanting to provision resources. You have been hired as an AWS Certified Solutions Architect Professional to spearhead this strategic initiative.</p>\n\n<p>Which of the following strategies would you adopt to address these business requirements for continuously assessing, auditing and monitoring the configurations of AWS resources? (Select two)</p>",
+            "userAnsText": "<p>Leverage CloudTrail integration with SNS to automatically notify unauthorized API activities. Ensure that CloudTrail is enabled for all accounts as well as all available AWS services. Use Lambda functions to automatically revert non-authorized changes in AWS resources</p><br><p>Leverage Config rules to audit changes to AWS resources and monitor the compliance of the configuration by running the evaluations for the rule at a frequency that you choose. Develop AWS Config custom rules to establish a test-driven development approach by triggering the evaluation when any resource that matches the rule's scope changes in configuration</p>",
+            "correctAnsText": "<p>Enable trails and set up CloudTrail events to review and monitor management activities of all AWS accounts by logging these activities into CloudWatch Logs using a KMS key. Ensure that CloudTrail is enabled for all accounts as well as all available AWS services</p><br><p>Leverage Config rules to audit changes to AWS resources and monitor the compliance of the configuration by running the evaluations for the rule at a frequency that you choose. Develop AWS Config custom rules to establish a test-driven development approach by triggering the evaluation when any resource that matches the rule's scope changes in configuration</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Leverage CloudTrail integration with SNS to automatically notify unauthorized API activities. Ensure that CloudTrail is enabled for all accounts as well as all available AWS services. Use Lambda functions to automatically revert non-authorized changes in AWS resources</p><br><p>Leverage Config rules to audit changes to AWS resources and monitor the compliance of the configuration by running the evaluations for the rule at a frequency that you choose. Develop AWS Config custom rules to establish a test-driven development approach by triggering the evaluation when any resource that matches the rule's scope changes in configuration</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003042,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 43,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design for New Solutions",
+            "text": "<p>The engineering team at a healthcare company is working on the Disaster Recovery (DR) plans for its Redshift cluster deployed in the eu-west-1 Region. The existing cluster is encrypted via AWS KMS and the team wants to copy the Redshift snapshots to another Region to meet the DR requirements.</p>\n\n<p>As a Solutions Architect Professional, which of the following solutions would you suggest to address the given use-case?</p>",
+            "userAnsText": "<p>Create a snapshot copy grant in the destination Region for a KMS key in the destination Region. Configure Redshift cross-Region replication in the source Region</p>",
+            "correctAnsText": "<p>Create a snapshot copy grant in the destination Region for a KMS key in the destination Region. Configure Redshift cross-Region snapshots in the source Region</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create a snapshot copy grant in the destination Region for a KMS key in the destination Region. Configure Redshift cross-Region replication in the source Region</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003008,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 9,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Accelerate Workload Migration and Modernization",
+            "text": "<p>A multi-national retail company has built a hub-and-spoke network with AWS Transit Gateway. VPCs have been provisioned into multiple AWS accounts to facilitate network isolation and to enable delegated network administration. The organization is looking at a cost-effective, quick and secure way of maintaining this distributed architecture so that it provides access to services required by workloads in each of the VPCs.</p>\n\n<p>As a Solutions Architect Professional, which of the following options would you recommend for the given use-case?</p>",
+            "userAnsText": "<p>Use Transit VPC to reduce cost and share the resources across VPCs</p>",
+            "correctAnsText": "<p>Use Centralized VPC Endpoints for connecting with multiple VPCs, also known as shared services VPC</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.236+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.236+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use Transit VPC to reduce cost and share the resources across VPCs</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003002,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 3,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Design Solutions for Organizational Complexity",
+            "text": "<p>An e-commerce company wants to rollout and test a blue-green deployment for its global application in the next couple of days. Most of the customers use mobile phones which are prone to DNS caching. The company has only two days left before the big sale will be launched.</p>\n\n<p>As a Solutions Architect Professional, which of the following options would you suggest to test the deployment on as many users as possible in the given time frame?</p>",
+            "userAnsText": "<p>Use Route 53 weighted routing to spread traffic across different deployments</p>",
+            "correctAnsText": "<p>Use AWS Global Accelerator to distribute a portion of traffic to a particular deployment</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.235+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.235+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use Route 53 weighted routing to spread traffic across different deployments</p>"
+                }
+            ]
+        },
+        {
+            "id": 30003001,
+            "examId": 300300,
+            "examKey": "exam1",
+            "examIndex": 1,
+            "examName": "AWS Certified Solutions Architect Professional - SPM - 1",
+            "qNum": 2,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Continuous Improvement for Existing Solutions",
+            "text": "<p>A retail company has hired you as an AWS Certified Solutions Architect Professional to provide consultancy for managing a serverless application that consists of multiple API gateways, Lambda functions, S3 buckets and DynamoDB tables. The company is getting reports from customers that some of the application components seem to be lagging while loading dynamic images and some are timing out with the \"504 Gateway Timeout\" error. As part of your investigations to identify the root cause behind this issue, you can confirm that DynamoDB monitoring metrics are at acceptable levels.</p>\n\n<p>Which of the following steps would you recommend to address these application issues? (Select two)</p>",
+            "userAnsText": "<p>Enable execution logging for the API Gateway. Process and analyze the execution logs in the API Gateway for HTTP errors to determine the root cause of the errors</p><br><p>Process and analyze the Amazon CloudWatch Logs for Lambda function to determine processing times for requested images at pre-configured intervals</p>",
+            "correctAnsText": "<p>Process and analyze the AWS X-Ray traces and analyze HTTP methods to determine the root cause of the HTTP errors</p><br><p>Process and analyze the Amazon CloudWatch Logs for Lambda function to determine processing times for requested images at pre-configured intervals</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-25T15:33:35.235+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-25T15:33:35.235+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Enable execution logging for the API Gateway. Process and analyze the execution logs in the API Gateway for HTTP errors to determine the root cause of the errors</p><br><p>Process and analyze the Amazon CloudWatch Logs for Lambda function to determine processing times for requested images at pre-configured intervals</p>"
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 50,
+        "total": 34,
+        "totalPages": 1
+    }
+}

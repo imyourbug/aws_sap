@@ -1,0 +1,505 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 40016199,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 25,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A solutions architect has implemented a SAML 2.0 federated identity solution with their company's on-premises identity provider (IdP) to authenticate users' access to the AWS environment. When the solutions architect tests authentication through the federated identity web portal, access to the AWS environment is granted. However, when test users attempt to authenticate through the federated identity web portal, they are not able to access the AWS environment.<br><br>Which items should the solutions architect check to ensure identity federation is properly configured? (Choose three.)",
+            "userAnsText": "The IAM user's permissions policy has allowed the use of SAML federation for that user.<br>The IAM roles created for the federated users' or federated groups' trust policy have set the SAML provider as the principal.<br>B. Test users are not in the AWSFederatedUsers group in the company's IdP.<br>The web portal calls the AWS STS AssumeRoleWithSAML API with the ARN of the SAML provider, the ARN of the IAM role, and the SAML assertion from IdP.",
+            "correctAnsText": "The IAM roles created for the federated users' or federated groups' trust policy have set the SAML provider as the principal.<br>B. Test users are not in the AWSFederatedUsers group in the company's IdP.<br>The web portal calls the AWS STS AssumeRoleWithSAML API with the ARN of the SAML provider, the ARN of the IAM role, and the SAML assertion from IdP.<br>The company's IdP defines SAML assertions that properly map users or groups. In the company to IAM roles with appropriate permissions.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-23T10:19:41.251+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-23T10:19:41.251+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "The IAM user's permissions policy has allowed the use of SAML federation for that user.<br>The IAM roles created for the federated users' or federated groups' trust policy have set the SAML provider as the principal.<br>B. Test users are not in the AWSFederatedUsers group in the company's IdP.<br>The web portal calls the AWS STS AssumeRoleWithSAML API with the ARN of the SAML provider, the ARN of the IAM role, and the SAML assertion from IdP."
+                }
+            ]
+        },
+        {
+            "id": 40016204,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 30,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is designing a new website that hosts static content. The website will give users the ability to upload and download large files. According to company requirements, all data must be encrypted in transit and at rest. A solutions architect is building the solution by using Amazon S3 and Amazon CloudFront.<br><br>Which combination of steps will meet the encryption requirements? (Choose three.)",
+            "userAnsText": "Turn on S3 server-side encryption for the S3 bucket that the web application uses.<br>Add a policy attribute of \"aws:SecureTransport\": \"true\" for read and write operations in the S3 ACLs.<br>Create a bucket policy that denies any unencrypted operations in the S3 bucket that the web application uses.",
+            "correctAnsText": "Turn on S3 server-side encryption for the S3 bucket that the web application uses.<br>Create a bucket policy that denies any unencrypted operations in the S3 bucket that the web application uses.<br>Configure redirection of HTTP requests to HTTPS requests in CloudFront.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-23T10:19:41.251+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-23T10:19:41.251+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Turn on S3 server-side encryption for the S3 bucket that the web application uses.<br>Add a policy attribute of \"aws:SecureTransport\": \"true\" for read and write operations in the S3 ACLs.<br>Create a bucket policy that denies any unencrypted operations in the S3 bucket that the web application uses."
+                }
+            ]
+        },
+        {
+            "id": 40016157,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 58,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A solutions architect must create a business case for migration of a company's on-premises data center to the AWS Cloud. The solutions architect will use a configuration management database (CMDB) export of all the company's servers to create the case.<br><br>Which solution will meet these requirements MOST cost-effectively?",
+            "userAnsText": "Implement resource matching rules. Use the CMDB export and the AWS Price List Bulk API to query CMDB data against AWS services in bulk.",
+            "correctAnsText": "Use Migration Evaluator to perform an analysis. Use the data import template to upload the data from the CMDB export.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-23T10:08:54.45+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-23T10:08:54.45+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Implement resource matching rules. Use the CMDB export and the AWS Price List Bulk API to query CMDB data against AWS services in bulk."
+                }
+            ]
+        },
+        {
+            "id": 40016215,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 41,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company uses a load balancer to distribute traffic to Amazon EC2 instances in a single Availability Zone. The company is concerned about security and wants a solutions architect to re-architect the solution to meet the following requirements:<br><br>•Inbound requests must be filtered for common vulnerability attacks.<br>•Rejected requests must be sent to a third-party auditing application.<br>•All resources should be highly available.<br><br>Which solution meets these requirements?",
+            "userAnsText": "Configure a Multi-AZ Auto Scaling group using the application's AMI. Create an Application Load Balancer (ALB) and select the previously created Auto Scaling group as the target. Use Amazon Inspector to monitor traffic to the ALB and EC2 instances. Create a web ACL in WAF. Create an AWS WAF using the web ACL and ALB. Use an AWS Lambda function to frequently push the Amazon Inspector report to the third-party auditing application.",
+            "correctAnsText": "Configure a Multi-AZ Auto Scaling group using the application's AMI. Create an Application Load Balancer (ALB) and select the previously created Auto Scaling group as the target. Create an Amazon Kinesis Data Firehose with a destination of the third-party auditing application. Create a web ACL in WAF. Create an AWS WAF using the WebACL and ALB then enable logging by selecting the Kinesis Data Firehose as the destination. Subscribe to AWS Managed Rules in AWS Marketplace, choosing the WAF as the subscriber.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-23T04:36:29.727+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-23T04:36:29.727+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Configure a Multi-AZ Auto Scaling group using the application's AMI. Create an Application Load Balancer (ALB) and select the previously created Auto Scaling group as the target. Use Amazon Inspector to monitor traffic to the ALB and EC2 instances. Create a web ACL in WAF. Create an AWS WAF using the web ACL and ALB. Use an AWS Lambda function to frequently push the Amazon Inspector report to the third-party auditing application."
+                }
+            ]
+        },
+        {
+            "id": 40016176,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 2,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is building a call center by using Amazon Connect. The company’s operations team is defining a disaster recovery (DR) strategy across AWS Regions. The contact center has dozens of contact flows, hundreds of users, and dozens of claimed phone numbers.<br><br>Which solution will provide DR with the LOWEST RTO?",
+            "userAnsText": "Provision a new Amazon Connect instance with all existing contact flows and claimed phone numbers in a second Region. Create an Amazon Route 53 health check for the URL of the Amazon Connect instance. Create an Amazon CloudWatch alarm for failed health checks. Create an AWS Lambda function to deploy an AWS CloudFormation template that provisions all users. Configure the alarm to invoke the Lambda function.",
+            "correctAnsText": "Provision a new Amazon Connect instance with all existing users and contact flows in a second Region. Create an Amazon Route 53 health check for the URL of the Amazon Connect instance. Create an Amazon CloudWatch alarm for failed health checks. Create an AWS Lambda function to deploy an AWS CloudFormation template that provisions claimed phone numbers. Configure the alarm to invoke the Lambda function.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-23T04:09:37.787+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-23T04:09:37.787+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Provision a new Amazon Connect instance with all existing contact flows and claimed phone numbers in a second Region. Create an Amazon Route 53 health check for the URL of the Amazon Connect instance. Create an Amazon CloudWatch alarm for failed health checks. Create an AWS Lambda function to deploy an AWS CloudFormation template that provisions all users. Configure the alarm to invoke the Lambda function."
+                }
+            ]
+        },
+        {
+            "id": 40016208,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 34,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company runs an IoT application in the AWS Cloud. The company has millions of sensors that collect data from houses in the United States. The sensors use the MQTT protocol to connect and send data to a custom MQTT broker. The MQTT broker stores the data on a single Amazon EC2 instance. The sensors connect to the broker through the domain named iot.example.com. The company uses Amazon Route 53 as its DNS service. The company stores the data in Amazon DynamoDB.<br><br>On several occasions, the amount of data has overloaded the MQTT broker and has resulted in lost sensor data. The company must improve the reliability of the solution.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Set up AWS IoT Greengrass to receive the sensor data. Update the DNS record in Route 53 to point to the AWS IoT Greengrass endpoint. Configure an AWS IoT rule to invoke an AWS Lambda function to store the data.",
+            "correctAnsText": "Set up AWS IoT Core to receive the sensor data. Create and configure a custom domain to connect to AWS IoT Core. Update the DNS record in Route 53 to point to the AWS IoT Core Data-ATS endpoint. Configure an AWS IoT rule to store the data.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-23T03:21:15.681+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-23T03:21:15.681+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Set up AWS IoT Greengrass to receive the sensor data. Update the DNS record in Route 53 to point to the AWS IoT Greengrass endpoint. Configure an AWS IoT rule to invoke an AWS Lambda function to store the data."
+                }
+            ]
+        },
+        {
+            "id": 40016185,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 11,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A solutions architect is creating an application that stores objects in an Amazon S3 bucket. The solutions architect must deploy the application in two AWS Regions that will be used simultaneously. The objects in the two S3 buckets must remain synchronized with each other.<br><br>Which combination of steps will meet these requirements with the LEAST operational overhead? (Choose three.)",
+            "userAnsText": "Create an S3 Multi-Region Access Point Change the application to refer to the Multi-Region Access Point<br>Configure two-way S3 Cross-Region Replication (CRR) between the two S3 buckets<br>Modify the application to store objects in each S3 bucket",
+            "correctAnsText": "Create an S3 Multi-Region Access Point Change the application to refer to the Multi-Region Access Point<br>Configure two-way S3 Cross-Region Replication (CRR) between the two S3 buckets<br>Enable S3 Versioning for each S3 bucket",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T15:00:28.316+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T15:00:28.316+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an S3 Multi-Region Access Point Change the application to refer to the Multi-Region Access Point<br>Configure two-way S3 Cross-Region Replication (CRR) between the two S3 buckets<br>Modify the application to store objects in each S3 bucket"
+                }
+            ]
+        },
+        {
+            "id": 40016221,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 47,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is developing a new on-demand video application that is based on microservices. The application will have 5 million users at launch and will have 30 million users after 6 months. The company has deployed the application on Amazon Elastic Container Service (Amazon ECS) on AWS Fargate. The company developed the application by using ECS services that use the HTTPS protocol.<br><br>A solutions architect needs to implement updates to the application by using blue/green deployments. The solution must distribute traffic to each ECS service through a load balancer. The application must automatically adjust the number of tasks in response to an Amazon CloudWatch alarm.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Configure the ECS services to use the blue/green deployment type and an Application Load Balancer. Implement an Auto Scaling group for each ECS service by using the Cluster Autoscaler.",
+            "correctAnsText": "Configure the ECS services to use the blue/green deployment type and an Application Load Balancer. Implement Service Auto Scaling for each ECS service.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T14:50:26.876+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T14:50:26.876+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Configure the ECS services to use the blue/green deployment type and an Application Load Balancer. Implement an Auto Scaling group for each ECS service by using the Cluster Autoscaler."
+                }
+            ]
+        },
+        {
+            "id": 40016158,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 59,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has a website that runs on Amazon EC2 instances behind an Application Load Balancer (ALB). The instances are in an Auto Scaling group. The ALB is associated with an AWS WAF web ACL.<br><br>The website often encounters attacks in the application layer. The attacks produce sudden and significant increases in traffic on the application server. The access logs show that each attack originates from different IP addresses. A solutions architect needs to implement a solution to mitigate these attacks.<br><br>Which solution will meet these requirements with the LEAST operational overhead?",
+            "userAnsText": "Create an Amazon CloudWatch alarm that monitors server access. Set a threshold based on access by IP address. Configure an alarm action that adds the IP address to the web ACL’s deny list.",
+            "correctAnsText": "Deploy AWS Shield Advanced in addition to AWS WAF. Add the ALB as a protected resource.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T14:30:37.756+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T14:30:37.756+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon CloudWatch alarm that monitors server access. Set a threshold based on access by IP address. Configure an alarm action that adds the IP address to the web ACL’s deny list."
+                }
+            ]
+        },
+        {
+            "id": 40016188,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 14,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is updating an application that customers use to make online orders. The number of attacks on the application by bad actors has increased recently.<br><br>The company will host the updated application on an Amazon Elastic Container Service (Amazon ECS) cluster. The company will use Amazon DynamoDB to store application data. A public Application Load Balancer (ALB) will provide end users with access to the application. The company must prevent attacks and ensure business continuity with minimal service interruptions during an ongoing attack.<br><br>Which combination of steps will meet these requirements MOST cost-effectively? (Choose two.)",
+            "userAnsText": "Configure auto scaling for Amazon ECS tasks Create a DynamoDB Accelerator (DAX) cluster.<br>Deploy an AWS WAF web ACL that includes an appropriate rule group. Associate the web ACL with the Amazon CloudFront distribution.",
+            "correctAnsText": "Create an Amazon CloudFront distribution with the ALB as the origin. Add a custom header and random value on the CloudFront domain. Configure the ALB to conditionally forward traffic if the header and value match.<br>Deploy an AWS WAF web ACL that includes an appropriate rule group. Associate the web ACL with the Amazon CloudFront distribution.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T14:16:31.73+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T14:16:31.73+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Configure auto scaling for Amazon ECS tasks Create a DynamoDB Accelerator (DAX) cluster.<br>Deploy an AWS WAF web ACL that includes an appropriate rule group. Associate the web ACL with the Amazon CloudFront distribution."
+                }
+            ]
+        },
+        {
+            "id": 40016179,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 5,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company runs a processing engine in the AWS Cloud. The engine processes environmental data from logistics centers to calculate a sustainability index. The company has millions of devices in logistics centers that are spread across Europe. The devices send information to the processing engine through a RESTful API.<br><br>The API experiences unpredictable bursts of traffic. The company must implement a solution to process all data that the devices send to the processing engine. Data loss is unacceptable.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Create an Amazon CloudFront distribution for the RESTful API. Create a data stream in Amazon Kinesis Data Streams. Set the data stream as the origin for the distribution. Create an AWS Lambda function to consume and process data in the data stream.",
+            "correctAnsText": "Create an Amazon API Gateway HTTP API that implements the RESTful API. Create an Amazon Simple Queue Service (Amazon SQS) queue. Create an API Gateway service integration with the SQS queue. Create an AWS Lambda function to process messages in the SQS queue.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T14:04:58.684+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T14:04:58.684+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an Amazon CloudFront distribution for the RESTful API. Create a data stream in Amazon Kinesis Data Streams. Set the data stream as the origin for the distribution. Create an AWS Lambda function to consume and process data in the data stream."
+                }
+            ]
+        },
+        {
+            "id": 40016202,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 28,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is planning a one-time migration of an on-premises MySQL database to Amazon Aurora MySQL in the us-east-1 Region. The company's current internet connection has limited bandwidth. The on-premises MySQL database is 60 TB in size. The company estimates that it will take a month to transfer the data to AWS over the current internet connection. The company needs a migration solution that will migrate the database more quickly.<br><br>Which solution will migrate the database in the LEAST amount of time?",
+            "userAnsText": "Request a 1 Gbps AWS Direct Connect connection between the on-premises data center and AWS. Use AWS Database Migration Service (AWS DMS) to migrate the on-premises MySQL database to Aurora MySQL.",
+            "correctAnsText": "Order an AWS Snowball Edge device. Load the data into an Amazon S3 bucket by using the S3 interface. Use AWS Database Migration Service (AWS DMS) to migrate the data from Amazon S3 to Aurora MySQL.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T13:58:32.344+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T13:58:32.344+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Request a 1 Gbps AWS Direct Connect connection between the on-premises data center and AWS. Use AWS Database Migration Service (AWS DMS) to migrate the on-premises MySQL database to Aurora MySQL."
+                }
+            ]
+        },
+        {
+            "id": 40016150,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 51,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has migrated an application from on premises to AWS. The application frontend is a static website that runs on two Amazon EC2 instances behind an Application Load Balancer (ALB). The application backend is a Python application that runs on three EC2 instances behind another ALB. The EC2 instances are large, general purpose On-Demand Instances that were sized to meet the on-premises specifications for peak usage of the application.<br><br>The application averages hundreds of thousands of requests each month. However, the application is used mainly during lunchtime and receives minimal traffic during the rest of the day.<br><br>A solutions architect needs to optimize the infrastructure cost of the application without negatively affecting the application availability.<br><br>Which combination of steps will meet these requirements? (Choose two.)",
+            "userAnsText": "Change all the EC2 instances to compute optimized instances that have the same number of cores as the existing EC2 instances.<br>Move the application frontend to a static website that is hosted on Amazon S3.",
+            "correctAnsText": "Move the application frontend to a static website that is hosted on Amazon S3.<br>Deploy the backend Python application to general purpose burstable EC2 instances that have the same number of cores as the existing EC2 instances.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T10:44:28.957+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T10:44:28.957+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Change all the EC2 instances to compute optimized instances that have the same number of cores as the existing EC2 instances.<br>Move the application frontend to a static website that is hosted on Amazon S3."
+                }
+            ]
+        },
+        {
+            "id": 40016212,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 38,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company uses a Grafana data visualization solution that runs on a single Amazon EC2 instance to monitor the health of the company's AWS workloads. The company has invested time and effort to create dashboards that the company wants to preserve. The dashboards need to be highly available and cannot be down for longer than 10 minutes. The company needs to minimize ongoing maintenance.<br><br>Which solution will meet these requirements with the LEAST operational overhead?",
+            "userAnsText": "Create an AMI that has Grafana pre-installed. Store the existing dashboards in Amazon Elastic File System (Amazon EFS). Create an Auto Scaling group that uses the new AMI. Set the Auto Scaling group's minimum, desired, and maximum number of instances to one. Create an Application Load Balancer that serves at least two Availability Zones.",
+            "correctAnsText": "Create an Amazon Managed Grafana workspace. Configure a new Amazon CloudWatch data source. Export dashboards from the existing Grafana instance. Import the dashboards into the new workspace.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T10:27:46.337+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T10:27:46.337+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an AMI that has Grafana pre-installed. Store the existing dashboards in Amazon Elastic File System (Amazon EFS). Create an Auto Scaling group that uses the new AMI. Set the Auto Scaling group's minimum, desired, and maximum number of instances to one. Create an Application Load Balancer that serves at least two Availability Zones."
+                }
+            ]
+        },
+        {
+            "id": 40016177,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 3,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company runs an application on AWS. The company curates data from several different sources. The company uses proprietary algorithms to perform data transformations and aggregations. After the company performs ETL processes, the company stores the results in Amazon Redshift tables. The company sells this data to other companies. The company downloads the data as files from the Amazon Redshift tables and transmits the files to several data customers by using FTP. The number of data customers has grown significantly. Management of the data customers has become difficult.<br><br>The company will use AWS Data Exchange to create a data product that the company can use to share data with customers. The company wants to confirm the identities of the customers before the company shares data. The customers also need access to the most recent data when the company publishes the data.<br><br>Which solution will meet these requirements with the LEAST operational overhead?",
+            "userAnsText": "Publish the Amazon Redshift data to an Open Data on AWS Data Exchange. Require the customers to subscribe to the data product in AWS Data Exchange. In the AWS account of the company that produces the data, attach IAM resource-based policies to the Amazon Redshift tables to allow access only to verified AWS accounts.",
+            "correctAnsText": "In the AWS account of the company that produces the data, create an AWS Data Exchange datashare by connecting AWS Data Exchange to the Redshift cluster. Configure subscription verification. Require the data customers to subscribe to the data product.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T10:16:23.928+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T10:16:23.928+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Publish the Amazon Redshift data to an Open Data on AWS Data Exchange. Require the customers to subscribe to the data product in AWS Data Exchange. In the AWS account of the company that produces the data, attach IAM resource-based policies to the Amazon Redshift tables to allow access only to verified AWS accounts."
+                }
+            ]
+        },
+        {
+            "id": 40016218,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 44,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has IoT sensors that monitor traffic patterns throughout a large city. The company wants to read and collect data from the sensors and perform aggregations on the data.<br><br>A solutions architect designs a solution in which the IoT devices are streaming to Amazon Kinesis Data Streams. Several applications are reading from the stream. However, several consumers are experiencing throttling and are periodically encountering a ReadProvisionedThroughputExceeded error.<br><br>Which actions should the solutions architect take to resolve this issue? (Choose three.)",
+            "userAnsText": "Reshard the stream to increase the number of shards in the stream.<br>Use the Kinesis Producer Library (KPL). Adjust the polling frequency.<br>Configure the stream to use dynamic partitioning.",
+            "correctAnsText": "Reshard the stream to increase the number of shards in the stream.<br>Use consumers with the enhanced fan-out feature.<br>Use an error retry and exponential backoff mechanism in the consumer logic.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-22T09:45:20.307+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-22T09:45:20.307+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Reshard the stream to increase the number of shards in the stream.<br>Use the Kinesis Producer Library (KPL). Adjust the polling frequency.<br>Configure the stream to use dynamic partitioning."
+                }
+            ]
+        },
+        {
+            "id": 40016172,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 73,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company needs to audit the security posture of a newly acquired AWS account. The company’s data security team requires a notification only when an Amazon S3 bucket becomes publicly exposed. The company has already established an Amazon Simple Notification Service (Amazon SNS) topic that has the data security team's email address subscribed.<br><br>Which solution will meet these requirements?",
+            "userAnsText": "Create an S3 event notification on all S3 buckets for the isPublic event. Select the SNS topic as the target for the event notifications.",
+            "correctAnsText": "Create an analyzer in AWS Identity and Access Management Access Analyzer. Create an Amazon EventBridge rule for the event type “Access Analyzer Finding” with a filter for “isPublic: true.” Select the SNS topic as the EventBridge rule target.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-20T16:15:50.647+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-20T16:15:50.647+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create an S3 event notification on all S3 buckets for the isPublic event. Select the SNS topic as the target for the event notifications."
+                }
+            ]
+        },
+        {
+            "id": 40016198,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 24,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company is using an organization in AWS Organizations to manage hundreds of AWS accounts. A solutions architect is working on a solution to provide baseline protection for the Open Web Application Security Project (OWASP) top 10 web application vulnerabilities. The solutions architect is using AWS WAF for all existing and new Amazon CloudFront distributions that are deployed within the organization.<br><br>Which combination of steps should the solutions architect take to provide the baseline protection? (Choose three.)",
+            "userAnsText": "Enable Amazon GuardDuty in all accounts<br>Enable all features for the organization<br>Use AWS Firewall Manager to deploy AWS WAF rules in all accounts for all CloudFront distributions",
+            "correctAnsText": "Enable AWS Config in all accounts<br>Enable all features for the organization<br>Use AWS Firewall Manager to deploy AWS WAF rules in all accounts for all CloudFront distributions",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-20T16:15:50.647+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-20T16:15:50.647+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Enable Amazon GuardDuty in all accounts<br>Enable all features for the organization<br>Use AWS Firewall Manager to deploy AWS WAF rules in all accounts for all CloudFront distributions"
+                }
+            ]
+        },
+        {
+            "id": 40016152,
+            "examId": 400802,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - Internet - 3",
+            "qNum": 53,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "text": "A company has deployed an application on AWS Elastic Beanstalk. The application uses Amazon Aurora for the database layer. An Amazon CloudFront distribution serves web requests and includes the Elastic Beanstalk domain name as the origin server. The distribution is configured with an alternate domain name that visitors use when they access the application.<br><br>Each week, the company takes the application out of service for routine maintenance. During the time that the application is unavailable, the company wants visitors to receive an informational message instead of a CloudFront error message.<br><br>A solutions architect creates an Amazon S3 bucket as the first step in the process.<br><br>Which combination of steps should the solutions architect take next to meet the requirements? (Choose three.)",
+            "userAnsText": "Upload static informational content to the S3 bucket.<br>Set the S3 bucket as a second origin in the original CloudFront distribution. Configure the distribution and the S3 bucket to use an origin access identity (OAI).<br>During the weekly maintenance, configure Elastic Beanstalk to serve traffic from the S3 bucket.",
+            "correctAnsText": "Upload static informational content to the S3 bucket.<br>Set the S3 bucket as a second origin in the original CloudFront distribution. Configure the distribution and the S3 bucket to use an origin access identity (OAI).<br>During the weekly maintenance, edit the default cache behavior to use the S3 origin. Revert the change when the maintenance is complete.",
+            "explanation": "",
+            "lastAttemptAt": "2026-08-20T16:07:19.564+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-08-20T16:07:19.564+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Upload static informational content to the S3 bucket.<br>Set the S3 bucket as a second origin in the original CloudFront distribution. Configure the distribution and the S3 bucket to use an origin access identity (OAI).<br>During the weekly maintenance, configure Elastic Beanstalk to serve traffic from the S3 bucket."
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 50,
+        "total": 19,
+        "totalPages": 1
+    }
+}

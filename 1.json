@@ -1,0 +1,605 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": 1003812,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 13,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A company is hosting its three-tier web application on the us-east-1 region of AWS. The web and application tiers are stateless and both are running on their own fleet of On-Demand Amazon EC2 instances, each with its respective Auto Scaling group. The database tier is running on an Amazon Aurora database with about 40 TB of data. As part of the business continuity strategy of the company, the Solutions Architect must design a disaster recovery plan in case the primary region fails. The application requires an RTO of 30 minutes and the data tier requires an RPO of 5 minutes.</p><p>Which of the following options should the Solution Architect implement to achieve the company requirements in a cost-effective manner? (Select TWO.)</p>",
+            "userAnsText": "<p>Set up a cross-Region read replica of the Amazon Aurora database to the backup region. Promote this read replica as the master database in case of a disaster in the primary region.</p><br><p>For a quick recovery time, set up a hot-standby of web and application tier on the backup region. Redirect the traffic to the backup region in case of a disaster in the primary region.</p>",
+            "correctAnsText": "<p>Schedule a daily snapshot of the Amazon EC2 instances for the web and application tier. Copy the snapshot to the backup region. Restore the backups in case of a disaster in the primary region.</p><br><p>Set up a cross-Region read replica of the Amazon Aurora database to the backup region. Promote this read replica as the master database in case of a disaster in the primary region.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up a cross-Region read replica of the Amazon Aurora database to the backup region. Promote this read replica as the master database in case of a disaster in the primary region.</p><br><p>For a quick recovery time, set up a hot-standby of web and application tier on the backup region. Redirect the traffic to the backup region in case of a disaster in the primary region.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003802,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 3,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A company is developing an application that will allow biologists from around the world to submit plant genomic information and share it with other biologists. The application will expect several submissions every minute and will push about 8KB of genomic data every second to the data platform. This data needs to be processed and analyzed to provide meaningful information back to the biologists. The following are the requirements for the data platform:</p><p>-The inbound genomic data must be processed near-real-time and provide analytics.</p><p>-The received data must be stored in a flexible, parallel, and durable manner.</p><p>-After processing the data, the resulting output must be delivered to a data warehouse.</p><p>Which of the following options should the Solutions Architect implement to meet the company's requirements?</p>",
+            "userAnsText": "<p>Create an Amazon Data Firehose stream to deliver the inbound data to an Amazon S3 bucket. Use a Kinesis client to analyze the stored data. For data warehousing, register the S3 bucket on AWS Lake Formation as a data lake. Use Amazon Quicksight to query the data lake.</p>",
+            "correctAnsText": "<p>Create a stream in Amazon Kinesis Data Streams to collect the inbound data. Use a Kinesis client to analyze the genomic data. After processing, use Amazon EMR to save the results to an Amazon Redshift cluster.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create an Amazon Data Firehose stream to deliver the inbound data to an Amazon S3 bucket. Use a Kinesis client to analyze the stored data. For data warehousing, register the S3 bucket on AWS Lake Formation as a data lake. Use Amazon Quicksight to query the data lake.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003828,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 29,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A company has a CRM application that uses a MySQL database hosted in Amazon RDS, and a central data warehouse that runs on Amazon Redshift. There is a batch analytics process that runs every day and reads data from RDS. During the execution of the batch analytics, the RDS utilization spikes up, which results in the CRM application becoming unresponsive.<strong> </strong>The top management dashboard must also be updated with new data right after the batch analytics processing completes. However, the dashboard is on another system running on-premises and cannot be modified directly. The only way to update the dashboard is to send an email with the new data to the dashboard system via SMTP, which will then be parsed and processed to update the dashboard with the latest data.</p><p>How would the solutions architect optimize this scenario to solve performance issues and automate the process as much as possible?</p>",
+            "userAnsText": "<p>Consider using Amazon Redshift as the main OLTP transactional database instead of RDS for the batch analytics and use Redshift Spectrum to run SQL queries directly against Exabytes of structured or unstructured data in S3 without the need for unnecessary data movement. Utilize Amazon SNS to notify the on-premises system to update the dashboard.</p>",
+            "correctAnsText": "<p>Add read replicas for the RDS database to speed up batch analytics and use Amazon SNS to notify the on-premises system to update the dashboard.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Consider using Amazon Redshift as the main OLTP transactional database instead of RDS for the batch analytics and use Redshift Spectrum to run SQL queries directly against Exabytes of structured or unstructured data in S3 without the need for unnecessary data movement. Utilize Amazon SNS to notify the on-premises system to update the dashboard.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003822,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 23,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A company has a gaming store platform hosted in its on-premises data center for a whole variety of digital games. The application just experienced downtime last week due to a large burst in web traffic caused by a year-end sale on almost all of the games. Due to the success of the previous promotion, the CEO has planned to do the same in a few weeks, which will drive similar unpredictable bursts in web traffic. The solutions architects are looking to find ways to quickly improve the infrastructure's ability to handle unexpected increases in traffic. The web application is currently made up of a 2-tier web tier which consists of a load balancer and several web app servers, as well as a database tier that hosts an Oracle database.</p><p>Which of the following infrastructure changes should the team implement to avoid any further incidences of downtime considering that the new announcement will be done in a few weeks?</p>",
+            "userAnsText": "Migrate your environment to AWS by using AWS VM Import to quickly convert your web server into an AMI. Then set up an Auto Scaling group that uses the imported AMI. Also, create an RDS read replica and migrate the Oracle database to an RDS instance through replication.",
+            "correctAnsText": "<p>Set up a CloudFront distribution to cache objects from a custom origin to offload traffic from your on-premises environment. Customize your object cache behavior, and choose a time-to-live that will determine how long objects will reside in the cache.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Migrate your environment to AWS by using AWS VM Import to quickly convert your web server into an AMI. Then set up an Auto Scaling group that uses the imported AMI. Also, create an RDS read replica and migrate the Oracle database to an RDS instance through replication."
+                }
+            ]
+        },
+        {
+            "id": 1003800,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 1,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A company runs a suite of web applications in AWS. The application is hosted in an Auto Scaling group of On-Demand Amazon EC2 instances behind an Application Load Balancer that handles traffic from multiple web domains. The solutions architect is responsible for securing the system by allowing multiple domains to serve SSL traffic without the need to re-authenticate and re-provision a new certificate whenever a new domain name is added. This change of architecture from HTTP to HTTPS will help improve the SEO and Google search ranking of the web application.</p><p>Which of the following options are valid solutions to meet the above requirements? (Select TWO.)</p>",
+            "userAnsText": "<p>Add a Subject Alternative Name (SAN) for each additional domain to your certificate.</p><br><p>Upload all SSL certificates of the domains in the ALB using the console and bind multiple certificates to the same secure listener on your load balancer. ALB will automatically choose the optimal TLS certificate for each client using Server Name Indication (SNI).</p>",
+            "correctAnsText": "<p>Create a new CloudFront web distribution and configure it to serve HTTPS requests using dedicated IP addresses in order to associate your alternate domain names with a dedicated IP address in each CloudFront edge location.</p><br><p>Upload all SSL certificates of the domains in the ALB using the console and bind multiple certificates to the same secure listener on your load balancer. ALB will automatically choose the optimal TLS certificate for each client using Server Name Indication (SNI).</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Add a Subject Alternative Name (SAN) for each additional domain to your certificate.</p><br><p>Upload all SSL certificates of the domains in the ALB using the console and bind multiple certificates to the same secure listener on your load balancer. ALB will automatically choose the optimal TLS certificate for each client using Server Name Indication (SNI).</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003862,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 63,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design for New Solutions",
+            "text": "<p>A major telecommunications company is planning to set up a disaster recovery solution for its Amazon Redshift cluster which is being used by its online data analytics application. Database encryption is enabled on their clusters using AWS KMS and it is required that the recovery site should be at least 500 miles from their primary cloud location.</p><p>Which of the following is the most suitable solution to meet these requirements and to make its architecture highly available?</p>",
+            "userAnsText": "<p>In your Redshift cluster, enable the cross-region snapshot copy feature to copy snapshots to another region.</p>",
+            "correctAnsText": "<p>Set up a <code>snapshot copy grant</code> for a master key in the destination region and enable cross-region snapshots in your Redshift cluster to copy snapshots of the cluster to another region.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>In your Redshift cluster, enable the cross-region snapshot copy feature to copy snapshots to another region.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003835,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 36,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design for New Solutions",
+            "text": "<p>A company uses an AWS CloudFormation template to deploy its three-tier web application on the AWS Cloud. The CloudFormation template contains a custom AMI value used by the Auto Scaling group of Amazon EC2 instances. Every new version of the application corresponds to a new AMI that needs to be deployed. The company doesn’t want any downtime during the deployment process. The Solutions Architect has been tasked to implement a solution that will streamline its AMI deployment process by doing the following steps:</p><p> - Update the CloudFormation template to refer to the new AMI.</p><p> - Launch new EC2 instances from the new AMI by using the calling the <code>UpdateStack</code> API to replace the&nbsp;old EC2 instances.</p><p>Which of the following actions should the Solutions Architect take to achieve the above requirements?</p>",
+            "userAnsText": "<p>Copy the updated template and deploy it to a new CloudFormation stack. After its successful deployment, update the Amazon Route 53 records to point to the new stack and delete the old stack.</p>",
+            "correctAnsText": "<p>Update the CloudFormation template <code>AWS::AutoScaling::AutoScalingGroup</code> resource section and specify an <code>UpdatePolicy</code> attribute with an <code>AutoScalingRollingUpdate</code>.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Copy the updated template and deploy it to a new CloudFormation stack. After its successful deployment, update the Amazon Route 53 records to point to the new stack and delete the old stack.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003855,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 56,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Accelerate Workload Migration and Modernization",
+            "text": "<p>A fashion company in France sells bags, clothes, and other luxury items in its online web store. The online store is currently hosted on the company’s on-premises data center. The company has recently decided to move all of its on-premises infrastructure to the AWS cloud. The main application is running on an NGINX web server and a database with an Oracle Real Application Clusters (RAC) One Node configuration.</p><p>Which of the following is the best way to migrate the application to AWS and set up an automated backup?</p>",
+            "userAnsText": "<p>Launch an On-Demand EC2 instance and run an NGINX server to host the application. Deploy an RDS instance with a Multi-AZ deployment configuration and enable automated backups on the RDS RAC cluster.</p>",
+            "correctAnsText": "<p>Launch an EC2 instance for both the NGINX server as well as for the database. Attach EBS volumes to the EC2 instance of the database and then use the Data Lifecycle Manager to automatically create scheduled snapshots against the EBS volumes.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Launch an On-Demand EC2 instance and run an NGINX server to host the application. Deploy an RDS instance with a Multi-AZ deployment configuration and enable automated backups on the RDS RAC cluster.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003837,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 38,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A financial company is building a new online document portal system that allows its employees and developers to upload yearly and bi-annual corporate earnings report files to a private S3 bucket in which other confidential corporate files will also be stored. You are working as a Solutions Architect and you were instructed to create the private S3 bucket as well as the IAM users for the application developers to start their work. You assigned the required policies in IAM to the developers that allows them read and write access to the S3 bucket. After a few weeks, they have completed the new online portal and hosted it on a fleet of Spot EC2 instances. One of the application developers created a pre-signed URL that points to the correct S3 bucket and after a few testing, he has successfully uploaded the files from his laptop using the generated URL. He then made the necessary code change to the online portal to generate the pre-signed URL to upload the files in S3. However, after a few days, the development team complained that they cannot upload the files anymore using the online portal.&nbsp; &nbsp;Which of the following options are valid reasons for this behavior? (Select TWO.) </p>",
+            "userAnsText": "There was a recent change in the S3 bucket that allows object versioning which invalidates all presigned URLs.<br><p>The expiration date of the pre-signed URL is incorrectly set to expire too quickly and thus, may have already expired when they used it.</p>",
+            "correctAnsText": "<p>The required AWS credentials in the <code>~/.aws/credentials</code> configuration file located on the EC2 instances of the online portal were misconfigured</p><br><p>The expiration date of the pre-signed URL is incorrectly set to expire too quickly and thus, may have already expired when they used it.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "There was a recent change in the S3 bucket that allows object versioning which invalidates all presigned URLs.<br><p>The expiration date of the pre-signed URL is incorrectly set to expire too quickly and thus, may have already expired when they used it.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003857,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 58,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design Solutions for Organizational Complexity",
+            "text": "<p>A financial services company operates a multi-account AWS environment managed by AWS Control Tower. The security team must centralize the management of compliance and security findings across all accounts. The solution should implement preventive, detective, and responsive controls to align with AWS best practices for securing multi-account environments and ensuring compliance with organizational policies.</p><p>Which of the following options will meet the given requirements?</p>",
+            "userAnsText": "<p>Use AWS Config conformance packs with AWS Control Tower and deploy them using AWS CloudFormation StackSets to apply organizational compliance rules across all accounts.</p>",
+            "correctAnsText": "<p>Create a new member account in AWS Organizations. Enable AWS Security Hub and designate the account as the delegated administrator.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Use AWS Config conformance packs with AWS Control Tower and deploy them using AWS CloudFormation StackSets to apply organizational compliance rules across all accounts.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003861,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 62,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A business news portal is visited by thousands of readers each day to check on the latest hot topics in the world of business and technology. The news portal runs on a fleet of Spot Amazon EC2 instances behind an Application Load Balancer (ALB). Readers can also submit comments in every article. Currently, the system's database is running on an on-premises data center, and the CTO is concerned that the content delivery time is not meeting company objectives. The portal's page load time is of utmost importance for the company to maintain its daily visitors.</p><p>Which of the following options would allow the solutions architect to quickly and cost-effectively modify the current infrastructure to reduce latency for customers?</p>",
+            "userAnsText": "<p>Create an Amazon CloudFront web distribution to speed up the delivery of data to their readers around the globe. Migrate the entire portal to an Amazon S3 bucket and then enable static web hosting. Set the S3 bucket as the origin of your CloudFront distribution.</p>",
+            "correctAnsText": "<p>Add an in-memory datastore using Amazon ElastiCache for Redis to reduce the burden on the database. Enable Redis replication to scale database reads and to have highly available clusters.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create an Amazon CloudFront web distribution to speed up the delivery of data to their readers around the globe. Migrate the entire portal to an Amazon S3 bucket and then enable static web hosting. Set the S3 bucket as the origin of your CloudFront distribution.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003859,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 60,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design for New Solutions",
+            "text": "<p>A company runs a finance-related application on a fleet of Amazon EC2 instances inside a private subnet of a VPC in AWS. To access the application, the instances are behind an internet-facing Application Load Balancer (ALB). As part of security compliance, the company is required to have a solution that allows it to inspect network payloads that are being sent to the application. Analyzing the network payloads will help in reverse-engineering sophisticated network attacks that the application may experience.</p><p>Which of the following options should the solutions architect implement to meet the company requirements?</p>",
+            "userAnsText": "<p>Go to the Amazon EC2 console and enable “Access logs” for the ALB. Send the ALB access logs to Amazon AppFlow for payload inspection and to an Amazon S3 bucket for long-term storage.</p>",
+            "correctAnsText": "<p>Configure Traffic Mirroring on the elastic network interface of the EC2 instances. Send the mirrored traffic to a monitoring appliance for storage and inspection.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Go to the Amazon EC2 console and enable “Access logs” for the ALB. Send the ALB access logs to Amazon AppFlow for payload inspection and to an Amazon S3 bucket for long-term storage.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003815,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 16,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A company is running a financial modeling application on the AWS cloud. The application tier runs on an Auto Scaling group of Amazon EC2 instances. A separate EC2 cluster with a fixed number of instances is hosting the 200 TB of financial data in a shared file system. The application reads and processes the data on the shared filesystem to generate an overall financial report, which takes about 72 hours to complete. This whole process only needs to run at the end of each month, but the storage tier instances are running continuously to retain all the data in the shared file system.</p><p>As the storage tier takes up a large percentage of operational costs, the management wants to reduce the cost of the storage tier while maintaining the high-performance access needed by the application during its 72-hour run.</p><p>Which of the following options should the solutions architect implement that will have the largest overall cost reduction?</p>",
+            "userAnsText": "<p>For the data tier, create an Amazon S3 bucket and move the objects of the existing shared file system to it. Use S3 Glacier Instant Retrieval Storage class to save costs. Use lazy-loading on an Amazon FSx for Lustre filesystem to import the contents of the S3 bucket. Use this filesystem as shared storage for the application tier EC2 instances for the duration of the job and delete it once the job is completed.</p>",
+            "correctAnsText": "<p>For the data tier, create an Amazon S3 bucket and move the objects of the existing shared file system to it. Use S3 Intelligent-Tiering Storage class to save costs. Use lazy-loading on an Amazon FSx for Lustre filesystem to import the contents of the S3 bucket. Use this filesystem as shared storage for the application tier EC2 instances for the duration of the job and delete it once the job is completed.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>For the data tier, create an Amazon S3 bucket and move the objects of the existing shared file system to it. Use S3 Glacier Instant Retrieval Storage class to save costs. Use lazy-loading on an Amazon FSx for Lustre filesystem to import the contents of the S3 bucket. Use this filesystem as shared storage for the application tier EC2 instances for the duration of the job and delete it once the job is completed.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003806,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 7,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A financial services company uses hardware security modules (HSMs) to generate encryption master keys. Since the company application logs include personally identifiable information, encryption is required as part of regulatory compliance. The application logs are going to be stored on a central Amazon S3 bucket and should be encrypted at rest. The security team wants to use the company HSMs to generate the key material for encryption on the S3 bucket.</p><p>Which of the following options should the solutions architect implement to meet the company’s requirements?</p>",
+            "userAnsText": "<p>Request to provision an AWS Direct Connect connection from the on-premises data center to AWS VPC. Ensure that the network addresses do not overlap. Apply an Amazon S3 bucket policy on the central logging bucket to allow only encrypted object uploads. Configure the application to generate a unique KMS key for each logging event by querying the on-premises HSMs through the Direct Connection network.</p>",
+            "correctAnsText": "<p>Using AWS CLI, create a new KMS key with no key material and use EXTERNAL as the origin of the key. Generate a key from the on-premises HSMs and import it as KMS key using the public key and import token from AWS. Apply an Amazon S3 bucket policy on the central logging bucket to require AWS KMS as the encryption source and deny unencrypted object uploads.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Request to provision an AWS Direct Connect connection from the on-premises data center to AWS VPC. Ensure that the network addresses do not overlap. Apply an Amazon S3 bucket policy on the central logging bucket to allow only encrypted object uploads. Configure the application to generate a unique KMS key for each logging event by querying the on-premises HSMs through the Direct Connection network.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003841,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 42,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A leading aerospace engineering company is experiencing high growth and demand on their highly available and fault-tolerant cloud services platform that is hosted in AWS. The technical lead of your team has asked you to virtually extend two existing on-premises data centers into AWS cloud to support an online flight-tracking service that is used by a lot of airline companies. The online service heavily depends on existing, on-premises resources located in multiple data centers and static content that is served from an S3 bucket. To meet the requirement, you launched a dual-tunnel VPN connection between your CGW and VGW.</p><p>In this scenario, which component of your cloud architecture represents a potential single point of failure, which you should consider changing to make the solution more highly available?</p>",
+            "userAnsText": "Create a second Virtual Gateway in a different AZ and a Customer Gateway in a different data center. Create another dual-tunnel connection to ensure high-availability and fault-tolerance.",
+            "correctAnsText": "Create another Customer Gateway in a different data center and set up another dual-tunnel VPN connection.",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Create a second Virtual Gateway in a different AZ and a Customer Gateway in a different data center. Create another dual-tunnel connection to ensure high-availability and fault-tolerance."
+                }
+            ]
+        },
+        {
+            "id": 1003853,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 54,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design for New Solutions",
+            "text": "<p>A company wants to improve the security of its cloud resources by ensuring that all running EC2 instances were launched from pre-approved AMIs only, which are set by the Security team. Their Development team has an agile CI/CD process which should not be stalled by the new automated solution that they’ll implement. Any new application release must be deployed first before the solution could analyze if it is using a pre-approved AMI or not.</p><p>Which of the following options enforces the required controls with the LEAST impact on the development process? (Select TWO.)</p>",
+            "userAnsText": "<p>Set up IAM policies to restrict the ability of users to launch EC2 instances based on a specific set of pre-approved AMIs which were tagged by the Security team.</p><br><p>Set up the required policies, roles, and permissions to a centralized IT Operations team, which will manually process the security approval steps to ensure that EC2 instances are only launched from pre-approved AMIs.</p>",
+            "correctAnsText": "<p>Set up a scheduled Lambda function to search through the list of running EC2 instances within your VPC and determine if any of these are based on unauthorized AMIs. Afterward, publish a new message to an SNS topic to inform the Security team that this occurred and then terminate the EC2 instance.</p><br><p>Set up AWS Config rules to determine any launches of EC2 instances based on non-approved AMIs and then trigger an AWS Lambda function to automatically terminate the instance. Afterward, publish a message to an SNS topic to inform the Security team about the occurrence.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Set up IAM policies to restrict the ability of users to launch EC2 instances based on a specific set of pre-approved AMIs which were tagged by the Security team.</p><br><p>Set up the required policies, roles, and permissions to a centralized IT Operations team, which will manually process the security approval steps to ensure that EC2 instances are only launched from pre-approved AMIs.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003808,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 9,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A company has a web service portal on which users can perform read and write operations to its semi-structured data. The company wants to refactor the current application and leverage AWS-managed services to have more scalability and higher availability. To ensure optimal user experience, the service is expected to respond to short but significant system load spikes. The service must be highly available and fault-tolerant in the event of a regional AWS failure.</p><p>Which of the following options is the suitable solution to meet the company's requirements?</p>",
+            "userAnsText": "<p>Create a primary Amazon S3 bucket to store the semi-structured data. Enable S3 Cross-Region Replication to sync objects to the backup region. Create an Amazon API Gateway and AWS Lambda-based web service on each region, and set them as the origin for the two Amazon CloudFront distributions. Add the company’s domain as an alternate name on the CloudFront distributions. Create Amazon Route 53 Alias records pointed to each distribution using a failover routing policy.</p>",
+            "correctAnsText": "<p>Create an Amazon DynamoDB global table to store the semi-structured data on two Regions. Use on-demand capacity mode to allow DynamoDB scaling. Run the web service on an Auto Scaling Amazon ECS Fargate cluster on each region. Place each Fargate cluster behind their own Application Load Balancer (ALB). Create Amazon Route 53 Alias records pointed to each ALB in using latency routing policy with health checks enabled.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create a primary Amazon S3 bucket to store the semi-structured data. Enable S3 Cross-Region Replication to sync objects to the backup region. Create an Amazon API Gateway and AWS Lambda-based web service on each region, and set them as the origin for the two Amazon CloudFront distributions. Add the company’s domain as an alternate name on the CloudFront distributions. Create Amazon Route 53 Alias records pointed to each distribution using a failover routing policy.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003844,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 45,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A leading commercial bank has a hybrid network architecture and is extensively using AWS for its day-to-day operations. The bank uses an Amazon S3 bucket to store sensitive bank records. It has versioning enabled and does not have any encryption. The new solutions architect for the company was asked to implement Server-Side Encryption with Customer-Provided Encryption Keys (SSE-C) for the Amazon S3 bucket to ensure data inside it is secured both at rest and in transit.</p><p>Which of the following options should the solutions architect implement to achieve the company requirements? (Select TWO.)</p>",
+            "userAnsText": "<p>For Amazon S3 REST API calls, use the following HTTP Request Headers:\n\n<code>x-amz-server-side​-encryption​-customer-algorithm</code> \n<code>x-amz-server-side​-encryption​-customer-key</code>\n<code>x-amz-server-side​-encryption​-customer-key-MD5</code></p><br><p>For presigned URLs, specify the algorithm using the <code>x-amz-server-side​-encryption​-customer-key-MD5</code> request header</p>",
+            "correctAnsText": "<p>For Amazon S3 REST API calls, use the following HTTP Request Headers:\n\n<code>x-amz-server-side​-encryption​-customer-algorithm</code> \n<code>x-amz-server-side​-encryption​-customer-key</code>\n<code>x-amz-server-side​-encryption​-customer-key-MD5</code></p><br><p>For presigned URLs, specify the algorithm using the <code>x-amz-server-side​-encryption​-customer-algorithm</code> request header</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>For Amazon S3 REST API calls, use the following HTTP Request Headers:\n\n<code>x-amz-server-side​-encryption​-customer-algorithm</code> \n<code>x-amz-server-side​-encryption​-customer-key</code>\n<code>x-amz-server-side​-encryption​-customer-key-MD5</code></p><br><p>For presigned URLs, specify the algorithm using the <code>x-amz-server-side​-encryption​-customer-key-MD5</code> request header</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003868,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 69,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design Solutions for Organizational Complexity",
+            "text": "<p>A multinational corporation has recently acquired a smaller company. The solutions architect was instructed to consolidate the multiple AWS accounts of both entities using AWS Organizations. The solutions architect has set up the required service control policies (SCPs) to simplify the process of controlling access permissions for each individual account and Organizational Units (OUs). However, one account is having trouble creating a new S3 bucket, and it is required to investigate the cause of this issue. The account has the following SCP attached:</p><div class=\"ud-component--base-components--code-block\"><div><pre class=\"prettyprint linenums prettyprinted\" role=\"presentation\" style=\"\"><ol class=\"linenums\"><li class=\"L0\"><span class=\"pun\">{</span></li><li class=\"L1\"><span class=\"str\">\"Version\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"2012-10-17\"</span><span class=\"pun\">,</span></li><li class=\"L2\"><span class=\"str\">\"Statement\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"pun\">[</span></li><li class=\"L3\"><span class=\"pln\">  </span><span class=\"pun\">{</span></li><li class=\"L4\"><span class=\"pln\">    </span><span class=\"str\">\"Effect\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"Allow\"</span><span class=\"pun\">,</span></li><li class=\"L5\"><span class=\"pln\">    </span><span class=\"str\">\"Action\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"cloudtrail:*\"</span><span class=\"pun\">,</span></li><li class=\"L6\"><span class=\"pln\">    </span><span class=\"str\">\"Resource\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"*\"</span></li><li class=\"L7\"><span class=\"pln\">  </span><span class=\"pun\">},</span></li><li class=\"L8\"><span class=\"pln\">  </span><span class=\"pun\">{</span></li><li class=\"L9\"><span class=\"pln\">    </span><span class=\"str\">\"Effect\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"Allow\"</span><span class=\"pun\">,</span></li><li class=\"L0\"><span class=\"pln\">    </span><span class=\"str\">\"Action\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"iam:*\"</span><span class=\"pun\">,</span></li><li class=\"L1\"><span class=\"pln\">    </span><span class=\"str\">\"Resource\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"*\"</span></li><li class=\"L2\"><span class=\"pln\">  </span><span class=\"pun\">}</span></li><li class=\"L3\"><span class=\"pln\"> </span><span class=\"pun\">]</span></li><li class=\"L4\"><span class=\"pun\">}</span></li></ol></pre></div></div><p><br></p><p>Each IAM user of the account has the following IAM policy attached:</p><p><br></p><div class=\"ud-component--base-components--code-block\"><div><pre class=\"prettyprint linenums prettyprinted\" role=\"presentation\" style=\"\"><ol class=\"linenums\"><li class=\"L0\"><span class=\"pun\">{</span></li><li class=\"L1\"><span class=\"str\">\"Version\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"2012-10-17\"</span><span class=\"pun\">,</span></li><li class=\"L2\"><span class=\"str\">\"Statement\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"pun\">[</span></li><li class=\"L3\"><span class=\"pln\">  </span><span class=\"pun\">{</span></li><li class=\"L4\"><span class=\"pln\">    </span><span class=\"str\">\"Effect\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"Allow\"</span><span class=\"pun\">,</span></li><li class=\"L5\"><span class=\"pln\">    </span><span class=\"str\">\"Action\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"s3:*\"</span><span class=\"pun\">,</span></li><li class=\"L6\"><span class=\"pln\">    </span><span class=\"str\">\"Resource\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"pun\">[</span></li><li class=\"L7\"><span class=\"pln\">     </span><span class=\"str\">\"arn:aws:s3:::*\"</span></li><li class=\"L8\"><span class=\"pun\">]</span></li><li class=\"L9\"><span class=\"pun\">},</span></li><li class=\"L0\"><span class=\"pln\">  </span><span class=\"pun\">{</span></li><li class=\"L1\"><span class=\"pln\">    </span><span class=\"str\">\"Effect\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"Deny\"</span><span class=\"pun\">,</span></li><li class=\"L2\"><span class=\"pln\">    </span><span class=\"str\">\"NotAction\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"str\">\"s3:*\"</span><span class=\"pun\">,</span></li><li class=\"L3\"><span class=\"pln\">    </span><span class=\"str\">\"NotResource\"</span><span class=\"pun\">:</span><span class=\"pln\"> </span><span class=\"pun\">[</span></li><li class=\"L4\"><span class=\"pln\">     </span><span class=\"str\">\"arn:aws:s3:::*\"</span></li><li class=\"L5\"><span class=\"pln\">   </span><span class=\"pun\">]</span></li><li class=\"L6\"><span class=\"pln\">  </span><span class=\"pun\">}</span></li><li class=\"L7\"><span class=\"pln\"> </span><span class=\"pun\">]</span></li><li class=\"L8\"><span class=\"pun\">}</span></li></ol></pre></div></div><p><br></p><p>Based on the provided SCP and IAM policy, which of the following options could be the possible root cause of this problem?</p>",
+            "userAnsText": "<p>The IAM policy is the root cause because you have denied user permissions to execute any S3-related actions.</p>",
+            "correctAnsText": "<p>The SCP is the root cause since it does not explicitly allow the required action that would enable the account to create an S3 bucket.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>The IAM policy is the root cause because you have denied user permissions to execute any S3-related actions.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003804,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 5,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Continuous Improvement for Existing Solutions",
+            "text": "<p>A visual effects studio has over 40-TB worth of video files stored in the company's on-premises tape library. The tape drives are managed by a Media Asset Management (MAM) solution. The video files contain a variety of footage which includes faces, objects, sceneries, cars, and many others. The company wants to automatically build a metadata library for the video files based on these objects. This will then be used as a catalog for the search feature of the MAM solution. The company already has a catalog of people’s photos and names that appeared on the video footage. The company wants to migrate all the video files of the MAM solution to AWS so a Direct Connect connection was provisioned from the on-premises data center to AWS to facilitate this.</p><p>Which of the following is the MOST suitable implementation that will meet the company's requirements?</p>",
+            "userAnsText": "<p>Create a stream in Amazon Kinesis Video Streams that will ingest the videos from the MAM system and store the videos to an Amazon S3 bucket. Configure the MAM solution to stream the videos into Kinesis Video Streams. Use Amazon Rekognition to build a collection based on the videos by using the catalog of people’s faces and names. Set up a stream consumer that will retrieve the generated metadata and then push it to the MAM solution search catalog.</p>",
+            "correctAnsText": "<p>Provision an AWS Storage Gateway – file gateway appliance on the on-premises data center. Configure the MAM solution to extract the video files from the current tape archives and move them to the file gateway share which is then synced to Amazon S3. Use Amazon Rekognition to build a collection based on the videos by using the catalog of people’s faces and names. Create an AWS Lambda function that will invoke Rekognition to pull the video files from the S3 bucket, retrieve the generated metadata and then push it to the MAM solution search catalog.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Create a stream in Amazon Kinesis Video Streams that will ingest the videos from the MAM system and store the videos to an Amazon S3 bucket. Configure the MAM solution to stream the videos into Kinesis Video Streams. Use Amazon Rekognition to build a collection based on the videos by using the catalog of people’s faces and names. Set up a stream consumer that will retrieve the generated metadata and then push it to the MAM solution search catalog.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003834,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 35,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design for New Solutions",
+            "text": "<p>A company has a multi-tier web application hosted in AWS. It leverages Amazon CloudFront to reliably scale and quickly serve requests from users around the world. After several months in operation, the company received user complaints of slow response time from the web application. The monitoring team reported that the CloudFront cache hit ratio metric is steadily dropping for the past months. This metric indicates that there are inconsistent query strings on user requests and queries that contain upper-case or mixed-case letters. These requests cause CloudFront to send unnecessary origin queries.</p><p>Which of the following actions will increase the cache hit ratio of the CloudFront distribution?</p>",
+            "userAnsText": "<p>Reconfigure the CloudFront distribution to remove the caching behavior based on query string parameters. This will cache the requests regardless of the order or case of the query parameters.</p>",
+            "correctAnsText": "<p>Write a Lamda@Edge function that will normalize the query parameters by sorting them in alphabetical order and converting them into lower case. Deploy this function with the CloudFront distribution and set “viewer request” as the trigger to invoke the function.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "<p>Reconfigure the CloudFront distribution to remove the caching behavior based on query string parameters. This will cache the requests regardless of the order or case of the query parameters.</p>"
+                }
+            ]
+        },
+        {
+            "id": 1003843,
+            "examId": 100071,
+            "examKey": "exam3",
+            "examIndex": 3,
+            "examName": "AWS Certified Solutions Architect Professional - JBS - 3",
+            "qNum": 44,
+            "attempts": 1,
+            "streak": [
+                "fail"
+            ],
+            "status": "new",
+            "domain": "Domain - Design for New Solutions",
+            "text": "<p>A small telecommunications company has recently adopted a hybrid cloud architecture with AWS. They are storing static files of their on-premises web application on a 5 TB gateway-stored volume in AWS Storage Gateway, which is attached to the application server via an iSCSI interface. As part of their disaster recovery plan, they should be able to run the web application on AWS in case their on-premises network encountered any technical issues.</p><p>Which of the following options is the MOST suitable solution that you should implement?</p>",
+            "userAnsText": "Restore the static content by&nbsp;attaching the AWS Storage Gateway to the EC2 instance that hosts the application server.",
+            "correctAnsText": "<p>Generate an EBS snapshot of the static content from the AWS Storage Gateway service. Afterward, restore it to an EBS volume that you can then attach to the EC2 instance where the application server is hosted.</p>",
+            "explanation": "",
+            "lastAttemptAt": "2026-09-19T17:21:15.92+00:00",
+            "attemptHistory": [
+                {
+                    "attemptNumber": 1,
+                    "attemptAt": "2026-09-19T17:21:15.92+00:00",
+                    "isCorrect": false,
+                    "selectedAnswerText": "Restore the static content by&nbsp;attaching the AWS Storage Gateway to the EC2 instance that hosts the application server."
+                }
+            ]
+        }
+    ],
+    "pagination": {
+        "page": 1,
+        "limit": 50,
+        "total": 22,
+        "totalPages": 1
+    }
+}
