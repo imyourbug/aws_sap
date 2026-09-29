@@ -14,7 +14,7 @@
       --card: #111a2e;
       --border: #1e293b;
       --border-strong: #334155;
-      --text: #e2e8f0;
+      --text: #c4ccd8;
       --text-dim: #94a3b8;
       --accent: #3b82f6;
       --accent-soft: rgba(59, 130, 246, .15);
@@ -333,6 +333,45 @@
     .explanation table { border-collapse: collapse; display: block; overflow-x: auto; }
     .explanation th, .explanation td { border: 1px solid var(--border-strong); padding: 4px 8px; }
 
+    /* ---------- Lịch sử ---------- */
+    .save-banner {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+      margin-bottom: 16px; padding: 10px 14px; border-radius: 8px;
+      border: 1px solid var(--amber); background: rgba(245, 158, 11, .08); font-size: 14px;
+    }
+    .save-banner .warn { color: var(--amber); font-weight: 600; }
+    .save-banner .err { color: var(--red); font-weight: 600; }
+    .save-banner button { height: 34px; font-size: 14px; }
+    .hist-card { margin-top: 16px; padding: 16px 18px; border-radius: 8px; border: 1px solid var(--border); background: var(--card); }
+    .hist-card h2 { margin: 0 0 12px; font-size: 16px; }
+    .file-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .file-status { font-size: 14px; color: var(--text-dim); }
+    .file-status b { color: var(--text); }
+    .file-status .ok { color: var(--green); }
+    .file-status .warn { color: var(--amber); }
+    .file-status .err { color: var(--red); }
+    .file-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .file-actions button { height: 36px; font-size: 14px; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 14px; }
+    .stat { padding: 10px 14px; border-radius: 6px; border: 1px solid var(--border); }
+    .stat .v { font-size: 24px; font-weight: 800; font-variant-numeric: tabular-nums; }
+    .stat .l { font-size: 13px; color: var(--text-dim); }
+    .stat.good .v { color: var(--green); }
+    .stat.bad .v { color: var(--red); }
+    .table-wrap { overflow-x: auto; }
+    table.hist { width: 100%; border-collapse: collapse; font-size: 14px; }
+    table.hist th, table.hist td { padding: 7px 10px; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
+    table.hist th { color: var(--text-dim); font-weight: 600; font-size: 13px; }
+    table.hist td.num, table.hist th.num { text-align: right; font-variant-numeric: tabular-nums; }
+    table.hist .up { color: var(--green); }
+    table.hist .down { color: var(--red); }
+    table.hist .muted { color: var(--text-dim); }
+    table.hist button { height: 28px; padding: 0 10px; font-size: 13px; }
+    .fixbar { display: flex; width: 160px; height: 8px; border-radius: 999px; overflow: hidden; background: var(--border-strong); }
+    .fixbar i { display: block; height: 100%; }
+    .fixbar .g { background: var(--green); }
+    .fixbar .r { background: var(--red); }
+
     [hidden] { display: none !important; }
 
     @media (max-width: 900px) {
@@ -356,6 +395,9 @@
       <span id="quiz-title">Quiz</span>
     </div>
     <div class="top-actions">
+      <button class="icon-btn" id="btn-history" title="Lịch sử & tiến bộ">
+        <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l3 2" /></svg>
+      </button>
       <button class="icon-btn" id="btn-home" title="Chọn lĩnh vực">
         <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" /><rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" /></svg>
       </button>
@@ -375,7 +417,54 @@
         </div>
         <label class="switch"><input type="checkbox" id="opt-shuffle" /> Xáo trộn thứ tự câu hỏi</label>
       </div>
+      <div class="save-banner" id="save-banner" hidden>
+        <div class="msg"></div>
+        <button class="btn-primary">Chọn thư mục history</button>
+      </div>
       <div class="topic-grid" id="topic-grid"></div>
+    </div>
+  </section>
+
+  <!-- ---------- Màn hình lịch sử ---------- -->
+  <section class="home" id="history" hidden>
+    <div class="home-inner">
+      <div class="home-head">
+        <div>
+          <h1>Lịch sử &amp; tiến bộ</h1>
+          <p>So sánh các lần thi với tình trạng ban đầu (315 câu sai và điểm devcloudly trước khi ôn).</p>
+        </div>
+        <button class="btn-outline" id="btn-history-back">← Chọn lĩnh vực</button>
+      </div>
+
+      <div class="hist-card">
+        <h2>File lịch sử</h2>
+        <div class="file-row">
+          <div class="file-status" id="file-status"></div>
+          <div class="file-actions">
+            <button class="btn-primary" id="btn-link-file">Chọn thư mục history</button>
+            <button class="btn-outline" id="btn-grant-file" hidden>Cấp quyền ghi file</button>
+            <button class="btn-outline" id="btn-export">Tải file JSON</button>
+            <button class="btn-outline" id="btn-import">Nhập từ file</button>
+            <input type="file" id="import-input" accept=".json,application/json" hidden />
+          </div>
+        </div>
+      </div>
+
+      <div class="hist-card">
+        <h2>315 câu từng làm sai: tình trạng hiện tại</h2>
+        <div class="stat-row" id="fix-stats"></div>
+        <div class="table-wrap"><table class="hist" id="fix-table"></table></div>
+      </div>
+
+      <div class="hist-card">
+        <h2>Theo đề / lĩnh vực</h2>
+        <div class="table-wrap"><table class="hist" id="quiz-table"></table></div>
+      </div>
+
+      <div class="hist-card">
+        <h2>Các lần thi</h2>
+        <div class="table-wrap"><table class="hist" id="attempt-table"></table></div>
+      </div>
     </div>
   </section>
 
@@ -492,6 +581,7 @@
       count: e.count,
       multi: e.multi,
       wrong: e.wrong,
+      baselinePct: e.baselinePct,
       file: e.file,
       questions: null,
     }));
@@ -554,6 +644,7 @@
         paused: false,
         submitted: false,
         order: $("opt-shuffle").checked ? shuffled(quiz.questions.map((q) => q.id)) : null,
+        startedAt: new Date().toISOString(),
       };
     }
 
@@ -825,6 +916,7 @@
       state.result = scoreOf(state, quiz);
       clearInterval(tickHandle);
       save();
+      recordAttempt();
       renderAll();
       renderPauseState();
       if (timeUp) alert("Hết giờ! Bài làm đã được nộp tự động.");
@@ -893,6 +985,7 @@
 
       $("quiz-title").textContent = (z.code && z.code !== "#" && z.code !== "★" ? z.code + " " : "") + z.name;
       $("home").hidden = true;
+      $("history").hidden = true;
       $("quiz-screen").hidden = false;
       $("filter-status").value = "all";
       initSections();
@@ -903,7 +996,7 @@
       $("main").scrollTop = 0;
     }
 
-    function showHome() {
+    function leaveQuiz() {
       if (quiz) {
         pause();
         save();
@@ -913,6 +1006,11 @@
       try { localStorage.removeItem("quiz-active"); } catch (e) { }
       $("quiz-title").textContent = "Quiz";
       $("quiz-screen").hidden = true;
+    }
+
+    function showHome() {
+      leaveQuiz();
+      $("history").hidden = true;
       $("home").hidden = false;
       renderHome();
     }
@@ -959,7 +1057,8 @@
           '<h3><span class="code">' + z.code + "</span><span>" + escapeHtml(z.name) + "</span></h3>" +
           '<div class="topic-meta"><span>' + countOf(z) + " câu</span><span>" + minutesOf(z) + " phút</span>" +
           '<span>' + multiOf(z) + " câu nhiều đáp án</span>" +
-          (z.wrong ? "<span>" + z.wrong + " câu từng sai</span>" : "") + "</div>" +
+          (z.wrong ? "<span>" + z.wrong + " câu từng sai</span>" : "") +
+          (z.baselinePct != null ? "<span>Ban đầu: " + z.baselinePct + "%</span>" : "") + "</div>" +
           '<div class="topic-status ' + statusCls + '">' + status + "</div>" +
           '<div class="topic-actions"></div>';
 
@@ -968,7 +1067,10 @@
           const b = document.createElement("button");
           b.className = cls;
           b.textContent = label;
-          b.onclick = fn;
+          b.onclick = () => {
+            ensureSavePermission();
+            fn();
+          };
           actions.appendChild(b);
         };
         if (saved && saved.submitted) {
@@ -984,6 +1086,303 @@
         }
         grid.appendChild(card);
       });
+    }
+
+    // ---------- Lịch sử thi ----------
+    // Mỗi lần nộp bài được thêm vào localStorage ("quiz-history") rồi ghi ra history/quiz-history.json
+    // trong thư mục người dùng chọn một lần (File System Access API, Chrome/Edge). Handle thư mục được
+    // giữ trong IndexedDB; mỗi phiên trình duyệt mới có thể cần bấm cấp quyền lại một lần.
+    // Trình duyệt không hỗ trợ: dùng nút Tải file JSON / Nhập từ file.
+    const HISTORY_KEY = "quiz-history";
+    const DELETED_KEY = "quiz-history-deleted";
+    const HISTORY_DIR_KEY = "history-dir";
+    const HISTORY_FILE = "quiz-history.json";
+    const canPickDir = "showDirectoryPicker" in window;
+    const WRONG_IDS = new Set(TOPICS.flatMap((t) => t.questions.map((q) => q.id)));
+
+    let history = [];
+    let deletedIds = new Set();   // lần thi đã xóa, để lần gộp sau không khôi phục lại
+    let dirHandle = null;
+    let fileState = { status: "none", at: null, msg: "" };   // none | ok | pending | error
+
+    function idb(mode, fn) {
+      return new Promise((resolve, reject) => {
+        const open = indexedDB.open("quiz-db", 1);
+        open.onupgradeneeded = () => open.result.createObjectStore("kv");
+        open.onerror = () => reject(open.error);
+        open.onsuccess = () => {
+          const tx = open.result.transaction("kv", mode);
+          const req = fn(tx.objectStore("kv"));
+          tx.oncomplete = () => resolve(req.result);
+          tx.onerror = () => reject(tx.error);
+        };
+      });
+    }
+
+    function loadHistory() {
+      try { history = JSON.parse(localStorage.getItem(HISTORY_KEY)) || []; } catch (e) { history = []; }
+      try { deletedIds = new Set(JSON.parse(localStorage.getItem(DELETED_KEY)) || []); } catch (e) { deletedIds = new Set(); }
+    }
+
+    function storeHistory() {
+      try {
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+        localStorage.setItem(DELETED_KEY, JSON.stringify([...deletedIds]));
+      } catch (e) { }
+    }
+
+    function mergeAttempts(list, deleted) {
+      (deleted || []).forEach((id) => deletedIds.add(id));
+      history = history.filter((a) => !deletedIds.has(a.id));
+      const ids = new Set(history.map((a) => a.id));
+      let added = 0;
+      (list || []).forEach((a) => {
+        if (a && a.id && a.quizKey && !ids.has(a.id) && !deletedIds.has(a.id)) {
+          history.push(a);
+          ids.add(a.id);
+          added++;
+        }
+      });
+      history.sort((a, b) => a.submittedAt.localeCompare(b.submittedAt));
+      return added;
+    }
+
+    function historyPayload() {
+      return {
+        app: "aws-sap-quiz",
+        version: 1,
+        savedAt: new Date().toISOString(),
+        baseline: {
+          note: "Tình trạng trước khi ôn: 315 câu sai trong 1.json…12.json và điểm devcloudly của từng đề.",
+          wrongQuestionIds: [...WRONG_IDS],
+          exams: EXAMS.map((e) => ({ key: e.key, name: e.name, count: e.count, wrong: e.wrong, pct: e.baselinePct })),
+        },
+        attempts: history,
+        deleted: [...deletedIds],
+      };
+    }
+
+    function recordAttempt() {
+      const res = state.result;
+      history.push({
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2, 7),
+        quizKey: quiz.key,
+        quizName: quizLabel(quiz),
+        startedAt: state.startedAt || null,
+        submittedAt: new Date().toISOString(),
+        durationMs: examMinutes * 60 * 1000 - state.remainingMs,
+        total: total,
+        correct: res.correct,
+        pct: res.pct,
+        passed: res.pct >= passPercent,
+        answers: questionData.map((q, i) => ({ id: q.id, chosen: (state.answers[i] || []).slice().sort(), ok: isCorrect(i) })),
+      });
+      storeHistory();
+      saveHistory(true);
+    }
+
+    async function readFolderHistory() {
+      try {
+        const fh = await dirHandle.getFileHandle(HISTORY_FILE);
+        const text = await (await fh.getFile()).text();
+        return text.trim() ? JSON.parse(text) : null;
+      } catch (e) {
+        if (e.name === "NotFoundError") return null;
+        throw e;
+      }
+    }
+
+    // Gộp với file hiện có trong thư mục (có thể do máy/trình duyệt khác ghi) rồi ghi đè.
+    // interactive = true chỉ khi đang trong một thao tác bấm của người dùng (được phép hỏi quyền).
+    async function saveHistory(interactive) {
+      if (!dirHandle) return renderSaveStatus();
+      try {
+        let perm = await dirHandle.queryPermission({ mode: "readwrite" });
+        if (perm !== "granted" && interactive) perm = await dirHandle.requestPermission({ mode: "readwrite" });
+        if (perm !== "granted") {
+          fileState = { status: "pending", at: fileState.at, msg: "" };
+        } else {
+          const data = await readFolderHistory();
+          if (data) mergeAttempts(data.attempts, data.deleted);
+          storeHistory();
+          const fh = await dirHandle.getFileHandle(HISTORY_FILE, { create: true });
+          const w = await fh.createWritable();
+          await w.write(JSON.stringify(historyPayload(), null, 1));
+          await w.close();
+          fileState = { status: "ok", at: new Date(), msg: "" };
+        }
+      } catch (e) {
+        fileState = { status: "error", at: fileState.at, msg: e.message };
+      }
+      renderSaveStatus();
+      if (!$("history").hidden) renderHistory();
+    }
+
+    // Gọi trong các nút bấm chính: nếu đang chờ quyền thì tận dụng lượt bấm đó để hỏi quyền.
+    function ensureSavePermission() {
+      if (dirHandle && fileState.status !== "ok") saveHistory(true);
+    }
+
+    async function linkHistoryFolder() {
+      let h;
+      try {
+        h = await showDirectoryPicker({ id: "quiz-history", mode: "readwrite", startIn: "desktop" });
+      } catch (e) { return; }   // người dùng bấm Hủy
+      if (h.name !== "history" && !confirm('Thư mục đã chọn tên là "' + h.name + '", không phải "history". Vẫn dùng thư mục này?')) return;
+      dirHandle = h;
+      try { await idb("readwrite", (st) => st.put(h, HISTORY_DIR_KEY)); } catch (e) { }
+      await saveHistory(true);
+    }
+
+    async function restoreHistoryFolder() {
+      if (!canPickDir) return renderSaveStatus();
+      try { dirHandle = (await idb("readonly", (st) => st.get(HISTORY_DIR_KEY))) || null; } catch (e) { dirHandle = null; }
+      await saveHistory(false);
+      if (!$("home").hidden) renderHome();
+    }
+
+    function saveStatusHtml() {
+      const where = dirHandle ? "<b>" + escapeHtml(dirHandle.name) + "/" + HISTORY_FILE + "</b>" : "";
+      const at = fileState.at ? " lúc " + fileState.at.toLocaleTimeString() : "";
+      if (!canPickDir)
+        return '<span class="warn">Trình duyệt này không hỗ trợ ghi file.</span> Hãy mở bằng Chrome hoặc Edge, hoặc dùng "Tải file JSON" để sao lưu.';
+      if (!dirHandle)
+        return '<span class="warn">Chưa chọn thư mục lưu.</span> Bấm "Chọn thư mục history" (chỉ cần làm 1 lần). Hiện lịch sử chỉ nằm trong trình duyệt (' + history.length + " lần thi).";
+      if (fileState.status === "ok")
+        return '<span class="ok">● Tự động lưu</span> vào ' + where + at + " (" + history.length + " lần thi).";
+      if (fileState.status === "pending")
+        return '<span class="warn">● Chrome cần bạn cho phép lại</span> để tiếp tục lưu vào ' + where + ".";
+      return '<span class="err">● Lỗi ghi file</span> ' + where + ": " + escapeHtml(fileState.msg);
+    }
+
+    function renderSaveStatus() {
+      const needAction = canPickDir && (!dirHandle || fileState.status !== "ok");
+      $("file-status").innerHTML = saveStatusHtml();
+      $("btn-link-file").hidden = !canPickDir;
+      $("btn-link-file").textContent = dirHandle ? "Đổi thư mục" : "Chọn thư mục history";
+      $("btn-grant-file").hidden = !(dirHandle && fileState.status !== "ok");
+
+      const banner = $("save-banner");
+      banner.hidden = !needAction;
+      if (needAction) {
+        banner.querySelector(".msg").innerHTML = saveStatusHtml();
+        banner.querySelector("button").textContent = dirHandle ? "Cho phép lưu" : "Chọn thư mục history";
+      }
+    }
+
+    function exportHistory() {
+      const blob = new Blob([JSON.stringify(historyPayload(), null, 1)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "quiz-history-" + new Date().toISOString().slice(0, 10) + ".json";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    }
+
+    async function importHistory(file) {
+      try {
+        const data = JSON.parse(await file.text());
+        const added = mergeAttempts(data.attempts || data, data.deleted);
+        storeHistory();
+        await saveHistory(true);
+        renderHistory();
+        alert("Đã nhập " + added + " lần thi mới.");
+      } catch (e) {
+        alert("File không hợp lệ: " + e.message);
+      }
+    }
+
+    function deleteAttempt(id) {
+      if (!confirm("Xóa lần thi này khỏi lịch sử (cả trong file)?")) return;
+      history = history.filter((a) => a.id !== id);
+      deletedIds.add(id);
+      storeHistory();
+      saveHistory(true);
+      renderHistory();
+    }
+
+    const quizLabel = (z) => (z.code === "Đề" ? "Đề " : z.code && z.code !== "#" && z.code !== "★" ? z.code + " " : "") + z.name;
+    const fmtDate = (iso) => new Date(iso).toLocaleString("vi-VN", { dateStyle: "short", timeStyle: "short" });
+    const pctCell = (v) => (v == null ? '<td class="num muted">—</td>' : '<td class="num">' + v + "%</td>");
+    function deltaCell(v, base) {
+      if (v == null || base == null) return '<td class="num muted">—</td>';
+      const d = Math.round((v - base) * 10) / 10;
+      return '<td class="num ' + (d > 0 ? "up" : d < 0 ? "down" : "muted") + '">' + (d > 0 ? "+" : "") + d + "</td>";
+    }
+
+    function showHistory() {
+      leaveQuiz();
+      $("home").hidden = true;
+      $("history").hidden = false;
+      renderHistory();
+    }
+
+    function renderHistory() {
+      renderSaveStatus();
+
+      // Trạng thái mới nhất của từng câu từng sai (theo lần thi gần nhất có câu đó).
+      const latest = new Map();
+      history.forEach((a) => a.answers.forEach((x) => {
+        if (WRONG_IDS.has(x.id) && x.chosen.length) latest.set(x.id, x.ok);
+      }));
+      const fixed = [...latest.values()].filter(Boolean).length;
+      const still = latest.size - fixed;
+      const untouched = WRONG_IDS.size - latest.size;
+      $("fix-stats").innerHTML =
+        '<div class="stat good"><div class="v">' + fixed + '</div><div class="l">Đã làm đúng lại</div></div>' +
+        '<div class="stat bad"><div class="v">' + still + '</div><div class="l">Vẫn sai</div></div>' +
+        '<div class="stat"><div class="v">' + untouched + '</div><div class="l">Chưa làm lại</div></div>' +
+        '<div class="stat"><div class="v">' + Math.round((fixed / (WRONG_IDS.size || 1)) * 100) + '%</div><div class="l">Đã khắc phục / ' + WRONG_IDS.size + "</div></div>";
+
+      let rows = '<tr><th>Lĩnh vực</th><th class="num">Câu sai ban đầu</th><th class="num">Đã đúng</th><th class="num">Vẫn sai</th><th class="num">Chưa làm</th><th></th></tr>';
+      TOPICS.forEach((t) => {
+        const n = t.questions.length;
+        let ok = 0, bad = 0;
+        t.questions.forEach((q) => {
+          if (!latest.has(q.id)) return;
+          latest.get(q.id) ? ok++ : bad++;
+        });
+        rows += "<tr><td>" + t.code + " " + escapeHtml(t.name) + '</td><td class="num">' + n + '</td><td class="num up">' + ok +
+          '</td><td class="num down">' + bad + '</td><td class="num muted">' + (n - ok - bad) + "</td>" +
+          '<td><div class="fixbar"><i class="g" style="width:' + (ok / n) * 100 + '%"></i><i class="r" style="width:' + (bad / n) * 100 + '%"></i></div></td></tr>';
+      });
+      $("fix-table").innerHTML = rows;
+
+      // Theo từng bộ đề: ban đầu, lần đầu ở đây, gần nhất, tốt nhất.
+      rows = '<tr><th>Bài</th><th class="num">Ban đầu</th><th class="num">Lần đầu</th><th class="num">Gần nhất</th><th class="num">± so ban đầu</th><th class="num">Tốt nhất</th><th class="num">Số lần</th></tr>';
+      let any = false;
+      QUIZZES.forEach((z) => {
+        const list = history.filter((a) => a.quizKey === z.key);
+        const base = z.baselinePct != null ? z.baselinePct : z.key.startsWith("topic-") ? 0 : null;
+        if (!list.length && z.baselinePct == null) return;
+        any = true;
+        const last = list.length ? list[list.length - 1].pct : null;
+        const best = list.length ? Math.max(...list.map((a) => a.pct)) : null;
+        rows += "<tr><td>" + escapeHtml(quizLabel(z)) + "</td>" + pctCell(base) + pctCell(list.length ? list[0].pct : null) +
+          pctCell(last) + deltaCell(last, base) + pctCell(best) + '<td class="num">' + list.length + "</td></tr>";
+      });
+      $("quiz-table").innerHTML = any ? rows : '<tr><td class="muted">Chưa có dữ liệu.</td></tr>';
+
+      // Danh sách các lần thi, mới nhất trước.
+      if (!history.length) {
+        $("attempt-table").innerHTML = '<tr><td class="muted">Chưa có lần thi nào. Nộp bài xong, kết quả sẽ hiện ở đây.</td></tr>';
+        return;
+      }
+      rows = '<tr><th>Thời gian</th><th>Bài</th><th class="num">Điểm</th><th class="num">Đúng</th><th class="num">Câu từng sai làm đúng</th><th class="num">Thời lượng</th><th></th></tr>';
+      history.slice().reverse().forEach((a) => {
+        const w = a.answers.filter((x) => WRONG_IDS.has(x.id));
+        rows += "<tr><td>" + fmtDate(a.submittedAt) + "</td><td>" + escapeHtml(a.quizName) + "</td>" +
+          '<td class="num ' + (a.passed ? "up" : "down") + '">' + a.pct + "%</td>" +
+          '<td class="num">' + a.correct + "/" + a.total + "</td>" +
+          '<td class="num">' + (w.length ? w.filter((x) => x.ok).length + "/" + w.length : "—") + "</td>" +
+          '<td class="num">' + formatTime(a.durationMs) + "</td>" +
+          '<td><button class="btn-outline" data-del="' + a.id + '">Xóa</button></td></tr>';
+      });
+      const table = $("attempt-table");
+      table.innerHTML = rows;
+      table.querySelectorAll("[data-del]").forEach((b) => (b.onclick = () => deleteAttempt(b.dataset.del)));
     }
 
     // ---------- Theme ----------
@@ -1007,6 +1406,20 @@
       $("btn-submit").onclick = () => submit(false);
       $("btn-reset").onclick = reset;
       $("btn-home").onclick = showHome;
+      $("btn-history").onclick = showHistory;
+      $("btn-history-back").onclick = showHome;
+      $("btn-link-file").onclick = linkHistoryFolder;
+      $("btn-grant-file").onclick = () => saveHistory(true);
+      $("save-banner").querySelector("button").onclick = () => (dirHandle ? saveHistory(true) : linkHistoryFolder());
+      $("btn-submit").addEventListener("pointerdown", ensureSavePermission);
+      $("btn-export").onclick = exportHistory;
+      $("btn-import").onclick = () => $("import-input").click();
+      $("import-input").onchange = (e) => {
+        if (e.target.files[0]) importHistory(e.target.files[0]);
+        e.target.value = "";
+      };
+      loadHistory();
+      restoreHistoryFolder();
       $("btn-collapse").onclick = () => $("sidebar").classList.add("collapsed");
       $("btn-open-sidebar").onclick = () => $("sidebar").classList.toggle("collapsed");
       $("btn-theme").onclick = () =>

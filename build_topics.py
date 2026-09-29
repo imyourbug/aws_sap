@@ -5,6 +5,7 @@
   - AWS_SAP_Weak_Topics_Roadmap.md     : mục 6 xếp mỗi câu `[Đề] Q#` vào 1 lĩnh vực
   - raw/devcloudly_sap_exams.json      : {examId: [question, ...]} lấy từ /api/exams/{id}/results/{resultId}
   - raw/explanations/exam_{id}.json    : giải thích công khai (R2) của từng đề
+  - raw/baseline.json                  : điểm devcloudly ban đầu của từng đề (để so sánh tiến bộ)
 
 Đầu ra:
   - questions.json          : toàn bộ câu sai với đủ lựa chọn, đáp án, giải thích
@@ -72,6 +73,7 @@ def build_exams(crawled, expl, wrong, topic_of):
     """Xuất đầy đủ từng đề. Q# trên devcloudly = (thứ tự theo id + offset) mod n,
     offset của mỗi đề suy ra từ qNum của các câu sai."""
     names = {w["examId"]: exam_label(w["examName"]) for w in wrong}
+    baseline = json.load(open(os.path.join(RAW, "baseline.json"), encoding="utf-8"))
     os.makedirs(EXAM_DIR, exist_ok=True)
     for f in glob.glob(os.path.join(EXAM_DIR, "*")):
         os.remove(f)
@@ -104,6 +106,7 @@ def build_exams(crawled, expl, wrong, topic_of):
             "count": n,
             "multi": sum(q["multiple"] for q in out),
             "wrong": sum("topic" in q for q in out),
+            "baselinePct": baseline.get(exam_id),
             "file": "exams/" + fname,
         })
         print("Đề %-14s %3d câu" % (names[eid], n))
