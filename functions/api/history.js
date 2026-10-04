@@ -30,6 +30,7 @@ export async function onRequestGet({ request, env }) {
     const seed = await env.ASSETS.fetch(new URL("/history/quiz-history.json", request.url));
     if (seed.ok && (seed.headers.get("Content-Type") || "").includes("json")) return json(await seed.text());
   }
+
   return json({});
 }
 
