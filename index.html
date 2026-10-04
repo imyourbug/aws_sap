@@ -722,19 +722,81 @@
       };
     }
 
-    function save() {
+    // changed = true khi người dùng vừa thao tác (chọn đáp án, đánh dấu, chuyển câu, nộp…):
+    // đánh dấu thời điểm và đẩy trạng thái lên Cloudflare để máy khác làm tiếp được.
+    function save(changed) {
       if (!quiz) return;
       try {
         if (!state.paused && !state.submitted) state.remainingMs = Math.max(0, endAt - Date.now());
+        if (changed) state.updatedAt = new Date().toISOString();
         localStorage.setItem(storageKeyOf(quiz), JSON.stringify(state));
+      } catch (e) { }
+      if (changed) queueStatePush();
+    }
+
+    // Lấy bản mới hơn giữa trạng thái trên máy này và trạng thái đã đồng bộ từ Cloudflare.
+    function readSaved(z) {
+      let local = null;
+      try {
+        const raw = localStorage.getItem(storageKeyOf(z));
+        local = raw ? JSON.parse(raw) : null;
+      } catch (e) { }
+      const remote = remoteStates[z.key];
+      if (!remote || !remote.updatedAt) return local;
+      if (!local || String(remote.updatedAt) > String(local.updatedAt || "")) return remote;
+      return local;
+    }
+
+    // ---------- Đồng bộ trạng thái bài đang làm (functions/api/state.js) ----------
+    let remoteStates = {};      // { quizKey: state } lấy từ Cloudflare
+    let pushTimer = null;
+    let pendingPush = null;     // { key, body }
+
+    function queueStatePush() {
+      if (!cloudMode || !quiz) return;
+      pendingPush = { key: quiz.key, body: JSON.stringify(state) };
+      remoteStates[quiz.key] = JSON.parse(pendingPush.body);
+      clearTimeout(pushTimer);
+      pushTimer = setTimeout(flushStatePush, 1000);
+    }
+
+    function flushStatePush() {
+      clearTimeout(pushTimer);
+      if (!pendingPush) return;
+      const { key, body } = pendingPush;
+      pendingPush = null;
+      // keepalive để lần lưu cuối vẫn tới server khi đóng tab hoặc chuyển ứng dụng trên điện thoại.
+      fetch("api/state?key=" + encodeURIComponent(key), {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body,
+        keepalive: body.length < 60000,
+      }).catch(() => { });
+    }
+
+    async function fetchRemoteStates(key) {
+      if (!cloudMode) return;
+      try {
+        const r = await fetch("api/state" + (key ? "?key=" + encodeURIComponent(key) : ""), { cache: "no-store" });
+        if (!r.ok) return;
+        const data = await r.json();
+        if (key) {
+          if (data && data.updatedAt) remoteStates[key] = data;
+        } else {
+          remoteStates = Object.assign(remoteStates, data || {});
+        }
       } catch (e) { }
     }
 
-    function readSaved(z) {
-      try {
-        const raw = localStorage.getItem(storageKeyOf(z));
-        return raw ? JSON.parse(raw) : null;
-      } catch (e) { return null; }
+    // Quay lại tab/ứng dụng: nếu máy khác vừa làm tiếp bài này thì nạp bản mới hơn.
+    async function syncActiveQuiz() {
+      if (!cloudMode || !quiz) return;
+      flushStatePush();
+      const key = quiz.key;
+      await fetchRemoteStates(key);
+      const remote = remoteStates[key];
+      if (!quiz || quiz.key !== key || !remote || String(remote.updatedAt) <= String(state.updatedAt || "")) return;
+      startQuiz(key, false, true);
     }
 
     // Sắp xếp câu hỏi theo thứ tự đã lưu (khi xáo trộn); bỏ qua nếu bộ đề đã thay đổi.
@@ -790,13 +852,14 @@
       }, 250);
     }
 
-    function pause() {
+    // silent = true khi tự tạm dừng lúc rời bài (không tính là thao tác mới, tránh ghi đè tiến độ từ máy khác).
+    function pause(silent) {
       if (state.submitted || state.paused) return;
       state.remainingMs = Math.max(0, endAt - Date.now());
       state.paused = true;
       clearInterval(tickHandle);
       renderPauseState();
-      save();
+      save(!silent);
     }
 
     function resume() {
@@ -804,7 +867,7 @@
       state.paused = false;
       startTicking();
       renderPauseState();
-      save();
+      save(true);
     }
 
     function renderPauseState() {
@@ -872,7 +935,7 @@
       Object.assign(review(), patch);
       const list = visibleIdx();
       if (list.length && !list.includes(state.current)) state.current = list[0];
-      save();
+      save(true);
       renderAll();
     }
 
@@ -1100,7 +1163,7 @@
           state.flagged = isFlagged(i) ? state.flagged.filter((x) => x !== i) : state.flagged.concat(i);
           b.classList.toggle("active", isFlagged(i));
           b.innerHTML = flagSvg(isFlagged(i));
-          save();
+          save(true);
           renderGrid();
           renderResult();
         };
@@ -1122,21 +1185,21 @@
         chosen = [letter];
       }
       state.answers[i] = chosen;
-      save();
+      save(true);
       renderAll();
     }
 
     function toggleFlag() {
       const i = state.current;
       state.flagged = isFlagged(i) ? state.flagged.filter((x) => x !== i) : state.flagged.concat(i);
-      save();
+      save(true);
       renderAll();
     }
 
     function goTo(i) {
       if (i === undefined || i < 0 || i >= total) return;
       state.current = i;
-      save();
+      save(true);
       if (state.submitted && review().view === "list") {
         renderGrid();
         document.querySelectorAll(".review-card.current").forEach((c) => c.classList.remove("current"));
@@ -1173,7 +1236,8 @@
       state.result = scoreOf(state, quiz);
       state.submittedAt = new Date().toISOString();
       clearInterval(tickHandle);
-      save();
+      save(true);
+      flushStatePush();
       recordAttempt();
       renderAll();
       renderPauseState();
@@ -1313,9 +1377,14 @@
       return saved;
     }
 
-    function startQuiz(key, fresh) {
+    function startQuiz(key, fresh, synced) {
       const z = findQuiz(key);
       if (!z) return showHome();
+      if (cloudMode && !fresh && !synced) {
+        // Lấy trạng thái mới nhất của bài này (có thể vừa làm trên máy khác) trước khi mở.
+        Promise.race([fetchRemoteStates(key), new Promise((r) => setTimeout(r, 3000))]).then(() => startQuiz(key, false, true));
+        return;
+      }
       if (!z.questions) {
         loadExam(z).then(() => startQuiz(key, fresh), () => {
           alert("Không tải được " + z.file);
@@ -1341,14 +1410,15 @@
       renderAll();
       if (!state.paused && !state.submitted) startTicking();
       renderPauseState();
-      save();
+      save(!!fresh);
       $("main").scrollTop = 0;
     }
 
     function leaveQuiz() {
       if (quiz) {
-        pause();
+        pause(true);
         save();
+        flushStatePush();
       }
       clearInterval(tickHandle);
       quiz = null;
@@ -1362,6 +1432,7 @@
       $("history").hidden = true;
       $("home").hidden = false;
       renderHome();
+      if (cloudMode) fetchRemoteStates().then(() => { if (!$("home").hidden) renderHome(); });
     }
 
     function renderHome() {
@@ -1617,8 +1688,12 @@
 
     async function initHistoryStorage() {
       cloudMode = await detectCloud();
-      if (cloudMode) await saveHistoryCloud();
-      else await restoreHistoryFolder();
+      if (cloudMode) {
+        await Promise.all([saveHistoryCloud(), fetchRemoteStates()]);
+        syncActiveQuiz();
+      } else {
+        await restoreHistoryFolder();
+      }
       if (!$("home").hidden) renderHome();
     }
 
@@ -1848,7 +1923,18 @@
         if (e.key === "ArrowRight") step(1);
         if (e.key === "ArrowLeft") step(-1);
       });
-      window.addEventListener("beforeunload", save);
+      window.addEventListener("beforeunload", () => {
+        save();
+        flushStatePush();
+      });
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "hidden") {
+          save();
+          flushStatePush();
+        } else {
+          syncActiveQuiz();
+        }
+      });
 
       if (window.innerWidth <= 900) $("sidebar").classList.add("collapsed");
 
