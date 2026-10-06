@@ -1358,7 +1358,7 @@
       return {
         current: 0,
         answers: Object.fromEntries(a.answers.map((x, i) => [i, x.chosen])),
-        flagged: [],
+        flagged: a.answers.map((x, i) => (x.flagged ? i : -1)).filter((i) => i >= 0),
         remainingMs: Math.max(0, minutesOf(z) * 60 * 1000 - (a.durationMs || 0)),
         paused: false,
         submitted: true,
@@ -1373,7 +1373,10 @@
       const saved = readSaved(z);
       if (saved && !saved.submitted) return saved;
       const a = lastAttemptOf(z);
-      if (a && (!saved || !saved.submittedAt || a.submittedAt > saved.submittedAt)) return stateFromAttempt(z, a);
+      // Lần nộp và trạng thái đã lưu của cùng một lần thi có submittedAt trùng nhau (bản cũ lệch vài ms):
+      // khi đó giữ trạng thái đã lưu vì nó có cả các câu được đánh dấu sau khi nộp.
+      const newer = a && (!saved || !saved.submittedAt || Date.parse(a.submittedAt) - Date.parse(saved.submittedAt) > 2000);
+      if (newer) return stateFromAttempt(z, a);
       return saved;
     }
 
@@ -1592,13 +1595,13 @@
         quizKey: quiz.key,
         quizName: quizLabel(quiz),
         startedAt: state.startedAt || null,
-        submittedAt: new Date().toISOString(),
+        submittedAt: state.submittedAt,
         durationMs: examMinutes * 60 * 1000 - state.remainingMs,
         total: total,
         correct: res.correct,
         pct: res.pct,
         passed: res.pct >= passPercent,
-        answers: questionData.map((q, i) => ({ id: q.id, chosen: (state.answers[i] || []).slice().sort(), ok: isCorrect(i) })),
+        answers: questionData.map((q, i) => ({ id: q.id, chosen: (state.answers[i] || []).slice().sort(), ok: isCorrect(i), flagged: isFlagged(i) })),
       });
       storeHistory();
       saveHistory(true);
