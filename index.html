@@ -749,6 +749,10 @@
 
     // ---------- Đồng bộ trạng thái bài đang làm (functions/api/state.js) ----------
     let remoteStates = {};      // { quizKey: state } lấy từ Cloudflare
+    // { quizKey: updatedAt } của bản trên Cloudflare mà trạng thái đang làm dựa vào ("" = coi như chưa có).
+    // Server từ chối bản gửi lên nếu bản đang lưu khác bản này, tức là máy này chưa thấy thao tác của máy khác.
+    let stateBase = {};
+    let cloudDetect = Promise.resolve(false);
     let pushTimer = null;
     let pendingPush = null;     // { key, body }
 
@@ -763,14 +767,28 @@
     function flushStatePush() {
       clearTimeout(pushTimer);
       if (!pendingPush) return;
-      const { key, body } = pendingPush;
+      const key = pendingPush.key;
+      const sent = JSON.parse(pendingPush.body);
       pendingPush = null;
+      sent.baseAt = stateBase[key] || "";
+      stateBase[key] = sent.updatedAt;
+      const body = JSON.stringify(sent);
       // keepalive để lần lưu cuối vẫn tới server khi đóng tab hoặc chuyển ứng dụng trên điện thoại.
       fetch("api/state?key=" + encodeURIComponent(key), {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body,
         keepalive: body.length < 60000,
+      }).then(async (r) => {
+        if (r.status !== 409) return;
+        // Máy khác đã lưu bản mà máy này chưa thấy: lấy bản đó thay vì ghi đè lên nó.
+        const current = await r.json();
+        remoteStates[key] = current;
+        stateBase[key] = current.updatedAt;
+        const z = findQuiz(key);
+        try { if (z) localStorage.setItem(storageKeyOf(z), JSON.stringify(current)); } catch (e) { }
+        if (quiz && quiz.key === key) startQuiz(key, false, true);
+        else if (!$("home").hidden) renderHome();
       }).catch(() => { });
     }
 
@@ -1383,13 +1401,15 @@
     function startQuiz(key, fresh, synced) {
       const z = findQuiz(key);
       if (!z) return showHome();
-      if (cloudMode && !fresh && !synced) {
-        // Lấy trạng thái mới nhất của bài này (có thể vừa làm trên máy khác) trước khi mở.
-        Promise.race([fetchRemoteStates(key), new Promise((r) => setTimeout(r, 3000))]).then(() => startQuiz(key, false, true));
+      if (!synced) {
+        // Chờ biết có Cloudflare hay không, rồi lấy trạng thái mới nhất của bài này (có thể vừa làm
+        // trên máy khác) trước khi mở. Kể cả khi bắt đầu lại, để biết bản trên server mà lần làm mới thay thế.
+        cloudDetect.then(() => cloudMode && Promise.race([fetchRemoteStates(key), new Promise((r) => setTimeout(r, 8000))]))
+          .then(() => startQuiz(key, fresh, true));
         return;
       }
       if (!z.questions) {
-        loadExam(z).then(() => startQuiz(key, fresh), () => {
+        loadExam(z).then(() => startQuiz(key, fresh, true), () => {
           alert("Không tải được " + z.file);
           showHome();
         });
@@ -1400,6 +1420,10 @@
       examMinutes = minutesOf(z);
       const saved = fresh ? null : effectiveState(z);
       state = saved ? Object.assign(freshState(), { order: null }, saved) : freshState();
+      delete state.baseAt;
+      const remote = remoteStates[key];
+      if (remote && remote.updatedAt && remote.updatedAt === state.updatedAt) stateBase[key] = remote.updatedAt;
+      else if (!(key in stateBase)) stateBase[key] = (remote && remote.updatedAt) || "";
       applyOrder();
       if (state.current >= total) state.current = 0;
       try { localStorage.setItem("quiz-active", key); } catch (e) { }
@@ -1690,7 +1714,8 @@
     }
 
     async function initHistoryStorage() {
-      cloudMode = await detectCloud();
+      cloudDetect = detectCloud();
+      cloudMode = await cloudDetect;
       if (cloudMode) {
         await Promise.all([saveHistoryCloud(), fetchRemoteStates()]);
         syncActiveQuiz();
@@ -1936,6 +1961,7 @@
           flushStatePush();
         } else {
           syncActiveQuiz();
+          if (cloudMode) saveHistoryCloud();
         }
       });
 
