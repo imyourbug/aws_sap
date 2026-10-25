@@ -208,6 +208,15 @@
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
     .btn-outline:disabled { opacity: .4; cursor: not-allowed; }
 
+    .sync-btn { display: inline-flex; align-items: center; gap: 8px; white-space: nowrap; }
+    .sync-btn[hidden] { display: none; }
+    .sync-btn i { width: 8px; height: 8px; border-radius: 50%; background: var(--text-dim); flex: none; }
+    .sync-btn.saved i { background: var(--green); }
+    .sync-btn.dirty { border-color: var(--amber); color: var(--amber); }
+    .sync-btn.dirty i { background: var(--amber); }
+    .sync-btn.error { border-color: var(--red); color: var(--red); }
+    .sync-btn.error i { background: var(--red); }
+
     .q-head { display: flex; align-items: center; gap: 8px; margin-top: 24px; }
     .q-head h3 { margin: 0; flex: 1; font-size: 18px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
 
@@ -587,6 +596,7 @@
           <button class="icon-btn" id="btn-pause" title="Tạm dừng / Tiếp tục">
             <svg viewBox="0 0 24 24" id="icon-pause"><path d="M9 5v14M15 5v14" /></svg>
           </button>
+          <button class="btn-outline sync-btn" id="btn-sync" hidden><i></i><span id="sync-text">Lưu</span></button>
           <button class="btn-outline" id="btn-submit">Nộp bài</button>
         </div>
 
@@ -722,74 +732,118 @@
       };
     }
 
-    // changed = true khi người dùng vừa thao tác (chọn đáp án, đánh dấu, chuyển câu, nộp…):
-    // đánh dấu thời điểm và đẩy trạng thái lên Cloudflare để máy khác làm tiếp được.
+    // changed = true khi người dùng vừa thao tác (chọn đáp án, đánh dấu, chuyển câu, tạm dừng, nộp…):
+    // lưu trên máy này và đánh dấu "chưa lưu lên KV". Chỉ nút Lưu mới gửi lên Cloudflare.
     function save(changed) {
       if (!quiz) return;
       try {
         if (!state.paused && !state.submitted) state.remainingMs = Math.max(0, endAt - Date.now());
-        if (changed) state.updatedAt = new Date().toISOString();
+        if (changed) {
+          state.updatedAt = new Date().toISOString();
+          state.dirty = true;
+        }
         localStorage.setItem(storageKeyOf(quiz), JSON.stringify(state));
       } catch (e) { }
-      if (changed) queueStatePush();
+      if (changed) renderSyncBtn();
     }
 
-    // Lấy bản mới hơn giữa trạng thái trên máy này và trạng thái đã đồng bộ từ Cloudflare.
-    function readSaved(z) {
-      let local = null;
+    function readLocal(z) {
       try {
         const raw = localStorage.getItem(storageKeyOf(z));
-        local = raw ? JSON.parse(raw) : null;
-      } catch (e) { }
+        return raw ? JSON.parse(raw) : null;
+      } catch (e) { return null; }
+    }
+
+    // Bản trên KV là bản chính. Chỉ giữ bản trên máy này khi:
+    //  - nó có thay đổi chưa bấm Lưu (dirty), hoặc
+    //  - KV trả về bản cũ hơn bản máy này đã lưu (KV cần tới ~60 giây để đồng bộ giữa các vùng).
+    // rev là số phiên bản server cấp, tăng 1 mỗi lần lưu; không so giờ vì đồng hồ mỗi máy có thể lệch.
+    function readSaved(z) {
+      const local = readLocal(z);
       const remote = remoteStates[z.key];
       if (!remote || !remote.updatedAt) return local;
-      if (!local || String(remote.updatedAt) > String(local.updatedAt || "")) return remote;
-      return local;
+      if (!local) return remote;
+      if (local.dirty || (local.rev || 0) > (remote.rev || 0)) return local;
+      return remote;
     }
 
-    // ---------- Đồng bộ trạng thái bài đang làm (functions/api/state.js) ----------
+    // ---------- Lưu lên KV bằng nút Lưu (functions/api/state.js) ----------
     let remoteStates = {};      // { quizKey: state } lấy từ Cloudflare
-    // { quizKey: updatedAt } của bản trên Cloudflare mà trạng thái đang làm dựa vào ("" = coi như chưa có).
-    // Server từ chối bản gửi lên nếu bản đang lưu khác bản này, tức là máy này chưa thấy thao tác của máy khác.
-    let stateBase = {};
     let cloudDetect = Promise.resolve(false);
-    let pushTimer = null;
-    let pendingPush = null;     // { key, body }
+    let syncStatus = "";        // "" | saving | error
 
-    function queueStatePush() {
-      if (!cloudMode || !quiz) return;
-      pendingPush = { key: quiz.key, body: JSON.stringify(state) };
-      remoteStates[quiz.key] = JSON.parse(pendingPush.body);
-      clearTimeout(pushTimer);
-      pushTimer = setTimeout(flushStatePush, 1000);
+    function storeLocal(z, st) {
+      try { localStorage.setItem(storageKeyOf(z), JSON.stringify(st)); } catch (e) { }
     }
 
-    function flushStatePush() {
-      clearTimeout(pushTimer);
-      if (!pendingPush) return;
-      const key = pendingPush.key;
-      const sent = JSON.parse(pendingPush.body);
-      pendingPush = null;
-      sent.baseAt = stateBase[key] || "";
-      stateBase[key] = sent.updatedAt;
-      const body = JSON.stringify(sent);
-      // keepalive để lần lưu cuối vẫn tới server khi đóng tab hoặc chuyển ứng dụng trên điện thoại.
-      fetch("api/state?key=" + encodeURIComponent(key), {
+    function renderSyncBtn() {
+      const b = $("btn-sync");
+      b.hidden = !cloudMode || !quiz;
+      if (b.hidden) return;
+      const st = syncStatus || (state.dirty ? "dirty" : "saved");
+      b.className = "btn-outline sync-btn " + st;
+      b.disabled = st === "saving";
+      $("sync-text").textContent = { saving: "Đang lưu…", error: "Lưu lại", dirty: "Lưu", saved: "Đã lưu" }[st];
+      b.title = {
+        saving: "Đang lưu lên KV…",
+        error: "Lưu lên KV thất bại, bấm để thử lại",
+        dirty: "Có thay đổi chưa lưu lên KV, máy khác chưa thấy",
+        saved: "Đã lưu lên KV" + (state.savedAt ? " lúc " + new Date(state.savedAt).toLocaleTimeString() : ""),
+      }[st];
+    }
+
+    async function putState(key, body) {
+      const r = await fetch("api/state?key=" + encodeURIComponent(key), {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body,
-        keepalive: body.length < 60000,
-      }).then(async (r) => {
-        if (r.status !== 409) return;
-        // Máy khác đã lưu bản mà máy này chưa thấy: lấy bản đó thay vì ghi đè lên nó.
-        const current = await r.json();
-        remoteStates[key] = current;
-        stateBase[key] = current.updatedAt;
-        const z = findQuiz(key);
-        try { if (z) localStorage.setItem(storageKeyOf(z), JSON.stringify(current)); } catch (e) { }
-        if (quiz && quiz.key === key) startQuiz(key, false, true);
-        else if (!$("home").hidden) renderHome();
-      }).catch(() => { });
+        body: JSON.stringify(body),
+      });
+      const data = await r.json().catch(() => ({}));
+      if (r.status !== 200 && r.status !== 409) throw new Error(data.error || "HTTP " + r.status);
+      return { status: r.status, data };
+    }
+
+    // Nút Lưu: gửi trạng thái hiện tại lên KV kèm rev của bản trên KV mà nó dựa vào.
+    async function saveToCloud() {
+      if (!cloudMode || !quiz || syncStatus === "saving") return;
+      save();
+      const key = quiz.key;
+      syncStatus = "saving";
+      renderSyncBtn();
+      try {
+        const body = Object.assign({}, state, { dirty: false, savedAt: new Date().toISOString() });
+        let res = await putState(key, body);
+        if (res.status === 409) {
+          // Máy khác đã lưu bản mới hơn từ lúc máy này tải về.
+          const current = res.data;
+          const at = current.savedAt || current.updatedAt;
+          const overwrite = confirm(
+            "Trên KV có bản mới hơn" + (at ? " (lưu lúc " + new Date(at).toLocaleString() + ")" : "") + ", có thể từ máy khác.\n\n" +
+            "OK: ghi đè bằng bài đang làm trên máy này.\nHủy: bỏ thay đổi trên máy này, tải bản trên KV về.");
+          if (!overwrite) {
+            syncStatus = "";
+            remoteStates[key] = current;
+            storeLocal(quiz, current);
+            startQuiz(key, false, true);
+            return;
+          }
+          res = await putState(key, Object.assign(body, { rev: current.rev || 0 }));
+          if (res.status !== 200) throw new Error("Bản trên KV vừa thay đổi lần nữa, hãy bấm Lưu lại.");
+        }
+        remoteStates[key] = res.data;
+        if (quiz && quiz.key === key) {
+          state.rev = res.data.rev;
+          state.savedAt = res.data.savedAt;
+          // Thao tác làm trong lúc đang gửi vẫn là thay đổi chưa lưu.
+          if (state.updatedAt === body.updatedAt) state.dirty = false;
+          storeLocal(quiz, state);
+        }
+        syncStatus = "";
+      } catch (e) {
+        syncStatus = "error";
+        alert("Không lưu được lên KV: " + e.message);
+      }
+      renderSyncBtn();
     }
 
     async function fetchRemoteStates(key) {
@@ -806,15 +860,15 @@
       } catch (e) { }
     }
 
-    // Quay lại tab/ứng dụng: nếu máy khác vừa làm tiếp bài này thì nạp bản mới hơn.
+    // Quay lại tab/ứng dụng: nếu máy khác vừa lưu bản mới hơn lên KV thì nạp bản đó
+    // (trừ khi máy này có thay đổi chưa lưu; khi đó bấm Lưu sẽ hỏi ghi đè hay tải về).
     async function syncActiveQuiz() {
       if (!cloudMode || !quiz) return;
-      flushStatePush();
       const key = quiz.key;
       await fetchRemoteStates(key);
       const remote = remoteStates[key];
-      if (!quiz || quiz.key !== key || !remote || String(remote.updatedAt) <= String(state.updatedAt || "")) return;
-      startQuiz(key, false, true);
+      if (!quiz || quiz.key !== key || !remote || state.dirty || syncStatus === "saving") return;
+      if ((remote.rev || 0) > (state.rev || 0)) startQuiz(key, false, true);
     }
 
     // Sắp xếp câu hỏi theo thứ tự đã lưu (khi xáo trộn); bỏ qua nếu bộ đề đã thay đổi.
@@ -871,6 +925,7 @@
     }
 
     // silent = true khi tự tạm dừng lúc rời bài (không tính là thao tác mới, tránh ghi đè tiến độ từ máy khác).
+    // silent = true khi tự tạm dừng lúc rời bài: không tính là thay đổi cần lưu lên KV.
     function pause(silent) {
       if (state.submitted || state.paused) return;
       state.remainingMs = Math.max(0, endAt - Date.now());
@@ -1255,7 +1310,6 @@
       state.submittedAt = new Date().toISOString();
       clearInterval(tickHandle);
       save(true);
-      flushStatePush();
       recordAttempt();
       renderAll();
       renderPauseState();
@@ -1404,7 +1458,7 @@
       if (!synced) {
         // Chờ biết có Cloudflare hay không, rồi lấy trạng thái mới nhất của bài này (có thể vừa làm
         // trên máy khác) trước khi mở. Kể cả khi bắt đầu lại, để biết bản trên server mà lần làm mới thay thế.
-        cloudDetect.then(() => cloudMode && Promise.race([fetchRemoteStates(key), new Promise((r) => setTimeout(r, 8000))]))
+        Promise.race([cloudDetect.then(() => cloudMode && fetchRemoteStates(key)), new Promise((r) => setTimeout(r, 5000))])
           .then(() => startQuiz(key, fresh, true));
         return;
       }
@@ -1420,10 +1474,10 @@
       examMinutes = minutesOf(z);
       const saved = fresh ? null : effectiveState(z);
       state = saved ? Object.assign(freshState(), { order: null }, saved) : freshState();
-      delete state.baseAt;
-      const remote = remoteStates[key];
-      if (remote && remote.updatedAt && remote.updatedAt === state.updatedAt) stateBase[key] = remote.updatedAt;
-      else if (!(key in stateBase)) stateBase[key] = (remote && remote.updatedAt) || "";
+      // Làm lại / bài dựng từ lịch sử thay cho bản đang có trên KV, nên mang rev của bản đó. Bài lấy từ
+      // KV hoặc từ máy này giữ nguyên rev của nó: nếu KV đã có bản mới hơn, bấm Lưu sẽ hỏi trước khi ghi đè.
+      if (!saved || saved.rev === undefined)
+        state.rev = Math.max((remoteStates[key] || {}).rev || 0, (readLocal(z) || {}).rev || 0);
       applyOrder();
       if (state.current >= total) state.current = 0;
       try { localStorage.setItem("quiz-active", key); } catch (e) { }
@@ -1438,6 +1492,7 @@
       if (!state.paused && !state.submitted) startTicking();
       renderPauseState();
       save(!!fresh);
+      renderSyncBtn();
       $("main").scrollTop = 0;
     }
 
@@ -1445,13 +1500,13 @@
       if (quiz) {
         pause(true);
         save();
-        flushStatePush();
       }
       clearInterval(tickHandle);
       quiz = null;
       try { localStorage.removeItem("quiz-active"); } catch (e) { }
       $("quiz-title").textContent = "Quiz";
       $("quiz-screen").hidden = true;
+      renderSyncBtn();
     }
 
     function showHome() {
@@ -1708,14 +1763,19 @@
     }
 
     // Có API lưu lịch sử không? (Trả JSON, kể cả 401/500, nghĩa là function đang chạy.)
+    // Hỏi một khóa trạng thái không tồn tại (một lần đọc KV, vài byte) thay vì tải cả lịch sử, để mở đề không phải chờ.
     async function detectCloud() {
       if (!location.protocol.startsWith("http")) return false;
-      try { return (await cloudFetch("GET")).api; } catch (e) { return false; }
+      try {
+        const r = await fetch("api/state?key=_ping", { cache: "no-store" });
+        return (r.headers.get("Content-Type") || "").includes("json");
+      } catch (e) { return false; }
     }
 
     async function initHistoryStorage() {
       cloudDetect = detectCloud();
       cloudMode = await cloudDetect;
+      renderSyncBtn();
       if (cloudMode) {
         await Promise.all([saveHistoryCloud(), fetchRemoteStates()]);
         syncActiveQuiz();
@@ -1925,6 +1985,7 @@
       $("btn-pause").onclick = () => (state.paused ? resume() : pause());
       $("btn-resume").onclick = resume;
       $("btn-submit").onclick = () => submit(false);
+      $("btn-sync").onclick = saveToCloud;
       $("btn-reset").onclick = reset;
       $("btn-home").onclick = showHome;
       $("btn-history").onclick = showHistory;
@@ -1951,14 +2012,14 @@
         if (e.key === "ArrowRight") step(1);
         if (e.key === "ArrowLeft") step(-1);
       });
-      window.addEventListener("beforeunload", () => {
+      window.addEventListener("beforeunload", (e) => {
         save();
-        flushStatePush();
+        // Nhắc khi đóng trang mà còn thay đổi chưa lưu lên KV (trình duyệt điện thoại có thể bỏ qua).
+        if (cloudMode && quiz && state.dirty) e.preventDefault();
       });
       document.addEventListener("visibilitychange", () => {
         if (document.visibilityState === "hidden") {
           save();
-          flushStatePush();
         } else {
           syncActiveQuiz();
           if (cloudMode) saveHistoryCloud();

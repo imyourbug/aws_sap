@@ -3,8 +3,8 @@
 //
 //   GET /api/state             -> { <quizKey>: state, ... } tất cả bộ đề đã có trạng thái
 //   GET /api/state?key=<quiz>  -> state của một bộ đề ({} nếu chưa có)
-//   PUT /api/state?key=<quiz>  -> lưu state (kèm baseAt = updatedAt của bản trên server mà nó dựa vào);
-//                                 409 + bản đang lưu nếu baseAt không khớp
+//   PUT /api/state?key=<quiz>  -> lưu state (kèm rev của bản trên server mà nó dựa vào), trả về bản đã lưu
+//                                 với rev mới; 409 + bản đang lưu nếu rev không khớp
 
 const PREFIX = "state:";
 const KEY_RE = /^[\w-]{1,64}$/;
@@ -59,13 +59,15 @@ export async function onRequestPut({ request, env }) {
   if (!incoming || typeof incoming.answers !== "object" || !incoming.updatedAt)
     return json({ error: "Thiếu answers hoặc updatedAt." }, 400);
 
-  // Chỉ ghi khi máy gửi đã thấy bản đang lưu (baseAt trùng updatedAt của nó). Nếu không, máy khác
-  // đã lưu bản mà máy này chưa tải về (vd. điện thoại vừa xóa cache bấm "Bắt đầu" trước khi kịp tải):
-  // trả 409 kèm bản đang lưu để máy đó nạp lại, thay vì ghi đè mất tiến độ của máy kia.
+  // rev là số phiên bản do server cấp, tăng 1 mỗi lần ghi; máy gửi kèm rev của bản nó dựa vào.
+  // Chỉ ghi khi đó vẫn là bản mới nhất. Nếu không, máy khác đã lưu bản mà máy này chưa tải về
+  // (vd. điện thoại bấm "Bắt đầu" trước khi kịp tải): trả 409 kèm bản đang lưu để máy đó nạp lại,
+  // thay vì ghi đè mất tiến độ của máy kia. Không so updatedAt vì đồng hồ mỗi máy có thể lệch.
   const current = await env.HISTORY.get(PREFIX + key, "json");
-  if (current && current.updatedAt && String(current.updatedAt) !== String(incoming.baseAt || ""))
-    return json(current, 409);
+  const currentRev = (current && current.rev) || 0;
+  if (current && current.updatedAt && (incoming.rev || 0) !== currentRev) return json(current, 409);
   delete incoming.baseAt;
+  incoming.rev = currentRev + 1;
   const stored = JSON.stringify(incoming);
   await env.HISTORY.put(PREFIX + key, stored);
   return json(stored);
